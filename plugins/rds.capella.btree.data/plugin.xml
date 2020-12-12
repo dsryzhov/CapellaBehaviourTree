@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+
+
+<plugin>
+
+   
+<!--@generated-->
+  <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated BehaviourTree -->
+      <package class="rds.capella.btree.data.BehaviourTree.BehaviourTreePackage" genModel="models/BehaviourTree.genmodel" uri="http://rds/capella/btree/1.0"/>
+   </extension>
+
+   
+<!--@generated-->
+  <extension point="org.eclipse.emf.ecore.extension_parser">
+      <!-- @generated BehaviourTree -->
+      <parser class="rds.capella.btree.data.BehaviourTree.util.BehaviourTreeResourceFactoryImpl" type="behaviourtree"/>
+   </extension>
+
+
+<!--@generated-->
+  <extension point="org.polarsys.capella.common.model.helpers.helper">
+    <helperImpl class="rds.capella.btree.data.helpers.BehaviourTreePackageHelper" nsURI="http://rds/capella/btree/1.0"/>
+  </extension>
+</plugin>

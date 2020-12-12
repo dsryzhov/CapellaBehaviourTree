@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         point="org.eclipse.sirius.componentization">
+      <component
+            class="rds.capella.btree.design.Activator"
+            id="rds.capella.btree.design"
+            name="rds.capella.btree.design">
+      </component>
+   </extension>
+   
+   
+   <extension
+    point="org.eclipse.ui.navigator.navigatorContent">
+		<commonFilter id="org.eclipse.ui.navigator.resources.filters.CapellaModel" 
+		name="BTreeNodeType property " 
+		description="Hide BTreeNodeType property" activeByDefault="false">
+		   <filterExpression>
+		      <and>
+		         <instanceof value="org.polarsys.capella.core.data.capellacore.StringPropertyValue"/>
+		      </and>
+		   </filterExpression>
+		</commonFilter>
+   </extension>
+   
+</plugin>
