@@ -17,7 +17,10 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="function" lowerBound="1"
         eType="ecore:EClass platform:/plugin/org.polarsys.capella.core.data.gen/model/FunctionalAnalysis.ecore#//AbstractFunction"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="BTreeDecorator" abstract="true" eSuperTypes="#//BTreeNode"/>
+  <eClassifiers xsi:type="ecore:EClass" name="BTreeDecorator" abstract="true" eSuperTypes="#//BTreeNode">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ownedNode" lowerBound="1"
+        eType="#//BTreeNode" containment="true"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="BTreeSequence" abstract="true" eSuperTypes="#//BTreeContainer"/>
   <eClassifiers xsi:type="ecore:EClass" name="BTreeFallback" abstract="true" eSuperTypes="#//BTreeContainer"/>
   <eClassifiers xsi:type="ecore:EClass" name="BTreeRoot" eSuperTypes="platform:/plugin/org.polarsys.kitalpha.emde/model/eMDE.ecore#//ElementExtension #//BTreeElement">
@@ -29,6 +32,10 @@
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="ownedBTreeContainer" eType="#//BTreeContainer"
         containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BTreeInclude" eSuperTypes="#//BTreeNode">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="btreeReference" lowerBound="1"
+        eType="#//BTreeRoot"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Action" eSuperTypes="#//BTreeLeaf"/>
   <eClassifiers xsi:type="ecore:EClass" name="Condition" eSuperTypes="#//BTreeLeaf"/>

@@ -22,6 +22,7 @@ import rds.capella.btree.data.BehaviourTree.BTreeDecorator;
 import rds.capella.btree.data.BehaviourTree.BTreeSequence;
 import rds.capella.btree.data.BehaviourTree.BTreeFallback;
 import rds.capella.btree.data.BehaviourTree.BTreeRoot;
+import rds.capella.btree.data.BehaviourTree.BTreeInclude;
 import rds.capella.btree.data.BehaviourTree.Action;
 import rds.capella.btree.data.BehaviourTree.Condition;
 import rds.capella.btree.data.BehaviourTree.Parallel;
@@ -70,6 +71,9 @@ public class BehaviourTreePackageHelper implements IHelper {
 		}
 		if (ret == null && object instanceof BTreeRoot) {
 			ret = BTreeRootHelper.getInstance().doSwitch((BTreeRoot) object, feature);
+		}
+		if (ret == null && object instanceof BTreeInclude) {
+			ret = BTreeIncludeHelper.getInstance().doSwitch((BTreeInclude) object, feature);
 		}
 		if (ret == null && object instanceof Action) {
 			ret = ActionHelper.getInstance().doSwitch((Action) object, feature);

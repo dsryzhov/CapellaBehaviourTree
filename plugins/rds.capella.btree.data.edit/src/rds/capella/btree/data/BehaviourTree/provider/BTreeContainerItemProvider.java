@@ -140,6 +140,17 @@ public class BTreeContainerItemProvider extends BTreeNodeItemProvider implements
 		{
 			CommandParameter commandParameter = createChildParameter(
 					BehaviourTreePackage.Literals.BTREE_CONTAINER__OWNED_NODES,
+					BehaviourTreeFactory.eINSTANCE.createBTreeInclude());
+			if (NewChildDescriptorHelper.isValidCommand(object, commandParameter)) {
+				newChildDescriptors.add(commandParameter);
+			}
+		}
+		// end-extension-code
+
+		// begin-extension-code
+		{
+			CommandParameter commandParameter = createChildParameter(
+					BehaviourTreePackage.Literals.BTREE_CONTAINER__OWNED_NODES,
 					BehaviourTreeFactory.eINSTANCE.createAction());
 			if (NewChildDescriptorHelper.isValidCommand(object, commandParameter)) {
 				newChildDescriptors.add(commandParameter);

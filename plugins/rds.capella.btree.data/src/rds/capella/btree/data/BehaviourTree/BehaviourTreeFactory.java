@@ -30,6 +30,15 @@ public interface BehaviourTreeFactory extends EFactory {
 	BTreeRoot createBTreeRoot();
 
 	/**
+	 * Returns a new object of class '<em>BTree Include</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>BTree Include</em>'.
+	 * @generated
+	 */
+	BTreeInclude createBTreeInclude();
+
+	/**
 	 * Returns a new object of class '<em>Action</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

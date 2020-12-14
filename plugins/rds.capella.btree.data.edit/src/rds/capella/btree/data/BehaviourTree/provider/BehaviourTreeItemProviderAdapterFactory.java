@@ -147,6 +147,29 @@ public class BehaviourTreeItemProviderAdapterFactory extends BehaviourTreeAdapte
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link rds.capella.btree.data.BehaviourTree.BTreeInclude} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected BTreeIncludeItemProvider bTreeIncludeItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link rds.capella.btree.data.BehaviourTree.BTreeInclude}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createBTreeIncludeAdapter() {
+		if (bTreeIncludeItemProvider == null) {
+			bTreeIncludeItemProvider = new BTreeIncludeItemProvider(this);
+		}
+
+		return bTreeIncludeItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link rds.capella.btree.data.BehaviourTree.Action} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -579,6 +602,8 @@ public class BehaviourTreeItemProviderAdapterFactory extends BehaviourTreeAdapte
 	public void dispose() {
 		if (bTreeRootItemProvider != null)
 			bTreeRootItemProvider.dispose();
+		if (bTreeIncludeItemProvider != null)
+			bTreeIncludeItemProvider.dispose();
 		if (actionItemProvider != null)
 			actionItemProvider.dispose();
 		if (conditionItemProvider != null)
@@ -768,6 +793,17 @@ public class BehaviourTreeItemProviderAdapterFactory extends BehaviourTreeAdapte
 					CommandParameter commandParameter = createChildParameter(
 							CapellacorePackage.Literals.CLASSIFIER__OWNED_FEATURES,
 							BehaviourTreeFactory.eINSTANCE.createBTreeRoot());
+					if (NewChildDescriptorHelper.isValidCommand(object, commandParameter)) {
+						newChildDescriptors.add(commandParameter);
+					}
+				}
+				// end-extension-code
+
+				// begin-extension-code
+				{
+					CommandParameter commandParameter = createChildParameter(
+							CapellacorePackage.Literals.CLASSIFIER__OWNED_FEATURES,
+							BehaviourTreeFactory.eINSTANCE.createBTreeInclude());
 					if (NewChildDescriptorHelper.isValidCommand(object, commandParameter)) {
 						newChildDescriptors.add(commandParameter);
 					}
@@ -1022,6 +1058,17 @@ public class BehaviourTreeItemProviderAdapterFactory extends BehaviourTreeAdapte
 				{
 					CommandParameter commandParameter = createChildParameter(
 							CapellacorePackage.Literals.CLASSIFIER__OWNED_FEATURES,
+							BehaviourTreeFactory.eINSTANCE.createBTreeInclude());
+					if (NewChildDescriptorHelper.isValidCommand(object, commandParameter)) {
+						newChildDescriptors.add(commandParameter);
+					}
+				}
+				// end-extension-code
+
+				// begin-extension-code
+				{
+					CommandParameter commandParameter = createChildParameter(
+							CapellacorePackage.Literals.CLASSIFIER__OWNED_FEATURES,
 							BehaviourTreeFactory.eINSTANCE.createAction());
 					if (NewChildDescriptorHelper.isValidCommand(object, commandParameter)) {
 						newChildDescriptors.add(commandParameter);
@@ -1256,6 +1303,17 @@ public class BehaviourTreeItemProviderAdapterFactory extends BehaviourTreeAdapte
 					CommandParameter commandParameter = createChildParameter(
 							CapellacorePackage.Literals.CLASSIFIER__OWNED_FEATURES,
 							BehaviourTreeFactory.eINSTANCE.createBTreeRoot());
+					if (NewChildDescriptorHelper.isValidCommand(object, commandParameter)) {
+						newChildDescriptors.add(commandParameter);
+					}
+				}
+				// end-extension-code
+
+				// begin-extension-code
+				{
+					CommandParameter commandParameter = createChildParameter(
+							CapellacorePackage.Literals.CLASSIFIER__OWNED_FEATURES,
+							BehaviourTreeFactory.eINSTANCE.createBTreeInclude());
 					if (NewChildDescriptorHelper.isValidCommand(object, commandParameter)) {
 						newChildDescriptors.add(commandParameter);
 					}
@@ -1510,6 +1568,17 @@ public class BehaviourTreeItemProviderAdapterFactory extends BehaviourTreeAdapte
 				{
 					CommandParameter commandParameter = createChildParameter(
 							SharedmodelPackage.Literals.GENERIC_PKG__CAPELLA_ELEMENTS,
+							BehaviourTreeFactory.eINSTANCE.createBTreeInclude());
+					if (NewChildDescriptorHelper.isValidCommand(object, commandParameter)) {
+						newChildDescriptors.add(commandParameter);
+					}
+				}
+				// end-extension-code
+
+				// begin-extension-code
+				{
+					CommandParameter commandParameter = createChildParameter(
+							SharedmodelPackage.Literals.GENERIC_PKG__CAPELLA_ELEMENTS,
 							BehaviourTreeFactory.eINSTANCE.createAction());
 					if (NewChildDescriptorHelper.isValidCommand(object, commandParameter)) {
 						newChildDescriptors.add(commandParameter);
@@ -1754,6 +1823,17 @@ public class BehaviourTreeItemProviderAdapterFactory extends BehaviourTreeAdapte
 				{
 					CommandParameter commandParameter = createChildParameter(
 							InformationPackage.Literals.ASSOCIATION__OWNED_MEMBERS,
+							BehaviourTreeFactory.eINSTANCE.createBTreeInclude());
+					if (NewChildDescriptorHelper.isValidCommand(object, commandParameter)) {
+						newChildDescriptors.add(commandParameter);
+					}
+				}
+				// end-extension-code
+
+				// begin-extension-code
+				{
+					CommandParameter commandParameter = createChildParameter(
+							InformationPackage.Literals.ASSOCIATION__OWNED_MEMBERS,
 							BehaviourTreeFactory.eINSTANCE.createAction());
 					if (NewChildDescriptorHelper.isValidCommand(object, commandParameter)) {
 						newChildDescriptors.add(commandParameter);
@@ -1988,6 +2068,17 @@ public class BehaviourTreeItemProviderAdapterFactory extends BehaviourTreeAdapte
 					CommandParameter commandParameter = createChildParameter(
 							CapellacorePackage.Literals.CLASSIFIER__OWNED_FEATURES,
 							BehaviourTreeFactory.eINSTANCE.createBTreeRoot());
+					if (NewChildDescriptorHelper.isValidCommand(object, commandParameter)) {
+						newChildDescriptors.add(commandParameter);
+					}
+				}
+				// end-extension-code
+
+				// begin-extension-code
+				{
+					CommandParameter commandParameter = createChildParameter(
+							CapellacorePackage.Literals.CLASSIFIER__OWNED_FEATURES,
+							BehaviourTreeFactory.eINSTANCE.createBTreeInclude());
 					if (NewChildDescriptorHelper.isValidCommand(object, commandParameter)) {
 						newChildDescriptors.add(commandParameter);
 					}

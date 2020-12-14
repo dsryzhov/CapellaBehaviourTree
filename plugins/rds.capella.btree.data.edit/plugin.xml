@@ -29,6 +29,7 @@
 <!--@generated-->
   <extension point="org.polarsys.capella.common.menu.dynamic.MDEMenuItemContribution">
     <MDEMenuItemContribution class="rds.capella.btree.data.BehaviourTree.provider.contributions.BTreeRootItemContribution" id="rds.capella.btree.data.BehaviourTree.provider.contributions.BTreeRootItemContribution"/>
+    <MDEMenuItemContribution class="rds.capella.btree.data.BehaviourTree.provider.contributions.BTreeIncludeItemContribution" id="rds.capella.btree.data.BehaviourTree.provider.contributions.BTreeIncludeItemContribution"/>
     <MDEMenuItemContribution class="rds.capella.btree.data.BehaviourTree.provider.contributions.ActionItemContribution" id="rds.capella.btree.data.BehaviourTree.provider.contributions.ActionItemContribution"/>
     <MDEMenuItemContribution class="rds.capella.btree.data.BehaviourTree.provider.contributions.ConditionItemContribution" id="rds.capella.btree.data.BehaviourTree.provider.contributions.ConditionItemContribution"/>
     <MDEMenuItemContribution class="rds.capella.btree.data.BehaviourTree.provider.contributions.ParallelItemContribution" id="rds.capella.btree.data.BehaviourTree.provider.contributions.ParallelItemContribution"/>

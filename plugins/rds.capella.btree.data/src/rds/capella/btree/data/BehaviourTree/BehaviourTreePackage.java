@@ -2416,13 +2416,22 @@ public interface BehaviourTreePackage extends EPackage {
 	int BTREE_DECORATOR__REPRESENTING_INSTANCE_ROLES = BTREE_NODE__REPRESENTING_INSTANCE_ROLES;
 
 	/**
+	 * The feature id for the '<em><b>Owned Node</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BTREE_DECORATOR__OWNED_NODE = BTREE_NODE_FEATURE_COUNT + 0;
+
+	/**
 	 * The number of structural features of the '<em>BTree Decorator</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BTREE_DECORATOR_FEATURE_COUNT = BTREE_NODE_FEATURE_COUNT + 0;
+	int BTREE_DECORATOR_FEATURE_COUNT = BTREE_NODE_FEATURE_COUNT + 1;
 
 	/**
 	 * The operation id for the '<em>Destroy</em>' operation.
@@ -3931,6 +3940,493 @@ public interface BehaviourTreePackage extends EPackage {
 	int BTREE_ROOT_OPERATION_COUNT = EmdePackage.ELEMENT_EXTENSION_OPERATION_COUNT + 4;
 
 	/**
+	 * The meta object id for the '{@link rds.capella.btree.data.BehaviourTree.impl.BTreeIncludeImpl <em>BTree Include</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see rds.capella.btree.data.BehaviourTree.impl.BTreeIncludeImpl
+	 * @see rds.capella.btree.data.BehaviourTree.impl.BehaviourTreePackageImpl#getBTreeInclude()
+	 * @generated
+	 */
+	int BTREE_INCLUDE = 8;
+
+	/**
+	 * The feature id for the '<em><b>Owned Extensions</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BTREE_INCLUDE__OWNED_EXTENSIONS = BTREE_NODE__OWNED_EXTENSIONS;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BTREE_INCLUDE__ID = BTREE_NODE__ID;
+
+	/**
+	 * The feature id for the '<em><b>Sid</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BTREE_INCLUDE__SID = BTREE_NODE__SID;
+
+	/**
+	 * The feature id for the '<em><b>Constraints</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BTREE_INCLUDE__CONSTRAINTS = BTREE_NODE__CONSTRAINTS;
+
+	/**
+	 * The feature id for the '<em><b>Owned Constraints</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BTREE_INCLUDE__OWNED_CONSTRAINTS = BTREE_NODE__OWNED_CONSTRAINTS;
+
+	/**
+	 * The feature id for the '<em><b>Owned Migrated Elements</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BTREE_INCLUDE__OWNED_MIGRATED_ELEMENTS = BTREE_NODE__OWNED_MIGRATED_ELEMENTS;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BTREE_INCLUDE__NAME = BTREE_NODE__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Incoming Traces</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BTREE_INCLUDE__INCOMING_TRACES = BTREE_NODE__INCOMING_TRACES;
+
+	/**
+	 * The feature id for the '<em><b>Outgoing Traces</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BTREE_INCLUDE__OUTGOING_TRACES = BTREE_NODE__OUTGOING_TRACES;
+
+	/**
+	 * The feature id for the '<em><b>Visible In Doc</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BTREE_INCLUDE__VISIBLE_IN_DOC = BTREE_NODE__VISIBLE_IN_DOC;
+
+	/**
+	 * The feature id for the '<em><b>Visible In LM</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BTREE_INCLUDE__VISIBLE_IN_LM = BTREE_NODE__VISIBLE_IN_LM;
+
+	/**
+	 * The feature id for the '<em><b>Summary</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BTREE_INCLUDE__SUMMARY = BTREE_NODE__SUMMARY;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BTREE_INCLUDE__DESCRIPTION = BTREE_NODE__DESCRIPTION;
+
+	/**
+	 * The feature id for the '<em><b>Review</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BTREE_INCLUDE__REVIEW = BTREE_NODE__REVIEW;
+
+	/**
+	 * The feature id for the '<em><b>Owned Property Values</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BTREE_INCLUDE__OWNED_PROPERTY_VALUES = BTREE_NODE__OWNED_PROPERTY_VALUES;
+
+	/**
+	 * The feature id for the '<em><b>Owned Enumeration Property Types</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BTREE_INCLUDE__OWNED_ENUMERATION_PROPERTY_TYPES = BTREE_NODE__OWNED_ENUMERATION_PROPERTY_TYPES;
+
+	/**
+	 * The feature id for the '<em><b>Applied Property Values</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BTREE_INCLUDE__APPLIED_PROPERTY_VALUES = BTREE_NODE__APPLIED_PROPERTY_VALUES;
+
+	/**
+	 * The feature id for the '<em><b>Owned Property Value Groups</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BTREE_INCLUDE__OWNED_PROPERTY_VALUE_GROUPS = BTREE_NODE__OWNED_PROPERTY_VALUE_GROUPS;
+
+	/**
+	 * The feature id for the '<em><b>Applied Property Value Groups</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BTREE_INCLUDE__APPLIED_PROPERTY_VALUE_GROUPS = BTREE_NODE__APPLIED_PROPERTY_VALUE_GROUPS;
+
+	/**
+	 * The feature id for the '<em><b>Status</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BTREE_INCLUDE__STATUS = BTREE_NODE__STATUS;
+
+	/**
+	 * The feature id for the '<em><b>Features</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BTREE_INCLUDE__FEATURES = BTREE_NODE__FEATURES;
+
+	/**
+	 * The feature id for the '<em><b>Applied Requirements</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BTREE_INCLUDE__APPLIED_REQUIREMENTS = BTREE_NODE__APPLIED_REQUIREMENTS;
+
+	/**
+	 * The feature id for the '<em><b>Is Abstract</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BTREE_INCLUDE__IS_ABSTRACT = BTREE_NODE__IS_ABSTRACT;
+
+	/**
+	 * The feature id for the '<em><b>Is Static</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BTREE_INCLUDE__IS_STATIC = BTREE_NODE__IS_STATIC;
+
+	/**
+	 * The feature id for the '<em><b>Visibility</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BTREE_INCLUDE__VISIBILITY = BTREE_NODE__VISIBILITY;
+
+	/**
+	 * The feature id for the '<em><b>Abstract Type</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BTREE_INCLUDE__ABSTRACT_TYPE = BTREE_NODE__ABSTRACT_TYPE;
+
+	/**
+	 * The feature id for the '<em><b>Type</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BTREE_INCLUDE__TYPE = BTREE_NODE__TYPE;
+
+	/**
+	 * The feature id for the '<em><b>Ordered</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BTREE_INCLUDE__ORDERED = BTREE_NODE__ORDERED;
+
+	/**
+	 * The feature id for the '<em><b>Unique</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BTREE_INCLUDE__UNIQUE = BTREE_NODE__UNIQUE;
+
+	/**
+	 * The feature id for the '<em><b>Min Inclusive</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BTREE_INCLUDE__MIN_INCLUSIVE = BTREE_NODE__MIN_INCLUSIVE;
+
+	/**
+	 * The feature id for the '<em><b>Max Inclusive</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BTREE_INCLUDE__MAX_INCLUSIVE = BTREE_NODE__MAX_INCLUSIVE;
+
+	/**
+	 * The feature id for the '<em><b>Owned Default Value</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BTREE_INCLUDE__OWNED_DEFAULT_VALUE = BTREE_NODE__OWNED_DEFAULT_VALUE;
+
+	/**
+	 * The feature id for the '<em><b>Owned Min Value</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BTREE_INCLUDE__OWNED_MIN_VALUE = BTREE_NODE__OWNED_MIN_VALUE;
+
+	/**
+	 * The feature id for the '<em><b>Owned Max Value</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BTREE_INCLUDE__OWNED_MAX_VALUE = BTREE_NODE__OWNED_MAX_VALUE;
+
+	/**
+	 * The feature id for the '<em><b>Owned Null Value</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BTREE_INCLUDE__OWNED_NULL_VALUE = BTREE_NODE__OWNED_NULL_VALUE;
+
+	/**
+	 * The feature id for the '<em><b>Owned Min Card</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BTREE_INCLUDE__OWNED_MIN_CARD = BTREE_NODE__OWNED_MIN_CARD;
+
+	/**
+	 * The feature id for the '<em><b>Owned Min Length</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BTREE_INCLUDE__OWNED_MIN_LENGTH = BTREE_NODE__OWNED_MIN_LENGTH;
+
+	/**
+	 * The feature id for the '<em><b>Owned Max Card</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BTREE_INCLUDE__OWNED_MAX_CARD = BTREE_NODE__OWNED_MAX_CARD;
+
+	/**
+	 * The feature id for the '<em><b>Owned Max Length</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BTREE_INCLUDE__OWNED_MAX_LENGTH = BTREE_NODE__OWNED_MAX_LENGTH;
+
+	/**
+	 * The feature id for the '<em><b>Final</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BTREE_INCLUDE__FINAL = BTREE_NODE__FINAL;
+
+	/**
+	 * The feature id for the '<em><b>Aggregation Kind</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BTREE_INCLUDE__AGGREGATION_KIND = BTREE_NODE__AGGREGATION_KIND;
+
+	/**
+	 * The feature id for the '<em><b>Is Derived</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BTREE_INCLUDE__IS_DERIVED = BTREE_NODE__IS_DERIVED;
+
+	/**
+	 * The feature id for the '<em><b>Is Read Only</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BTREE_INCLUDE__IS_READ_ONLY = BTREE_NODE__IS_READ_ONLY;
+
+	/**
+	 * The feature id for the '<em><b>Is Part Of Key</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BTREE_INCLUDE__IS_PART_OF_KEY = BTREE_NODE__IS_PART_OF_KEY;
+
+	/**
+	 * The feature id for the '<em><b>Association</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BTREE_INCLUDE__ASSOCIATION = BTREE_NODE__ASSOCIATION;
+
+	/**
+	 * The feature id for the '<em><b>Representing Instance Roles</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BTREE_INCLUDE__REPRESENTING_INSTANCE_ROLES = BTREE_NODE__REPRESENTING_INSTANCE_ROLES;
+
+	/**
+	 * The feature id for the '<em><b>Btree Reference</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BTREE_INCLUDE__BTREE_REFERENCE = BTREE_NODE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>BTree Include</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BTREE_INCLUDE_FEATURE_COUNT = BTREE_NODE_FEATURE_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>Destroy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BTREE_INCLUDE___DESTROY = BTREE_NODE___DESTROY;
+
+	/**
+	 * The operation id for the '<em>Get Full Label</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BTREE_INCLUDE___GET_FULL_LABEL = BTREE_NODE___GET_FULL_LABEL;
+
+	/**
+	 * The operation id for the '<em>Get Label</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BTREE_INCLUDE___GET_LABEL = BTREE_NODE___GET_LABEL;
+
+	/**
+	 * The operation id for the '<em>Has Unnamed Label</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BTREE_INCLUDE___HAS_UNNAMED_LABEL = BTREE_NODE___HAS_UNNAMED_LABEL;
+
+	/**
+	 * The number of operations of the '<em>BTree Include</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BTREE_INCLUDE_OPERATION_COUNT = BTREE_NODE_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link rds.capella.btree.data.BehaviourTree.impl.ActionImpl <em>Action</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3938,7 +4434,7 @@ public interface BehaviourTreePackage extends EPackage {
 	 * @see rds.capella.btree.data.BehaviourTree.impl.BehaviourTreePackageImpl#getAction()
 	 * @generated
 	 */
-	int ACTION = 8;
+	int ACTION = 9;
 
 	/**
 	 * The feature id for the '<em><b>Owned Extensions</b></em>' containment reference list.
@@ -4425,7 +4921,7 @@ public interface BehaviourTreePackage extends EPackage {
 	 * @see rds.capella.btree.data.BehaviourTree.impl.BehaviourTreePackageImpl#getCondition()
 	 * @generated
 	 */
-	int CONDITION = 9;
+	int CONDITION = 10;
 
 	/**
 	 * The feature id for the '<em><b>Owned Extensions</b></em>' containment reference list.
@@ -4912,7 +5408,7 @@ public interface BehaviourTreePackage extends EPackage {
 	 * @see rds.capella.btree.data.BehaviourTree.impl.BehaviourTreePackageImpl#getParallel()
 	 * @generated
 	 */
-	int PARALLEL = 10;
+	int PARALLEL = 11;
 
 	/**
 	 * The feature id for the '<em><b>Owned Extensions</b></em>' containment reference list.
@@ -5399,7 +5895,7 @@ public interface BehaviourTreePackage extends EPackage {
 	 * @see rds.capella.btree.data.BehaviourTree.impl.BehaviourTreePackageImpl#getSequence()
 	 * @generated
 	 */
-	int SEQUENCE = 11;
+	int SEQUENCE = 12;
 
 	/**
 	 * The feature id for the '<em><b>Owned Extensions</b></em>' containment reference list.
@@ -5886,7 +6382,7 @@ public interface BehaviourTreePackage extends EPackage {
 	 * @see rds.capella.btree.data.BehaviourTree.impl.BehaviourTreePackageImpl#getReactiveSequence()
 	 * @generated
 	 */
-	int REACTIVE_SEQUENCE = 12;
+	int REACTIVE_SEQUENCE = 13;
 
 	/**
 	 * The feature id for the '<em><b>Owned Extensions</b></em>' containment reference list.
@@ -6373,7 +6869,7 @@ public interface BehaviourTreePackage extends EPackage {
 	 * @see rds.capella.btree.data.BehaviourTree.impl.BehaviourTreePackageImpl#getSequenceStar()
 	 * @generated
 	 */
-	int SEQUENCE_STAR = 13;
+	int SEQUENCE_STAR = 14;
 
 	/**
 	 * The feature id for the '<em><b>Owned Extensions</b></em>' containment reference list.
@@ -6860,7 +7356,7 @@ public interface BehaviourTreePackage extends EPackage {
 	 * @see rds.capella.btree.data.BehaviourTree.impl.BehaviourTreePackageImpl#getFallback()
 	 * @generated
 	 */
-	int FALLBACK = 14;
+	int FALLBACK = 15;
 
 	/**
 	 * The feature id for the '<em><b>Owned Extensions</b></em>' containment reference list.
@@ -7347,7 +7843,7 @@ public interface BehaviourTreePackage extends EPackage {
 	 * @see rds.capella.btree.data.BehaviourTree.impl.BehaviourTreePackageImpl#getReactiveFallback()
 	 * @generated
 	 */
-	int REACTIVE_FALLBACK = 15;
+	int REACTIVE_FALLBACK = 16;
 
 	/**
 	 * The feature id for the '<em><b>Owned Extensions</b></em>' containment reference list.
@@ -7834,7 +8330,7 @@ public interface BehaviourTreePackage extends EPackage {
 	 * @see rds.capella.btree.data.BehaviourTree.impl.BehaviourTreePackageImpl#getInverter()
 	 * @generated
 	 */
-	int INVERTER = 16;
+	int INVERTER = 17;
 
 	/**
 	 * The feature id for the '<em><b>Owned Extensions</b></em>' containment reference list.
@@ -8251,6 +8747,15 @@ public interface BehaviourTreePackage extends EPackage {
 	int INVERTER__REPRESENTING_INSTANCE_ROLES = BTREE_DECORATOR__REPRESENTING_INSTANCE_ROLES;
 
 	/**
+	 * The feature id for the '<em><b>Owned Node</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INVERTER__OWNED_NODE = BTREE_DECORATOR__OWNED_NODE;
+
+	/**
 	 * The number of structural features of the '<em>Inverter</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -8312,7 +8817,7 @@ public interface BehaviourTreePackage extends EPackage {
 	 * @see rds.capella.btree.data.BehaviourTree.impl.BehaviourTreePackageImpl#getForceSuccess()
 	 * @generated
 	 */
-	int FORCE_SUCCESS = 17;
+	int FORCE_SUCCESS = 18;
 
 	/**
 	 * The feature id for the '<em><b>Owned Extensions</b></em>' containment reference list.
@@ -8729,6 +9234,15 @@ public interface BehaviourTreePackage extends EPackage {
 	int FORCE_SUCCESS__REPRESENTING_INSTANCE_ROLES = BTREE_DECORATOR__REPRESENTING_INSTANCE_ROLES;
 
 	/**
+	 * The feature id for the '<em><b>Owned Node</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FORCE_SUCCESS__OWNED_NODE = BTREE_DECORATOR__OWNED_NODE;
+
+	/**
 	 * The number of structural features of the '<em>Force Success</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -8790,7 +9304,7 @@ public interface BehaviourTreePackage extends EPackage {
 	 * @see rds.capella.btree.data.BehaviourTree.impl.BehaviourTreePackageImpl#getForceFailure()
 	 * @generated
 	 */
-	int FORCE_FAILURE = 18;
+	int FORCE_FAILURE = 19;
 
 	/**
 	 * The feature id for the '<em><b>Owned Extensions</b></em>' containment reference list.
@@ -9207,6 +9721,15 @@ public interface BehaviourTreePackage extends EPackage {
 	int FORCE_FAILURE__REPRESENTING_INSTANCE_ROLES = BTREE_DECORATOR__REPRESENTING_INSTANCE_ROLES;
 
 	/**
+	 * The feature id for the '<em><b>Owned Node</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FORCE_FAILURE__OWNED_NODE = BTREE_DECORATOR__OWNED_NODE;
+
+	/**
 	 * The number of structural features of the '<em>Force Failure</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -9268,7 +9791,7 @@ public interface BehaviourTreePackage extends EPackage {
 	 * @see rds.capella.btree.data.BehaviourTree.impl.BehaviourTreePackageImpl#getRepeat()
 	 * @generated
 	 */
-	int REPEAT = 19;
+	int REPEAT = 20;
 
 	/**
 	 * The feature id for the '<em><b>Owned Extensions</b></em>' containment reference list.
@@ -9685,6 +10208,15 @@ public interface BehaviourTreePackage extends EPackage {
 	int REPEAT__REPRESENTING_INSTANCE_ROLES = BTREE_DECORATOR__REPRESENTING_INSTANCE_ROLES;
 
 	/**
+	 * The feature id for the '<em><b>Owned Node</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REPEAT__OWNED_NODE = BTREE_DECORATOR__OWNED_NODE;
+
+	/**
 	 * The number of structural features of the '<em>Repeat</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -9746,7 +10278,7 @@ public interface BehaviourTreePackage extends EPackage {
 	 * @see rds.capella.btree.data.BehaviourTree.impl.BehaviourTreePackageImpl#getRetry()
 	 * @generated
 	 */
-	int RETRY = 20;
+	int RETRY = 21;
 
 	/**
 	 * The feature id for the '<em><b>Owned Extensions</b></em>' containment reference list.
@@ -10163,6 +10695,15 @@ public interface BehaviourTreePackage extends EPackage {
 	int RETRY__REPRESENTING_INSTANCE_ROLES = BTREE_DECORATOR__REPRESENTING_INSTANCE_ROLES;
 
 	/**
+	 * The feature id for the '<em><b>Owned Node</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RETRY__OWNED_NODE = BTREE_DECORATOR__OWNED_NODE;
+
+	/**
 	 * The number of structural features of the '<em>Retry</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -10224,7 +10765,7 @@ public interface BehaviourTreePackage extends EPackage {
 	 * @see rds.capella.btree.data.BehaviourTree.impl.BehaviourTreePackageImpl#getTickResult()
 	 * @generated
 	 */
-	int TICK_RESULT = 21;
+	int TICK_RESULT = 22;
 
 	/**
 	 * Returns the meta object for class '{@link rds.capella.btree.data.BehaviourTree.BTreeElement <em>BTree Element</em>}'.
@@ -10299,6 +10840,17 @@ public interface BehaviourTreePackage extends EPackage {
 	EClass getBTreeDecorator();
 
 	/**
+	 * Returns the meta object for the containment reference '{@link rds.capella.btree.data.BehaviourTree.BTreeDecorator#getOwnedNode <em>Owned Node</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Owned Node</em>'.
+	 * @see rds.capella.btree.data.BehaviourTree.BTreeDecorator#getOwnedNode()
+	 * @see #getBTreeDecorator()
+	 * @generated
+	 */
+	EReference getBTreeDecorator_OwnedNode();
+
+	/**
 	 * Returns the meta object for class '{@link rds.capella.btree.data.BehaviourTree.BTreeSequence <em>BTree Sequence</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -10338,6 +10890,27 @@ public interface BehaviourTreePackage extends EPackage {
 	 * @generated
 	 */
 	EReference getBTreeRoot_OwnedBTreeContainer();
+
+	/**
+	 * Returns the meta object for class '{@link rds.capella.btree.data.BehaviourTree.BTreeInclude <em>BTree Include</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>BTree Include</em>'.
+	 * @see rds.capella.btree.data.BehaviourTree.BTreeInclude
+	 * @generated
+	 */
+	EClass getBTreeInclude();
+
+	/**
+	 * Returns the meta object for the reference '{@link rds.capella.btree.data.BehaviourTree.BTreeInclude#getBtreeReference <em>Btree Reference</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Btree Reference</em>'.
+	 * @see rds.capella.btree.data.BehaviourTree.BTreeInclude#getBtreeReference()
+	 * @see #getBTreeInclude()
+	 * @generated
+	 */
+	EReference getBTreeInclude_BtreeReference();
 
 	/**
 	 * Returns the meta object for class '{@link rds.capella.btree.data.BehaviourTree.Action <em>Action</em>}'.
@@ -10569,6 +11142,14 @@ public interface BehaviourTreePackage extends EPackage {
 		EClass BTREE_DECORATOR = eINSTANCE.getBTreeDecorator();
 
 		/**
+		 * The meta object literal for the '<em><b>Owned Node</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference BTREE_DECORATOR__OWNED_NODE = eINSTANCE.getBTreeDecorator_OwnedNode();
+
+		/**
 		 * The meta object literal for the '{@link rds.capella.btree.data.BehaviourTree.impl.BTreeSequenceImpl <em>BTree Sequence</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -10605,6 +11186,24 @@ public interface BehaviourTreePackage extends EPackage {
 		 * @generated
 		 */
 		EReference BTREE_ROOT__OWNED_BTREE_CONTAINER = eINSTANCE.getBTreeRoot_OwnedBTreeContainer();
+
+		/**
+		 * The meta object literal for the '{@link rds.capella.btree.data.BehaviourTree.impl.BTreeIncludeImpl <em>BTree Include</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see rds.capella.btree.data.BehaviourTree.impl.BTreeIncludeImpl
+		 * @see rds.capella.btree.data.BehaviourTree.impl.BehaviourTreePackageImpl#getBTreeInclude()
+		 * @generated
+		 */
+		EClass BTREE_INCLUDE = eINSTANCE.getBTreeInclude();
+
+		/**
+		 * The meta object literal for the '<em><b>Btree Reference</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference BTREE_INCLUDE__BTREE_REFERENCE = eINSTANCE.getBTreeInclude_BtreeReference();
 
 		/**
 		 * The meta object literal for the '{@link rds.capella.btree.data.BehaviourTree.impl.ActionImpl <em>Action</em>}' class.

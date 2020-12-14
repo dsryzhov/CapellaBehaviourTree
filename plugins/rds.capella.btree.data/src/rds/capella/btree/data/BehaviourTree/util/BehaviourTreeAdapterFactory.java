@@ -125,6 +125,11 @@ public class BehaviourTreeAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
+		public Adapter caseBTreeInclude(BTreeInclude object) {
+			return createBTreeIncludeAdapter();
+		}
+
+		@Override
 		public Adapter caseAction(Action object) {
 			return createActionAdapter();
 		}
@@ -397,6 +402,20 @@ public class BehaviourTreeAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createBTreeRootAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link rds.capella.btree.data.BehaviourTree.BTreeInclude <em>BTree Include</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see rds.capella.btree.data.BehaviourTree.BTreeInclude
+	 * @generated
+	 */
+	public Adapter createBTreeIncludeAdapter() {
 		return null;
 	}
 

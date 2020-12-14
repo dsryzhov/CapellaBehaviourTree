@@ -20,7 +20,17 @@ import org.eclipse.sirius.diagram.ui.business.internal.view.AbstractLayoutData;
 import org.eclipse.sirius.diagram.ui.business.internal.view.RootLayoutData;
 import org.eclipse.sirius.diagram.ui.business.api.view.SiriusGMFHelper;
 import org.eclipse.ui.IEditorPart;
+import org.polarsys.capella.core.data.capellacore.CapellaElement;
+import org.polarsys.capella.core.data.capellacore.NamedElement;
+import org.polarsys.capella.core.data.capellamodeller.SystemEngineering;
+import org.polarsys.capella.core.data.cs.ComponentArchitecture;
+import org.polarsys.capella.core.data.fa.AbstractFunction;
+import org.polarsys.capella.core.data.fa.FunctionPkg;
+import org.polarsys.capella.core.data.la.LaFactory;
+import org.polarsys.capella.core.data.la.LogicalFunction;
+import org.polarsys.capella.core.data.la.LogicalFunctionPkg;
 
+import rds.capella.btree.data.BehaviourTree.Action;
 import rds.capella.btree.data.BehaviourTree.BTreeContainer;
 import rds.capella.btree.data.BehaviourTree.BTreeElement;
 import rds.capella.btree.data.BehaviourTree.BTreeLeaf;
@@ -174,6 +184,45 @@ public class BTreeNativeService {
     	}
     	return node;
     }
+    
+    public AbstractFunction findRootFunction(CapellaElement element) {
+    	
+    	AbstractFunction root_fnc = null;
+    	CapellaElement parent;
+    	parent = element;
+    	while (!(parent.eContainer() instanceof SystemEngineering || parent.eContainer() instanceof AbstractFunction )) parent = (CapellaElement) parent.eContainer();
+    	
+    	if (parent instanceof ComponentArchitecture) {
+    		ComponentArchitecture ca = (ComponentArchitecture)parent;
+    		
+    		
+    		FunctionPkg fnc_pkg = ca.getOwnedFunctionPkg();
+    		
+    		if (fnc_pkg instanceof LogicalFunctionPkg) {
+    			root_fnc = ((LogicalFunctionPkg)fnc_pkg).getOwnedLogicalFunctions().get(0);
+    		}
+    	} else 
+    		if (parent.eContainer() instanceof AbstractFunction) {
+    			root_fnc = (AbstractFunction) parent.eContainer();
+    		}
+    	return root_fnc;
+    }
+   
+    public AbstractFunction createBtreeActionFunction(Action btree_action_node) {
+    	
+    	AbstractFunction root_fnc = findRootFunction(btree_action_node);
+    	if (root_fnc != null) {
+    		if (root_fnc instanceof LogicalFunction) {
+    			LogicalFunction node_fnc = LaFactory.eINSTANCE.createLogicalFunction();
+    			node_fnc.setName("Action");
+    			root_fnc.getOwnedFunctions().add(node_fnc);
+    			return node_fnc;
+    		}
+    	}
+    	
+    	return null;
+    }
+    
     
 
 

@@ -410,6 +410,47 @@ public class BehaviourTreeSwitch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
+		case BehaviourTreePackage.BTREE_INCLUDE: {
+			BTreeInclude bTreeInclude = (BTreeInclude) theEObject;
+			T result = caseBTreeInclude(bTreeInclude);
+			if (result == null)
+				result = caseBTreeNode(bTreeInclude);
+			if (result == null)
+				result = caseBTreeElement(bTreeInclude);
+			if (result == null)
+				result = caseAbstractInstance(bTreeInclude);
+			if (result == null)
+				result = caseProperty(bTreeInclude);
+			if (result == null)
+				result = caseFeature(bTreeInclude);
+			if (result == null)
+				result = caseTypedElement(bTreeInclude);
+			if (result == null)
+				result = caseMultiplicityElement(bTreeInclude);
+			if (result == null)
+				result = caseFinalizableElement(bTreeInclude);
+			if (result == null)
+				result = caseNamedElement(bTreeInclude);
+			if (result == null)
+				result = caseAbstractTypedElement(bTreeInclude);
+			if (result == null)
+				result = caseAbstractNamedElement(bTreeInclude);
+			if (result == null)
+				result = caseCapellaElement(bTreeInclude);
+			if (result == null)
+				result = caseTraceableElement(bTreeInclude);
+			if (result == null)
+				result = casePublishableElement(bTreeInclude);
+			if (result == null)
+				result = caseModelElement(bTreeInclude);
+			if (result == null)
+				result = caseExtensibleElement(bTreeInclude);
+			if (result == null)
+				result = caseElement(bTreeInclude);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
 		case BehaviourTreePackage.ACTION: {
 			Action action = (Action) theEObject;
 			T result = caseAction(action);
@@ -1101,6 +1142,21 @@ public class BehaviourTreeSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseBTreeRoot(BTreeRoot object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>BTree Include</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>BTree Include</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseBTreeInclude(BTreeInclude object) {
 		return null;
 	}
 

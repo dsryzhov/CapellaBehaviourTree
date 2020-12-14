@@ -49,6 +49,7 @@ import rds.capella.btree.data.BehaviourTree.BTreeContainer;
 import rds.capella.btree.data.BehaviourTree.BTreeDecorator;
 import rds.capella.btree.data.BehaviourTree.BTreeElement;
 import rds.capella.btree.data.BehaviourTree.BTreeFallback;
+import rds.capella.btree.data.BehaviourTree.BTreeInclude;
 import rds.capella.btree.data.BehaviourTree.BTreeLeaf;
 import rds.capella.btree.data.BehaviourTree.BTreeNode;
 import rds.capella.btree.data.BehaviourTree.BTreeRoot;
@@ -131,6 +132,13 @@ public class BehaviourTreePackageImpl extends EPackageImpl implements BehaviourT
 	 * @generated
 	 */
 	private EClass bTreeRootEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass bTreeIncludeEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -390,6 +398,16 @@ public class BehaviourTreePackageImpl extends EPackageImpl implements BehaviourT
 	 * @generated
 	 */
 	@Override
+	public EReference getBTreeDecorator_OwnedNode() {
+		return (EReference) bTreeDecoratorEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getBTreeSequence() {
 		return bTreeSequenceEClass;
 	}
@@ -422,6 +440,26 @@ public class BehaviourTreePackageImpl extends EPackageImpl implements BehaviourT
 	@Override
 	public EReference getBTreeRoot_OwnedBTreeContainer() {
 		return (EReference) bTreeRootEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getBTreeInclude() {
+		return bTreeIncludeEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getBTreeInclude_BtreeReference() {
+		return (EReference) bTreeIncludeEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -605,6 +643,7 @@ public class BehaviourTreePackageImpl extends EPackageImpl implements BehaviourT
 		createEReference(bTreeLeafEClass, BTREE_LEAF__FUNCTION);
 
 		bTreeDecoratorEClass = createEClass(BTREE_DECORATOR);
+		createEReference(bTreeDecoratorEClass, BTREE_DECORATOR__OWNED_NODE);
 
 		bTreeSequenceEClass = createEClass(BTREE_SEQUENCE);
 
@@ -612,6 +651,9 @@ public class BehaviourTreePackageImpl extends EPackageImpl implements BehaviourT
 
 		bTreeRootEClass = createEClass(BTREE_ROOT);
 		createEReference(bTreeRootEClass, BTREE_ROOT__OWNED_BTREE_CONTAINER);
+
+		bTreeIncludeEClass = createEClass(BTREE_INCLUDE);
+		createEReference(bTreeIncludeEClass, BTREE_INCLUDE__BTREE_REFERENCE);
 
 		actionEClass = createEClass(ACTION);
 
@@ -687,6 +729,7 @@ public class BehaviourTreePackageImpl extends EPackageImpl implements BehaviourT
 		bTreeFallbackEClass.getESuperTypes().add(this.getBTreeContainer());
 		bTreeRootEClass.getESuperTypes().add(theEmdePackage.getElementExtension());
 		bTreeRootEClass.getESuperTypes().add(this.getBTreeElement());
+		bTreeIncludeEClass.getESuperTypes().add(this.getBTreeNode());
 		actionEClass.getESuperTypes().add(this.getBTreeLeaf());
 		conditionEClass.getESuperTypes().add(this.getBTreeLeaf());
 		parallelEClass.getESuperTypes().add(this.getBTreeContainer());
@@ -722,6 +765,9 @@ public class BehaviourTreePackageImpl extends EPackageImpl implements BehaviourT
 
 		initEClass(bTreeDecoratorEClass, BTreeDecorator.class, "BTreeDecorator", IS_ABSTRACT, !IS_INTERFACE, //$NON-NLS-1$
 				IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getBTreeDecorator_OwnedNode(), this.getBTreeNode(), null, "ownedNode", null, 1, 1, //$NON-NLS-1$
+				BTreeDecorator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(bTreeSequenceEClass, BTreeSequence.class, "BTreeSequence", IS_ABSTRACT, !IS_INTERFACE, //$NON-NLS-1$
 				IS_GENERATED_INSTANCE_CLASS);
@@ -733,6 +779,12 @@ public class BehaviourTreePackageImpl extends EPackageImpl implements BehaviourT
 				IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getBTreeRoot_OwnedBTreeContainer(), this.getBTreeContainer(), null, "ownedBTreeContainer", null, //$NON-NLS-1$
 				0, 1, BTreeRoot.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(bTreeIncludeEClass, BTreeInclude.class, "BTreeInclude", !IS_ABSTRACT, !IS_INTERFACE, //$NON-NLS-1$
+				IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getBTreeInclude_BtreeReference(), this.getBTreeRoot(), null, "btreeReference", null, 1, 1, //$NON-NLS-1$
+				BTreeInclude.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(actionEClass, Action.class, "Action", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$

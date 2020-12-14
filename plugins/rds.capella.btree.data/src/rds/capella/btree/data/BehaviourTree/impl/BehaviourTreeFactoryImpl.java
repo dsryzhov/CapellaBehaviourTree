@@ -59,6 +59,8 @@ public class BehaviourTreeFactoryImpl extends EFactoryImpl implements BehaviourT
 		switch (eClass.getClassifierID()) {
 		case BehaviourTreePackage.BTREE_ROOT:
 			return createBTreeRoot();
+		case BehaviourTreePackage.BTREE_INCLUDE:
+			return createBTreeInclude();
 		case BehaviourTreePackage.ACTION:
 			return createAction();
 		case BehaviourTreePackage.CONDITION:
@@ -134,6 +136,21 @@ public class BehaviourTreeFactoryImpl extends EFactoryImpl implements BehaviourT
 
 		//end-capella-code
 		return bTreeRoot;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public BTreeInclude createBTreeInclude() {
+		BTreeIncludeImpl bTreeInclude = new BTreeIncludeImpl();
+		//begin-capella-code
+
+		bTreeInclude.setId(IdGenerator.createId());
+
+		//end-capella-code
+		return bTreeInclude;
 	}
 
 	/**
@@ -398,6 +415,19 @@ public class BehaviourTreeFactoryImpl extends EFactoryImpl implements BehaviourT
 		BTreeRoot bTreeRoot = createBTreeRoot();
 		bTreeRoot.setName(name_p);
 		return bTreeRoot;
+	}
+
+	/**
+	 * Creates class and sets its name
+	 * (This method comes from a customization of the standard EMF generator)
+	 *
+	 * @param name_p : default name of created element
+	 * @generated
+	 */
+	public BTreeInclude createBTreeInclude(String name_p) {
+		BTreeInclude bTreeInclude = createBTreeInclude();
+		bTreeInclude.setName(name_p);
+		return bTreeInclude;
 	}
 
 	/**
