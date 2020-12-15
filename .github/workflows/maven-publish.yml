@@ -26,7 +26,7 @@ jobs:
       uses: svenstaro/upload-release-action@v2
       with:
         repo_token: ${{ secrets.GITHUB_TOKEN }}
-        file: ./releng/rds.capella.btree.site/target/rds.capella.btree.site-0.1.0-SNAPSHOT.zip
+        file: ./releng/rds.capella.btree.site/site.xml
         asset_name: updateSite
         tag: ${{ github.ref }}
         overwrite: true
