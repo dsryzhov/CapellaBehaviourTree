@@ -21,12 +21,13 @@ jobs:
         server-id: github # Value of the distributionManagement/repository/id field of the pom.xml
         settings-path: ${{ github.workspace }} # location for the settings.xml file
 
-    - name: Upload a Release Asset
-      uses: actions/upload-release-asset@v1.0.2
+ 
+    - name: Upload update site to release
+      uses: svenstaro/upload-release-action@v2
       with:
-        # The path to the asset you want to upload
-        asset_path: ./releng/rds.capella.btree.site/target/rds.capella.btree.site-0.1.0-SNAPSHOT.zip
-        # The name of the asset you want to upload
+        repo_token: ${{ secrets.GITHUB_TOKEN }}
+        file: ./releng/rds.capella.btree.site/target/rds.capella.btree.site-0.1.0-SNAPSHOT.zip
         asset_name: updateSite
-        # The content-type of the asset you want to upload. See the supported Media Types here: https://www.iana.org/assignments/media-types/media-types.xhtml for more information
-        asset_content_type: zip
+        tag: ${{ github.ref }}
+        overwrite: true
+        body: "Update site"
