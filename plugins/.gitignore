@@ -1,3 +1,4 @@
 org.eclipse.egf.chain.capella 
 org.eclipse.egf.chain.capella.feature
 */bin
+*/target

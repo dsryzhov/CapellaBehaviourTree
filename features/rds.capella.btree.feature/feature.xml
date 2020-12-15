@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="rds.capella.btree.feature"
+      label="Behaviour Tree Feature"
+      version="0.1.0.qualifier"
+	  provider-name="%providerName">
+      
+	  
+   <description url="https://github.com/dsryzhov/CapellaBehaviourTree">
+      This is the Behaviour Tree notation for Eclipse Capella.
+   </description>
+
+   <plugin
+         id="rds.capella.btree"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="rds.capella.btree.data"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="rds.capella.btree.data.edit"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="rds.capella.btree.design"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+</feature>

@@ -1,0 +1,10 @@
+<site>
+   <description>
+      Behaviour Tree notation for Eclipse Capella
+   </description>
+   
+   <feature id="rds.capella.btree.feature" version="0.1.0.qualifier">
+      <category name="rds.capella.btree.category"/>
+   </feature>
+   <category-def name="rds.capella.btree.category" label="Behaviour Tree"/>
+</site>
