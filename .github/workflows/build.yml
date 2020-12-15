@@ -20,14 +20,14 @@ jobs:
         java-version: 1.8
         server-id: github # Value of the distributionManagement/repository/id field of the pom.xml
         settings-path: ${{ github.workspace }} # location for the settings.xml file
-
- 
+    - name: Build with Maven
+      run: mvn -B package --file pom.xml 
     - name: Upload update site to release
       uses: svenstaro/upload-release-action@v2
       with:
         repo_token: ${{ secrets.GITHUB_TOKEN }}
-        file: ./releng/rds.capella.btree.site/site.xml
-        asset_name: updateSite
+        file: ./releng/rds.capella.btree.site/target/rds.capella.btree.site-0.1.0-SNAPSHOT.zip
+        asset_name: rds.capella.btree.site-0.1.0-SNAPSHOT.zip
         tag: ${{ github.ref }}
         overwrite: true
         body: "Update site"
