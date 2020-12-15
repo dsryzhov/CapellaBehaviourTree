@@ -17,43 +17,133 @@
   <extension point="org.eclipse.emf.edit.childCreationExtenders">
       <!-- @generated BehaviourTree -->
       <extender class="rds.capella.btree.data.BehaviourTree.provider.BehaviourTreeItemProviderAdapterFactory$EmdeChildCreationExtender" uri="http://www.polarsys.org/kitalpha/emde/1.0.0"/>
-      <extender class="rds.capella.btree.data.BehaviourTree.provider.BehaviourTreeItemProviderAdapterFactory$CapellacoreChildCreationExtender" uri="http://www.polarsys.org/capella/core/core/1.4.0"/>
-      <extender class="rds.capella.btree.data.BehaviourTree.provider.BehaviourTreeItemProviderAdapterFactory$PaChildCreationExtender" uri="http://www.polarsys.org/capella/core/pa/1.4.0"/>
-      <extender class="rds.capella.btree.data.BehaviourTree.provider.BehaviourTreeItemProviderAdapterFactory$EpbsChildCreationExtender" uri="http://www.polarsys.org/capella/core/epbs/1.4.0"/>
       <extender class="rds.capella.btree.data.BehaviourTree.provider.BehaviourTreeItemProviderAdapterFactory$SharedmodelChildCreationExtender" uri="http://www.polarsys.org/capella/core/sharedmodel/1.4.0"/>
-      <extender class="rds.capella.btree.data.BehaviourTree.provider.BehaviourTreeItemProviderAdapterFactory$InformationChildCreationExtender" uri="http://www.polarsys.org/capella/core/information/1.4.0"/>
-      <extender class="rds.capella.btree.data.BehaviourTree.provider.BehaviourTreeItemProviderAdapterFactory$CsChildCreationExtender" uri="http://www.polarsys.org/capella/core/cs/1.4.0"/>
    </extension>
 
 
 <!--@generated-->
   <extension point="org.polarsys.capella.common.menu.dynamic.MDEMenuItemContribution">
-    <MDEMenuItemContribution class="rds.capella.btree.data.BehaviourTree.provider.contributions.BTreeRootItemContribution" id="rds.capella.btree.data.BehaviourTree.provider.contributions.BTreeRootItemContribution"/>
-    <MDEMenuItemContribution class="rds.capella.btree.data.BehaviourTree.provider.contributions.BTreeIncludeItemContribution" id="rds.capella.btree.data.BehaviourTree.provider.contributions.BTreeIncludeItemContribution"/>
-    <MDEMenuItemContribution class="rds.capella.btree.data.BehaviourTree.provider.contributions.ActionItemContribution" id="rds.capella.btree.data.BehaviourTree.provider.contributions.ActionItemContribution"/>
-    <MDEMenuItemContribution class="rds.capella.btree.data.BehaviourTree.provider.contributions.ConditionItemContribution" id="rds.capella.btree.data.BehaviourTree.provider.contributions.ConditionItemContribution"/>
-    <MDEMenuItemContribution class="rds.capella.btree.data.BehaviourTree.provider.contributions.ParallelItemContribution" id="rds.capella.btree.data.BehaviourTree.provider.contributions.ParallelItemContribution"/>
-    <MDEMenuItemContribution class="rds.capella.btree.data.BehaviourTree.provider.contributions.SequenceItemContribution" id="rds.capella.btree.data.BehaviourTree.provider.contributions.SequenceItemContribution"/>
-    <MDEMenuItemContribution class="rds.capella.btree.data.BehaviourTree.provider.contributions.ReactiveSequenceItemContribution" id="rds.capella.btree.data.BehaviourTree.provider.contributions.ReactiveSequenceItemContribution"/>
-    <MDEMenuItemContribution class="rds.capella.btree.data.BehaviourTree.provider.contributions.SequenceStarItemContribution" id="rds.capella.btree.data.BehaviourTree.provider.contributions.SequenceStarItemContribution"/>
-    <MDEMenuItemContribution class="rds.capella.btree.data.BehaviourTree.provider.contributions.FallbackItemContribution" id="rds.capella.btree.data.BehaviourTree.provider.contributions.FallbackItemContribution"/>
-    <MDEMenuItemContribution class="rds.capella.btree.data.BehaviourTree.provider.contributions.ReactiveFallbackItemContribution" id="rds.capella.btree.data.BehaviourTree.provider.contributions.ReactiveFallbackItemContribution"/>
-    <MDEMenuItemContribution class="rds.capella.btree.data.BehaviourTree.provider.contributions.InverterItemContribution" id="rds.capella.btree.data.BehaviourTree.provider.contributions.InverterItemContribution"/>
-    <MDEMenuItemContribution class="rds.capella.btree.data.BehaviourTree.provider.contributions.ForceSuccessItemContribution" id="rds.capella.btree.data.BehaviourTree.provider.contributions.ForceSuccessItemContribution"/>
-    <MDEMenuItemContribution class="rds.capella.btree.data.BehaviourTree.provider.contributions.ForceFailureItemContribution" id="rds.capella.btree.data.BehaviourTree.provider.contributions.ForceFailureItemContribution"/>
-    <MDEMenuItemContribution class="rds.capella.btree.data.BehaviourTree.provider.contributions.RepeatItemContribution" id="rds.capella.btree.data.BehaviourTree.provider.contributions.RepeatItemContribution"/>
-    <MDEMenuItemContribution class="rds.capella.btree.data.BehaviourTree.provider.contributions.RetryItemContribution" id="rds.capella.btree.data.BehaviourTree.provider.contributions.RetryItemContribution"/>
 </extension>
 
 <!--@generated-->
   <extension point="org.eclipse.ui.views.properties.tabbed.propertySections">
     <propertySections contributorId="org.polarsys.capella.core.data.capellamodeller.properties">
+        <propertySection class="org.polarsys.capella.core.data.core.properties.sections.DefaultNamedElementSection" filter="rds.capella.btree.data.BehaviourTree.provider.sections.BTreeElementSection" id="rds.capella.btree.data.BehaviourTree.provider.contributions.BTreeElementItemContribution.section" tab="BaseCapella">
+            <input type="rds.capella.btree.data.BehaviourTree.BTreeElement"/>
+        </propertySection>
+        <propertySection class="org.polarsys.capella.core.data.core.properties.sections.DefaultNamedElementSection" filter="rds.capella.btree.data.BehaviourTree.provider.sections.BTreeNodeSection" id="rds.capella.btree.data.BehaviourTree.provider.contributions.BTreeNodeItemContribution.section" tab="BaseCapella">
+            <input type="rds.capella.btree.data.BehaviourTree.BTreeNode"/>
+        </propertySection>
+        <propertySection class="org.polarsys.capella.core.data.core.properties.sections.DefaultNamedElementSection" filter="rds.capella.btree.data.BehaviourTree.provider.sections.BTreeContainerSection" id="rds.capella.btree.data.BehaviourTree.provider.contributions.BTreeContainerItemContribution.section" tab="BaseCapella">
+            <input type="rds.capella.btree.data.BehaviourTree.BTreeContainer"/>
+        </propertySection>
+        <propertySection class="org.polarsys.capella.core.data.core.properties.sections.DefaultNamedElementSection" filter="rds.capella.btree.data.BehaviourTree.provider.sections.BTreeLeafSection" id="rds.capella.btree.data.BehaviourTree.provider.contributions.BTreeLeafItemContribution.section" tab="BaseCapella">
+            <input type="rds.capella.btree.data.BehaviourTree.BTreeLeaf"/>
+        </propertySection>
+        <propertySection class="org.polarsys.capella.core.data.core.properties.sections.DefaultNamedElementSection" filter="rds.capella.btree.data.BehaviourTree.provider.sections.BTreeDecoratorSection" id="rds.capella.btree.data.BehaviourTree.provider.contributions.BTreeDecoratorItemContribution.section" tab="BaseCapella">
+            <input type="rds.capella.btree.data.BehaviourTree.BTreeDecorator"/>
+        </propertySection>
+        <propertySection class="org.polarsys.capella.core.data.core.properties.sections.DefaultNamedElementSection" filter="rds.capella.btree.data.BehaviourTree.provider.sections.BTreeSequenceSection" id="rds.capella.btree.data.BehaviourTree.provider.contributions.BTreeSequenceItemContribution.section" tab="BaseCapella">
+            <input type="rds.capella.btree.data.BehaviourTree.BTreeSequence"/>
+        </propertySection>
+        <propertySection class="org.polarsys.capella.core.data.core.properties.sections.DefaultNamedElementSection" filter="rds.capella.btree.data.BehaviourTree.provider.sections.BTreeFallbackSection" id="rds.capella.btree.data.BehaviourTree.provider.contributions.BTreeFallbackItemContribution.section" tab="BaseCapella">
+            <input type="rds.capella.btree.data.BehaviourTree.BTreeFallback"/>
+        </propertySection>
+        <propertySection class="org.polarsys.capella.core.data.core.properties.sections.DefaultNamedElementSection" filter="rds.capella.btree.data.BehaviourTree.provider.sections.BTreeRootSection" id="rds.capella.btree.data.BehaviourTree.provider.contributions.BTreeRootItemContribution.section" tab="BaseCapella">
+            <input type="rds.capella.btree.data.BehaviourTree.BTreeRoot"/>
+        </propertySection>
+        <propertySection class="org.polarsys.capella.core.data.core.properties.sections.DefaultNamedElementSection" filter="rds.capella.btree.data.BehaviourTree.provider.sections.BTreeIncludeSection" id="rds.capella.btree.data.BehaviourTree.provider.contributions.BTreeIncludeItemContribution.section" tab="BaseCapella">
+            <input type="rds.capella.btree.data.BehaviourTree.BTreeInclude"/>
+        </propertySection>
+        <propertySection class="org.polarsys.capella.core.data.core.properties.sections.DefaultNamedElementSection" filter="rds.capella.btree.data.BehaviourTree.provider.sections.ActionSection" id="rds.capella.btree.data.BehaviourTree.provider.contributions.ActionItemContribution.section" tab="BaseCapella">
+            <input type="rds.capella.btree.data.BehaviourTree.Action"/>
+        </propertySection>
+        <propertySection class="org.polarsys.capella.core.data.core.properties.sections.DefaultNamedElementSection" filter="rds.capella.btree.data.BehaviourTree.provider.sections.ConditionSection" id="rds.capella.btree.data.BehaviourTree.provider.contributions.ConditionItemContribution.section" tab="BaseCapella">
+            <input type="rds.capella.btree.data.BehaviourTree.Condition"/>
+        </propertySection>
+        <propertySection class="org.polarsys.capella.core.data.core.properties.sections.DefaultNamedElementSection" filter="rds.capella.btree.data.BehaviourTree.provider.sections.ParallelSection" id="rds.capella.btree.data.BehaviourTree.provider.contributions.ParallelItemContribution.section" tab="BaseCapella">
+            <input type="rds.capella.btree.data.BehaviourTree.Parallel"/>
+        </propertySection>
+        <propertySection class="org.polarsys.capella.core.data.core.properties.sections.DefaultNamedElementSection" filter="rds.capella.btree.data.BehaviourTree.provider.sections.SequenceSection" id="rds.capella.btree.data.BehaviourTree.provider.contributions.SequenceItemContribution.section" tab="BaseCapella">
+            <input type="rds.capella.btree.data.BehaviourTree.Sequence"/>
+        </propertySection>
+        <propertySection class="org.polarsys.capella.core.data.core.properties.sections.DefaultNamedElementSection" filter="rds.capella.btree.data.BehaviourTree.provider.sections.ReactiveSequenceSection" id="rds.capella.btree.data.BehaviourTree.provider.contributions.ReactiveSequenceItemContribution.section" tab="BaseCapella">
+            <input type="rds.capella.btree.data.BehaviourTree.ReactiveSequence"/>
+        </propertySection>
+        <propertySection class="org.polarsys.capella.core.data.core.properties.sections.DefaultNamedElementSection" filter="rds.capella.btree.data.BehaviourTree.provider.sections.SequenceStarSection" id="rds.capella.btree.data.BehaviourTree.provider.contributions.SequenceStarItemContribution.section" tab="BaseCapella">
+            <input type="rds.capella.btree.data.BehaviourTree.SequenceStar"/>
+        </propertySection>
+        <propertySection class="org.polarsys.capella.core.data.core.properties.sections.DefaultNamedElementSection" filter="rds.capella.btree.data.BehaviourTree.provider.sections.FallbackSection" id="rds.capella.btree.data.BehaviourTree.provider.contributions.FallbackItemContribution.section" tab="BaseCapella">
+            <input type="rds.capella.btree.data.BehaviourTree.Fallback"/>
+        </propertySection>
+        <propertySection class="org.polarsys.capella.core.data.core.properties.sections.DefaultNamedElementSection" filter="rds.capella.btree.data.BehaviourTree.provider.sections.ReactiveFallbackSection" id="rds.capella.btree.data.BehaviourTree.provider.contributions.ReactiveFallbackItemContribution.section" tab="BaseCapella">
+            <input type="rds.capella.btree.data.BehaviourTree.ReactiveFallback"/>
+        </propertySection>
+        <propertySection class="org.polarsys.capella.core.data.core.properties.sections.DefaultNamedElementSection" filter="rds.capella.btree.data.BehaviourTree.provider.sections.InverterSection" id="rds.capella.btree.data.BehaviourTree.provider.contributions.InverterItemContribution.section" tab="BaseCapella">
+            <input type="rds.capella.btree.data.BehaviourTree.Inverter"/>
+        </propertySection>
+        <propertySection class="org.polarsys.capella.core.data.core.properties.sections.DefaultNamedElementSection" filter="rds.capella.btree.data.BehaviourTree.provider.sections.ForceSuccessSection" id="rds.capella.btree.data.BehaviourTree.provider.contributions.ForceSuccessItemContribution.section" tab="BaseCapella">
+            <input type="rds.capella.btree.data.BehaviourTree.ForceSuccess"/>
+        </propertySection>
+        <propertySection class="org.polarsys.capella.core.data.core.properties.sections.DefaultNamedElementSection" filter="rds.capella.btree.data.BehaviourTree.provider.sections.ForceFailureSection" id="rds.capella.btree.data.BehaviourTree.provider.contributions.ForceFailureItemContribution.section" tab="BaseCapella">
+            <input type="rds.capella.btree.data.BehaviourTree.ForceFailure"/>
+        </propertySection>
+        <propertySection class="org.polarsys.capella.core.data.core.properties.sections.DefaultNamedElementSection" filter="rds.capella.btree.data.BehaviourTree.provider.sections.RepeatSection" id="rds.capella.btree.data.BehaviourTree.provider.contributions.RepeatItemContribution.section" tab="BaseCapella">
+            <input type="rds.capella.btree.data.BehaviourTree.Repeat"/>
+        </propertySection>
+        <propertySection class="org.polarsys.capella.core.data.core.properties.sections.DefaultNamedElementSection" filter="rds.capella.btree.data.BehaviourTree.provider.sections.RetrySection" id="rds.capella.btree.data.BehaviourTree.provider.contributions.RetryItemContribution.section" tab="BaseCapella">
+            <input type="rds.capella.btree.data.BehaviourTree.Retry"/>
+        </propertySection>
 </propertySections>
     </extension>
 
 <!--@generated-->
   <extension point="org.eclipse.ui.views.properties.tabbed.propertySections">
     <propertySections contributorId="org.eclipse.sirius.diagram.ui">
+        <propertySection class="rds.capella.btree.data.BehaviourTree.provider.sections.BTreeElementSection" filter="rds.capella.btree.data.BehaviourTree.provider.sections.BTreeElementSection" id="rds.capella.btree.data.BehaviourTree.provider.sections.BTreeElementSection.section" tab="BaseSiriusDiagram">
+        </propertySection>
+        <propertySection class="org.polarsys.capella.core.data.core.properties.sections.DefaultNamedElementSection" filter="rds.capella.btree.data.BehaviourTree.provider.sections.BTreeNodeSection" id="rds.capella.btree.data.BehaviourTree.provider.sections.BTreeNodeSection.section" tab="BaseSiriusDiagram">
+        </propertySection>
+        <propertySection class="org.polarsys.capella.core.data.core.properties.sections.DefaultNamedElementSection" filter="rds.capella.btree.data.BehaviourTree.provider.sections.BTreeContainerSection" id="rds.capella.btree.data.BehaviourTree.provider.sections.BTreeContainerSection.section" tab="BaseSiriusDiagram">
+        </propertySection>
+        <propertySection class="org.polarsys.capella.core.data.core.properties.sections.DefaultNamedElementSection" filter="rds.capella.btree.data.BehaviourTree.provider.sections.BTreeLeafSection" id="rds.capella.btree.data.BehaviourTree.provider.sections.BTreeLeafSection.section" tab="BaseSiriusDiagram">
+        </propertySection>
+        <propertySection class="org.polarsys.capella.core.data.core.properties.sections.DefaultNamedElementSection" filter="rds.capella.btree.data.BehaviourTree.provider.sections.BTreeDecoratorSection" id="rds.capella.btree.data.BehaviourTree.provider.sections.BTreeDecoratorSection.section" tab="BaseSiriusDiagram">
+        </propertySection>
+        <propertySection class="org.polarsys.capella.core.data.core.properties.sections.DefaultNamedElementSection" filter="rds.capella.btree.data.BehaviourTree.provider.sections.BTreeSequenceSection" id="rds.capella.btree.data.BehaviourTree.provider.sections.BTreeSequenceSection.section" tab="BaseSiriusDiagram">
+        </propertySection>
+        <propertySection class="org.polarsys.capella.core.data.core.properties.sections.DefaultNamedElementSection" filter="rds.capella.btree.data.BehaviourTree.provider.sections.BTreeFallbackSection" id="rds.capella.btree.data.BehaviourTree.provider.sections.BTreeFallbackSection.section" tab="BaseSiriusDiagram">
+        </propertySection>
+        <propertySection class="org.polarsys.capella.core.data.core.properties.sections.DefaultNamedElementSection" filter="rds.capella.btree.data.BehaviourTree.provider.sections.BTreeRootSection" id="rds.capella.btree.data.BehaviourTree.provider.sections.BTreeRootSection.section" tab="BaseSiriusDiagram">
+        </propertySection>
+        <propertySection class="org.polarsys.capella.core.data.core.properties.sections.DefaultNamedElementSection" filter="rds.capella.btree.data.BehaviourTree.provider.sections.BTreeIncludeSection" id="rds.capella.btree.data.BehaviourTree.provider.sections.BTreeIncludeSection.section" tab="BaseSiriusDiagram">
+        </propertySection>
+        <propertySection class="org.polarsys.capella.core.data.core.properties.sections.DefaultNamedElementSection" filter="rds.capella.btree.data.BehaviourTree.provider.sections.ActionSection" id="rds.capella.btree.data.BehaviourTree.provider.sections.ActionSection.section" tab="BaseSiriusDiagram">
+        </propertySection>
+        <propertySection class="org.polarsys.capella.core.data.core.properties.sections.DefaultNamedElementSection" filter="rds.capella.btree.data.BehaviourTree.provider.sections.ConditionSection" id="rds.capella.btree.data.BehaviourTree.provider.sections.ConditionSection.section" tab="BaseSiriusDiagram">
+        </propertySection>
+        <propertySection class="org.polarsys.capella.core.data.core.properties.sections.DefaultNamedElementSection" filter="rds.capella.btree.data.BehaviourTree.provider.sections.ParallelSection" id="rds.capella.btree.data.BehaviourTree.provider.sections.ParallelSection.section" tab="BaseSiriusDiagram">
+        </propertySection>
+        <propertySection class="org.polarsys.capella.core.data.core.properties.sections.DefaultNamedElementSection" filter="rds.capella.btree.data.BehaviourTree.provider.sections.SequenceSection" id="rds.capella.btree.data.BehaviourTree.provider.sections.SequenceSection.section" tab="BaseSiriusDiagram">
+        </propertySection>
+        <propertySection class="org.polarsys.capella.core.data.core.properties.sections.DefaultNamedElementSection" filter="rds.capella.btree.data.BehaviourTree.provider.sections.ReactiveSequenceSection" id="rds.capella.btree.data.BehaviourTree.provider.sections.ReactiveSequenceSection.section" tab="BaseSiriusDiagram">
+        </propertySection>
+        <propertySection class="org.polarsys.capella.core.data.core.properties.sections.DefaultNamedElementSection" filter="rds.capella.btree.data.BehaviourTree.provider.sections.SequenceStarSection" id="rds.capella.btree.data.BehaviourTree.provider.sections.SequenceStarSection.section" tab="BaseSiriusDiagram">
+        </propertySection>
+        <propertySection class="org.polarsys.capella.core.data.core.properties.sections.DefaultNamedElementSection" filter="rds.capella.btree.data.BehaviourTree.provider.sections.FallbackSection" id="rds.capella.btree.data.BehaviourTree.provider.sections.FallbackSection.section" tab="BaseSiriusDiagram">
+        </propertySection>
+        <propertySection class="org.polarsys.capella.core.data.core.properties.sections.DefaultNamedElementSection" filter="rds.capella.btree.data.BehaviourTree.provider.sections.ReactiveFallbackSection" id="rds.capella.btree.data.BehaviourTree.provider.sections.ReactiveFallbackSection.section" tab="BaseSiriusDiagram">
+        </propertySection>
+        <propertySection class="org.polarsys.capella.core.data.core.properties.sections.DefaultNamedElementSection" filter="rds.capella.btree.data.BehaviourTree.provider.sections.InverterSection" id="rds.capella.btree.data.BehaviourTree.provider.sections.InverterSection.section" tab="BaseSiriusDiagram">
+        </propertySection>
+        <propertySection class="org.polarsys.capella.core.data.core.properties.sections.DefaultNamedElementSection" filter="rds.capella.btree.data.BehaviourTree.provider.sections.ForceSuccessSection" id="rds.capella.btree.data.BehaviourTree.provider.sections.ForceSuccessSection.section" tab="BaseSiriusDiagram">
+        </propertySection>
+        <propertySection class="org.polarsys.capella.core.data.core.properties.sections.DefaultNamedElementSection" filter="rds.capella.btree.data.BehaviourTree.provider.sections.ForceFailureSection" id="rds.capella.btree.data.BehaviourTree.provider.sections.ForceFailureSection.section" tab="BaseSiriusDiagram">
+        </propertySection>
+        <propertySection class="org.polarsys.capella.core.data.core.properties.sections.DefaultNamedElementSection" filter="rds.capella.btree.data.BehaviourTree.provider.sections.RepeatSection" id="rds.capella.btree.data.BehaviourTree.provider.sections.RepeatSection.section" tab="BaseSiriusDiagram">
+        </propertySection>
+        <propertySection class="org.polarsys.capella.core.data.core.properties.sections.DefaultNamedElementSection" filter="rds.capella.btree.data.BehaviourTree.provider.sections.RetrySection" id="rds.capella.btree.data.BehaviourTree.provider.sections.RetrySection.section" tab="BaseSiriusDiagram">
+        </propertySection>
 </propertySections>
     </extension>
 </plugin>

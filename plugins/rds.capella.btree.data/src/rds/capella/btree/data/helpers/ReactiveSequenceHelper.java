@@ -24,8 +24,9 @@ public class ReactiveSequenceHelper {
 	public Object doSwitch(ReactiveSequence object, EStructuralFeature feature) {
 		// handle derivated feature
 
-		// Unfortunately the generator was unable to find appropriate helper class
-		throw new HelperNotFoundException();
+		// delegate to parent helper
+		return org.polarsys.capella.core.data.helpers.capellacore.delegates.NamedElementHelper.getInstance()
+				.doSwitch(object, feature);
 
 	}
 

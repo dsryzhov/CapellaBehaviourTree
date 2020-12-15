@@ -6,12 +6,5 @@
 
 <plugin>
 
-   <extension point="org.eclipse.emf.ecore.generated_package">
-      <!-- @generated BehaviourTree -->
-      <package
-            uri="http://rds/capella/btree/1.0"
-            class="rds.capella.btree.model.BehaviourTree.BehaviourTreePackage"
-            genModel="models/BehaviourTree.genmodel"/>
-   </extension>
 
 </plugin>

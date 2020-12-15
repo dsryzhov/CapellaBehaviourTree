@@ -7,8 +7,11 @@ import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.command.CommandParameter;
 
+import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
@@ -16,16 +19,25 @@ import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.ViewerNotification;
+import org.polarsys.capella.common.data.modellingcore.ModellingcorePackage;
+import org.polarsys.capella.core.data.capellacore.CapellacorePackage;
 import org.polarsys.capella.core.data.information.InformationPackage;
+import org.polarsys.capella.core.data.information.datavalue.DatavalueFactory;
+import org.polarsys.kitalpha.emde.extension.ExtensionModelManager;
+import org.polarsys.kitalpha.emde.extension.ModelExtensionHelper;
 import org.polarsys.capella.core.data.information.provider.AbstractInstanceItemProvider;
 import org.polarsys.capella.core.data.capellacore.provider.NamedElementItemProvider;
 
+import org.polarsys.capella.core.data.information.InformationFactory;
 import org.polarsys.kitalpha.emde.model.EmdePackage;
 
 import org.polarsys.kitalpha.emde.model.edit.provider.NewChildDescriptorHelper;
 
 import rds.capella.btree.data.BehaviourTree.BTreeElement;
 import rds.capella.btree.data.BehaviourTree.BehaviourTreeFactory;
+import rds.capella.btree.data.BehaviourTree.BehaviourTreePackage;
 
 /**
  * This is the item provider adapter for a {@link rds.capella.btree.data.BehaviourTree.BTreeElement} object.
@@ -33,7 +45,7 @@ import rds.capella.btree.data.BehaviourTree.BehaviourTreeFactory;
  * <!-- end-user-doc -->
  * @generated
  */
-public class BTreeElementItemProvider extends AbstractInstanceItemProvider implements IEditingDomainItemProvider,
+public class BTreeElementItemProvider extends NamedElementItemProvider implements IEditingDomainItemProvider,
 		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
@@ -122,33 +134,6 @@ public class BTreeElementItemProvider extends AbstractInstanceItemProvider imple
 		}
 		// end-extension-code
 
-	}
-
-	/**
-	 * This returns the label text for {@link org.eclipse.emf.edit.command.CreateChildCommand}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String getCreateChildText(Object owner, Object feature, Object child, Collection<?> selection) {
-		Object childFeature = feature;
-		Object childObject = child;
-
-		boolean qualify = childFeature == InformationPackage.Literals.MULTIPLICITY_ELEMENT__OWNED_DEFAULT_VALUE
-				|| childFeature == InformationPackage.Literals.MULTIPLICITY_ELEMENT__OWNED_MIN_VALUE
-				|| childFeature == InformationPackage.Literals.MULTIPLICITY_ELEMENT__OWNED_MAX_VALUE
-				|| childFeature == InformationPackage.Literals.MULTIPLICITY_ELEMENT__OWNED_NULL_VALUE
-				|| childFeature == InformationPackage.Literals.MULTIPLICITY_ELEMENT__OWNED_MIN_CARD
-				|| childFeature == InformationPackage.Literals.MULTIPLICITY_ELEMENT__OWNED_MIN_LENGTH
-				|| childFeature == InformationPackage.Literals.MULTIPLICITY_ELEMENT__OWNED_MAX_CARD
-				|| childFeature == InformationPackage.Literals.MULTIPLICITY_ELEMENT__OWNED_MAX_LENGTH;
-
-		if (qualify) {
-			return getString("_UI_CreateChild_text2", //$NON-NLS-1$
-					new Object[] { getTypeText(childObject), getFeatureText(childFeature), getTypeText(owner) });
-		}
-		return super.getCreateChildText(owner, feature, child, selection);
 	}
 
 }

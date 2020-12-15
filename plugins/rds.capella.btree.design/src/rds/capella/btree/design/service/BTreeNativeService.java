@@ -214,7 +214,7 @@ public class BTreeNativeService {
     	if (root_fnc != null) {
     		if (root_fnc instanceof LogicalFunction) {
     			LogicalFunction node_fnc = LaFactory.eINSTANCE.createLogicalFunction();
-    			node_fnc.setName("Action");
+    			node_fnc.setName(btree_action_node.getName());
     			root_fnc.getOwnedFunctions().add(node_fnc);
     			return node_fnc;
     		}

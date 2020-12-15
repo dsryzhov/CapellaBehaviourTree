@@ -98,36 +98,6 @@ public class BehaviourTreeFactoryImpl extends EFactoryImpl implements BehaviourT
 	 * @generated
 	 */
 	@Override
-	public Object createFromString(EDataType eDataType, String initialValue) {
-		switch (eDataType.getClassifierID()) {
-		case BehaviourTreePackage.TICK_RESULT:
-			return createTickResultFromString(eDataType, initialValue);
-		default:
-			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier"); //$NON-NLS-1$ //$NON-NLS-2$
-		}
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String convertToString(EDataType eDataType, Object instanceValue) {
-		switch (eDataType.getClassifierID()) {
-		case BehaviourTreePackage.TICK_RESULT:
-			return convertTickResultToString(eDataType, instanceValue);
-		default:
-			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier"); //$NON-NLS-1$ //$NON-NLS-2$
-		}
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public BTreeRoot createBTreeRoot() {
 		BTreeRootImpl bTreeRoot = new BTreeRootImpl();
 		//begin-capella-code
@@ -359,28 +329,6 @@ public class BehaviourTreeFactoryImpl extends EFactoryImpl implements BehaviourT
 
 		//end-capella-code
 		return retry;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public TickResult createTickResultFromString(EDataType eDataType, String initialValue) {
-		TickResult result = TickResult.get(initialValue);
-		if (result == null)
-			throw new IllegalArgumentException(
-					"The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-		return result;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String convertTickResultToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
 	}
 
 	/**

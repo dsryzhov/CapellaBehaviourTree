@@ -88,21 +88,7 @@ public class BehaviourTreeSwitch<T> extends Switch<T> {
 			BTreeElement bTreeElement = (BTreeElement) theEObject;
 			T result = caseBTreeElement(bTreeElement);
 			if (result == null)
-				result = caseAbstractInstance(bTreeElement);
-			if (result == null)
-				result = caseProperty(bTreeElement);
-			if (result == null)
-				result = caseFeature(bTreeElement);
-			if (result == null)
-				result = caseTypedElement(bTreeElement);
-			if (result == null)
-				result = caseMultiplicityElement(bTreeElement);
-			if (result == null)
-				result = caseFinalizableElement(bTreeElement);
-			if (result == null)
 				result = caseNamedElement(bTreeElement);
-			if (result == null)
-				result = caseAbstractTypedElement(bTreeElement);
 			if (result == null)
 				result = caseAbstractNamedElement(bTreeElement);
 			if (result == null)
@@ -127,21 +113,7 @@ public class BehaviourTreeSwitch<T> extends Switch<T> {
 			if (result == null)
 				result = caseBTreeElement(bTreeNode);
 			if (result == null)
-				result = caseAbstractInstance(bTreeNode);
-			if (result == null)
-				result = caseProperty(bTreeNode);
-			if (result == null)
-				result = caseFeature(bTreeNode);
-			if (result == null)
-				result = caseTypedElement(bTreeNode);
-			if (result == null)
-				result = caseMultiplicityElement(bTreeNode);
-			if (result == null)
-				result = caseFinalizableElement(bTreeNode);
-			if (result == null)
 				result = caseNamedElement(bTreeNode);
-			if (result == null)
-				result = caseAbstractTypedElement(bTreeNode);
 			if (result == null)
 				result = caseAbstractNamedElement(bTreeNode);
 			if (result == null)
@@ -168,21 +140,7 @@ public class BehaviourTreeSwitch<T> extends Switch<T> {
 			if (result == null)
 				result = caseBTreeElement(bTreeContainer);
 			if (result == null)
-				result = caseAbstractInstance(bTreeContainer);
-			if (result == null)
-				result = caseProperty(bTreeContainer);
-			if (result == null)
-				result = caseFeature(bTreeContainer);
-			if (result == null)
-				result = caseTypedElement(bTreeContainer);
-			if (result == null)
-				result = caseMultiplicityElement(bTreeContainer);
-			if (result == null)
-				result = caseFinalizableElement(bTreeContainer);
-			if (result == null)
 				result = caseNamedElement(bTreeContainer);
-			if (result == null)
-				result = caseAbstractTypedElement(bTreeContainer);
 			if (result == null)
 				result = caseAbstractNamedElement(bTreeContainer);
 			if (result == null)
@@ -209,21 +167,7 @@ public class BehaviourTreeSwitch<T> extends Switch<T> {
 			if (result == null)
 				result = caseBTreeElement(bTreeLeaf);
 			if (result == null)
-				result = caseAbstractInstance(bTreeLeaf);
-			if (result == null)
-				result = caseProperty(bTreeLeaf);
-			if (result == null)
-				result = caseFeature(bTreeLeaf);
-			if (result == null)
-				result = caseTypedElement(bTreeLeaf);
-			if (result == null)
-				result = caseMultiplicityElement(bTreeLeaf);
-			if (result == null)
-				result = caseFinalizableElement(bTreeLeaf);
-			if (result == null)
 				result = caseNamedElement(bTreeLeaf);
-			if (result == null)
-				result = caseAbstractTypedElement(bTreeLeaf);
 			if (result == null)
 				result = caseAbstractNamedElement(bTreeLeaf);
 			if (result == null)
@@ -250,21 +194,7 @@ public class BehaviourTreeSwitch<T> extends Switch<T> {
 			if (result == null)
 				result = caseBTreeElement(bTreeDecorator);
 			if (result == null)
-				result = caseAbstractInstance(bTreeDecorator);
-			if (result == null)
-				result = caseProperty(bTreeDecorator);
-			if (result == null)
-				result = caseFeature(bTreeDecorator);
-			if (result == null)
-				result = caseTypedElement(bTreeDecorator);
-			if (result == null)
-				result = caseMultiplicityElement(bTreeDecorator);
-			if (result == null)
-				result = caseFinalizableElement(bTreeDecorator);
-			if (result == null)
 				result = caseNamedElement(bTreeDecorator);
-			if (result == null)
-				result = caseAbstractTypedElement(bTreeDecorator);
 			if (result == null)
 				result = caseAbstractNamedElement(bTreeDecorator);
 			if (result == null)
@@ -293,21 +223,7 @@ public class BehaviourTreeSwitch<T> extends Switch<T> {
 			if (result == null)
 				result = caseBTreeElement(bTreeSequence);
 			if (result == null)
-				result = caseAbstractInstance(bTreeSequence);
-			if (result == null)
-				result = caseProperty(bTreeSequence);
-			if (result == null)
-				result = caseFeature(bTreeSequence);
-			if (result == null)
-				result = caseTypedElement(bTreeSequence);
-			if (result == null)
-				result = caseMultiplicityElement(bTreeSequence);
-			if (result == null)
-				result = caseFinalizableElement(bTreeSequence);
-			if (result == null)
 				result = caseNamedElement(bTreeSequence);
-			if (result == null)
-				result = caseAbstractTypedElement(bTreeSequence);
 			if (result == null)
 				result = caseAbstractNamedElement(bTreeSequence);
 			if (result == null)
@@ -336,21 +252,7 @@ public class BehaviourTreeSwitch<T> extends Switch<T> {
 			if (result == null)
 				result = caseBTreeElement(bTreeFallback);
 			if (result == null)
-				result = caseAbstractInstance(bTreeFallback);
-			if (result == null)
-				result = caseProperty(bTreeFallback);
-			if (result == null)
-				result = caseFeature(bTreeFallback);
-			if (result == null)
-				result = caseTypedElement(bTreeFallback);
-			if (result == null)
-				result = caseMultiplicityElement(bTreeFallback);
-			if (result == null)
-				result = caseFinalizableElement(bTreeFallback);
-			if (result == null)
 				result = caseNamedElement(bTreeFallback);
-			if (result == null)
-				result = caseAbstractTypedElement(bTreeFallback);
 			if (result == null)
 				result = caseAbstractNamedElement(bTreeFallback);
 			if (result == null)
@@ -377,23 +279,9 @@ public class BehaviourTreeSwitch<T> extends Switch<T> {
 			if (result == null)
 				result = caseBTreeElement(bTreeRoot);
 			if (result == null)
-				result = caseAbstractInstance(bTreeRoot);
-			if (result == null)
-				result = caseElement(bTreeRoot);
-			if (result == null)
-				result = caseProperty(bTreeRoot);
-			if (result == null)
-				result = caseFeature(bTreeRoot);
-			if (result == null)
-				result = caseTypedElement(bTreeRoot);
-			if (result == null)
-				result = caseMultiplicityElement(bTreeRoot);
-			if (result == null)
-				result = caseFinalizableElement(bTreeRoot);
-			if (result == null)
 				result = caseNamedElement(bTreeRoot);
 			if (result == null)
-				result = caseAbstractTypedElement(bTreeRoot);
+				result = caseElement(bTreeRoot);
 			if (result == null)
 				result = caseAbstractNamedElement(bTreeRoot);
 			if (result == null)
@@ -418,21 +306,7 @@ public class BehaviourTreeSwitch<T> extends Switch<T> {
 			if (result == null)
 				result = caseBTreeElement(bTreeInclude);
 			if (result == null)
-				result = caseAbstractInstance(bTreeInclude);
-			if (result == null)
-				result = caseProperty(bTreeInclude);
-			if (result == null)
-				result = caseFeature(bTreeInclude);
-			if (result == null)
-				result = caseTypedElement(bTreeInclude);
-			if (result == null)
-				result = caseMultiplicityElement(bTreeInclude);
-			if (result == null)
-				result = caseFinalizableElement(bTreeInclude);
-			if (result == null)
 				result = caseNamedElement(bTreeInclude);
-			if (result == null)
-				result = caseAbstractTypedElement(bTreeInclude);
 			if (result == null)
 				result = caseAbstractNamedElement(bTreeInclude);
 			if (result == null)
@@ -461,21 +335,7 @@ public class BehaviourTreeSwitch<T> extends Switch<T> {
 			if (result == null)
 				result = caseBTreeElement(action);
 			if (result == null)
-				result = caseAbstractInstance(action);
-			if (result == null)
-				result = caseProperty(action);
-			if (result == null)
-				result = caseFeature(action);
-			if (result == null)
-				result = caseTypedElement(action);
-			if (result == null)
-				result = caseMultiplicityElement(action);
-			if (result == null)
-				result = caseFinalizableElement(action);
-			if (result == null)
 				result = caseNamedElement(action);
-			if (result == null)
-				result = caseAbstractTypedElement(action);
 			if (result == null)
 				result = caseAbstractNamedElement(action);
 			if (result == null)
@@ -504,21 +364,7 @@ public class BehaviourTreeSwitch<T> extends Switch<T> {
 			if (result == null)
 				result = caseBTreeElement(condition);
 			if (result == null)
-				result = caseAbstractInstance(condition);
-			if (result == null)
-				result = caseProperty(condition);
-			if (result == null)
-				result = caseFeature(condition);
-			if (result == null)
-				result = caseTypedElement(condition);
-			if (result == null)
-				result = caseMultiplicityElement(condition);
-			if (result == null)
-				result = caseFinalizableElement(condition);
-			if (result == null)
 				result = caseNamedElement(condition);
-			if (result == null)
-				result = caseAbstractTypedElement(condition);
 			if (result == null)
 				result = caseAbstractNamedElement(condition);
 			if (result == null)
@@ -547,21 +393,7 @@ public class BehaviourTreeSwitch<T> extends Switch<T> {
 			if (result == null)
 				result = caseBTreeElement(parallel);
 			if (result == null)
-				result = caseAbstractInstance(parallel);
-			if (result == null)
-				result = caseProperty(parallel);
-			if (result == null)
-				result = caseFeature(parallel);
-			if (result == null)
-				result = caseTypedElement(parallel);
-			if (result == null)
-				result = caseMultiplicityElement(parallel);
-			if (result == null)
-				result = caseFinalizableElement(parallel);
-			if (result == null)
 				result = caseNamedElement(parallel);
-			if (result == null)
-				result = caseAbstractTypedElement(parallel);
 			if (result == null)
 				result = caseAbstractNamedElement(parallel);
 			if (result == null)
@@ -592,21 +424,7 @@ public class BehaviourTreeSwitch<T> extends Switch<T> {
 			if (result == null)
 				result = caseBTreeElement(sequence);
 			if (result == null)
-				result = caseAbstractInstance(sequence);
-			if (result == null)
-				result = caseProperty(sequence);
-			if (result == null)
-				result = caseFeature(sequence);
-			if (result == null)
-				result = caseTypedElement(sequence);
-			if (result == null)
-				result = caseMultiplicityElement(sequence);
-			if (result == null)
-				result = caseFinalizableElement(sequence);
-			if (result == null)
 				result = caseNamedElement(sequence);
-			if (result == null)
-				result = caseAbstractTypedElement(sequence);
 			if (result == null)
 				result = caseAbstractNamedElement(sequence);
 			if (result == null)
@@ -637,21 +455,7 @@ public class BehaviourTreeSwitch<T> extends Switch<T> {
 			if (result == null)
 				result = caseBTreeElement(reactiveSequence);
 			if (result == null)
-				result = caseAbstractInstance(reactiveSequence);
-			if (result == null)
-				result = caseProperty(reactiveSequence);
-			if (result == null)
-				result = caseFeature(reactiveSequence);
-			if (result == null)
-				result = caseTypedElement(reactiveSequence);
-			if (result == null)
-				result = caseMultiplicityElement(reactiveSequence);
-			if (result == null)
-				result = caseFinalizableElement(reactiveSequence);
-			if (result == null)
 				result = caseNamedElement(reactiveSequence);
-			if (result == null)
-				result = caseAbstractTypedElement(reactiveSequence);
 			if (result == null)
 				result = caseAbstractNamedElement(reactiveSequence);
 			if (result == null)
@@ -682,21 +486,7 @@ public class BehaviourTreeSwitch<T> extends Switch<T> {
 			if (result == null)
 				result = caseBTreeElement(sequenceStar);
 			if (result == null)
-				result = caseAbstractInstance(sequenceStar);
-			if (result == null)
-				result = caseProperty(sequenceStar);
-			if (result == null)
-				result = caseFeature(sequenceStar);
-			if (result == null)
-				result = caseTypedElement(sequenceStar);
-			if (result == null)
-				result = caseMultiplicityElement(sequenceStar);
-			if (result == null)
-				result = caseFinalizableElement(sequenceStar);
-			if (result == null)
 				result = caseNamedElement(sequenceStar);
-			if (result == null)
-				result = caseAbstractTypedElement(sequenceStar);
 			if (result == null)
 				result = caseAbstractNamedElement(sequenceStar);
 			if (result == null)
@@ -727,21 +517,7 @@ public class BehaviourTreeSwitch<T> extends Switch<T> {
 			if (result == null)
 				result = caseBTreeElement(fallback);
 			if (result == null)
-				result = caseAbstractInstance(fallback);
-			if (result == null)
-				result = caseProperty(fallback);
-			if (result == null)
-				result = caseFeature(fallback);
-			if (result == null)
-				result = caseTypedElement(fallback);
-			if (result == null)
-				result = caseMultiplicityElement(fallback);
-			if (result == null)
-				result = caseFinalizableElement(fallback);
-			if (result == null)
 				result = caseNamedElement(fallback);
-			if (result == null)
-				result = caseAbstractTypedElement(fallback);
 			if (result == null)
 				result = caseAbstractNamedElement(fallback);
 			if (result == null)
@@ -772,21 +548,7 @@ public class BehaviourTreeSwitch<T> extends Switch<T> {
 			if (result == null)
 				result = caseBTreeElement(reactiveFallback);
 			if (result == null)
-				result = caseAbstractInstance(reactiveFallback);
-			if (result == null)
-				result = caseProperty(reactiveFallback);
-			if (result == null)
-				result = caseFeature(reactiveFallback);
-			if (result == null)
-				result = caseTypedElement(reactiveFallback);
-			if (result == null)
-				result = caseMultiplicityElement(reactiveFallback);
-			if (result == null)
-				result = caseFinalizableElement(reactiveFallback);
-			if (result == null)
 				result = caseNamedElement(reactiveFallback);
-			if (result == null)
-				result = caseAbstractTypedElement(reactiveFallback);
 			if (result == null)
 				result = caseAbstractNamedElement(reactiveFallback);
 			if (result == null)
@@ -815,21 +577,7 @@ public class BehaviourTreeSwitch<T> extends Switch<T> {
 			if (result == null)
 				result = caseBTreeElement(inverter);
 			if (result == null)
-				result = caseAbstractInstance(inverter);
-			if (result == null)
-				result = caseProperty(inverter);
-			if (result == null)
-				result = caseFeature(inverter);
-			if (result == null)
-				result = caseTypedElement(inverter);
-			if (result == null)
-				result = caseMultiplicityElement(inverter);
-			if (result == null)
-				result = caseFinalizableElement(inverter);
-			if (result == null)
 				result = caseNamedElement(inverter);
-			if (result == null)
-				result = caseAbstractTypedElement(inverter);
 			if (result == null)
 				result = caseAbstractNamedElement(inverter);
 			if (result == null)
@@ -858,21 +606,7 @@ public class BehaviourTreeSwitch<T> extends Switch<T> {
 			if (result == null)
 				result = caseBTreeElement(forceSuccess);
 			if (result == null)
-				result = caseAbstractInstance(forceSuccess);
-			if (result == null)
-				result = caseProperty(forceSuccess);
-			if (result == null)
-				result = caseFeature(forceSuccess);
-			if (result == null)
-				result = caseTypedElement(forceSuccess);
-			if (result == null)
-				result = caseMultiplicityElement(forceSuccess);
-			if (result == null)
-				result = caseFinalizableElement(forceSuccess);
-			if (result == null)
 				result = caseNamedElement(forceSuccess);
-			if (result == null)
-				result = caseAbstractTypedElement(forceSuccess);
 			if (result == null)
 				result = caseAbstractNamedElement(forceSuccess);
 			if (result == null)
@@ -901,21 +635,7 @@ public class BehaviourTreeSwitch<T> extends Switch<T> {
 			if (result == null)
 				result = caseBTreeElement(forceFailure);
 			if (result == null)
-				result = caseAbstractInstance(forceFailure);
-			if (result == null)
-				result = caseProperty(forceFailure);
-			if (result == null)
-				result = caseFeature(forceFailure);
-			if (result == null)
-				result = caseTypedElement(forceFailure);
-			if (result == null)
-				result = caseMultiplicityElement(forceFailure);
-			if (result == null)
-				result = caseFinalizableElement(forceFailure);
-			if (result == null)
 				result = caseNamedElement(forceFailure);
-			if (result == null)
-				result = caseAbstractTypedElement(forceFailure);
 			if (result == null)
 				result = caseAbstractNamedElement(forceFailure);
 			if (result == null)
@@ -944,21 +664,7 @@ public class BehaviourTreeSwitch<T> extends Switch<T> {
 			if (result == null)
 				result = caseBTreeElement(repeat);
 			if (result == null)
-				result = caseAbstractInstance(repeat);
-			if (result == null)
-				result = caseProperty(repeat);
-			if (result == null)
-				result = caseFeature(repeat);
-			if (result == null)
-				result = caseTypedElement(repeat);
-			if (result == null)
-				result = caseMultiplicityElement(repeat);
-			if (result == null)
-				result = caseFinalizableElement(repeat);
-			if (result == null)
 				result = caseNamedElement(repeat);
-			if (result == null)
-				result = caseAbstractTypedElement(repeat);
 			if (result == null)
 				result = caseAbstractNamedElement(repeat);
 			if (result == null)
@@ -987,21 +693,7 @@ public class BehaviourTreeSwitch<T> extends Switch<T> {
 			if (result == null)
 				result = caseBTreeElement(retry);
 			if (result == null)
-				result = caseAbstractInstance(retry);
-			if (result == null)
-				result = caseProperty(retry);
-			if (result == null)
-				result = caseFeature(retry);
-			if (result == null)
-				result = caseTypedElement(retry);
-			if (result == null)
-				result = caseMultiplicityElement(retry);
-			if (result == null)
-				result = caseFinalizableElement(retry);
-			if (result == null)
 				result = caseNamedElement(retry);
-			if (result == null)
-				result = caseAbstractTypedElement(retry);
 			if (result == null)
 				result = caseAbstractNamedElement(retry);
 			if (result == null)
@@ -1472,111 +1164,6 @@ public class BehaviourTreeSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseNamedElement(NamedElement object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Feature</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Feature</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseFeature(Feature object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Abstract Typed Element</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Abstract Typed Element</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseAbstractTypedElement(AbstractTypedElement object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Typed Element</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Typed Element</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseTypedElement(TypedElement object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Multiplicity Element</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Multiplicity Element</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseMultiplicityElement(MultiplicityElement object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Finalizable Element</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Finalizable Element</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseFinalizableElement(FinalizableElement object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Property</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Property</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseProperty(Property object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Abstract Instance</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Abstract Instance</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseAbstractInstance(AbstractInstance object) {
 		return null;
 	}
 

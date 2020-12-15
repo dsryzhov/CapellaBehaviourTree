@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/sequence/description/2.0.0" xmlns:description_2="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/diagram/sequence/description/tool/2.0.0" xmlns:tool_1="http://www.eclipse.org/sirius/description/tool/1.1.0" xmlns:tool_2="http://www.eclipse.org/sirius/diagram/description/tool/1.1.0" name="BTree" version="12.0.0.2017041100">
   <ownedViewpoints name="Behaviour Tree Viewpoint" label="Behaviour Tree Viewpoint">
-    <ownedRepresentations xsi:type="description_1:SequenceDiagramDescription" dropDescriptions="//@ownedViewpoints[name='Behaviour%20Tree%20Viewpoint']/@ownedRepresentations[name='BTtree%20Sequenece%20Diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='FncDragDropId']" name="BTtree Sequenece Diagram" label="Behaviour Tree Sequence Diagram" domainClass="interaction.Scenario" endsOrdering="aql:self.makeIntersection(self.ownedInteractionFragments, eventEnds)" instanceRolesOrdering="feature:ownedInstanceRoles">
+    <ownedRepresentations xsi:type="description_1:SequenceDiagramDescription" dropDescriptions="//@ownedViewpoints[name='Behaviour%20Tree%20Viewpoint']/@ownedRepresentations[name='BTtree%20Sequenece%20Diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='FncDragDropId']" name="BTtree Sequenece Diagram" label="Behaviour Tree (FD) Sequence Diagram" domainClass="interaction.Scenario" endsOrdering="aql:self.makeIntersection(self.ownedInteractionFragments, eventEnds)" instanceRolesOrdering="feature:ownedInstanceRoles">
       <defaultLayer name="Default">
         <nodeMappings xsi:type="description_1:InstanceRoleMapping" name="Instancerole Mapping FS2" semanticCandidatesExpression="feature:ownedInstanceRoles" semanticElements="service:getAssociatedSemanticElements()" synchronizationLock="true" domainClass="interaction.InstanceRole">
           <deletionDescription href="platform:/plugin/org.polarsys.capella.core.sirius.analysis/description/common.odesign#//@ownedViewpoints[name='Common']/@ownedRepresentations[name='Functional%20Scenario']/@defaultLayer/@toolSections.0/@ownedTools[name='delete%20capella%20elements']"/>
@@ -826,7 +826,7 @@
         </toolSections>
       </defaultLayer>
     </ownedRepresentations>
-    <ownedRepresentations xsi:type="description_2:DiagramDescription" name="BTreeDefinition" label="Behaviour Tree Definition Diagram" domainClass="AbstractFunction" enablePopupBars="true">
+    <ownedRepresentations xsi:type="description_2:DiagramDescription" name="BTreeDefinition" label="Behaviour Tree (FD) Definition Diagram" domainClass="AbstractFunction" enablePopupBars="true">
       <layout xsi:type="description_2:CustomLayoutConfiguration" id="org.eclipse.elk.graphviz.dot" label="Dot" description="Layered drawings of directed graphs. The algorithm aims edges in the same direction (top to bottom, or left to right) and then attempts to avoid edge crossings and reduce edge length. Edges are routed as spline curves and are thus drawn very smoothly. This algorithm is very suitable for state machine and activity diagrams, where the direction of edges has an important role."/>
       <defaultLayer name="Default">
         <nodeMappings name="BTreeNode" deletionDescription="//@ownedViewpoints[name='Behaviour%20Tree%20Viewpoint']/@ownedRepresentations[name='BTreeDefinition']/@defaultLayer/@toolSections.0/@ownedTools[name='delete%20LF']" labelDirectEdit="//@ownedViewpoints[name='Behaviour%20Tree%20Viewpoint']/@ownedRepresentations[name='BTreeDefinition']/@defaultLayer/@toolSections.0/@ownedTools[name='rename%20Logical%20Function']" semanticCandidatesExpression="service:getFBDSemanticFunctions()" domainClass="AbstractFunction">
@@ -1270,7 +1270,7 @@
         <toolSections/>
       </defaultLayer>
     </ownedRepresentations>
-    <ownedRepresentations xsi:type="description_2:DiagramDescription" name="BTreeDefinitionStandalone" label="Behaviour Tree Definition Diagram 2" domainClass="BTreeRoot" enablePopupBars="true">
+    <ownedRepresentations xsi:type="description_2:DiagramDescription" name="BTreeDefinitionStandalone" label="Behaviour Tree Definition Diagram" domainClass="BTreeRoot" enablePopupBars="true">
       <metamodel href="http://rds/capella/btree/1.0#/"/>
       <layout xsi:type="description_2:CustomLayoutConfiguration" id="org.eclipse.elk.graphviz.dot" label="Dot" description="Layered drawings of directed graphs. The algorithm aims edges in the same direction (top to bottom, or left to right) and then attempts to avoid edge crossings and reduce edge length. Edges are routed as spline curves and are thus drawn very smoothly. This algorithm is very suitable for state machine and activity diagrams, where the direction of edges has an important role.">
         <layoutOptions xsi:type="description_2:BooleanLayoutOption" id="org.eclipse.elk.graphviz.adaptPortPositions">
@@ -1449,7 +1449,7 @@
           </conditionnalStyles>
         </nodeMappings>
         <nodeMappings name="BTreeInclude" detailDescriptions="//@ownedViewpoints[name='Behaviour%20Tree%20Viewpoint']/@ownedRepresentations[name='BTreeDefinitionStandalone']/@defaultLayer/@toolSections.0/@ownedTools[name='btree.create.diagram']" navigationDescriptions="//@ownedViewpoints[name='Behaviour%20Tree%20Viewpoint']/@ownedRepresentations[name='BTreeDefinitionStandalone']/@defaultLayer/@toolSections.0/@ownedTools[name='BTreeDiagramNavigate']" semanticCandidatesExpression="aql:self.eAllContents()" domainClass="BTreeInclude" dropDescriptions="//@ownedViewpoints[name='Behaviour%20Tree%20Viewpoint']/@ownedRepresentations[name='BTreeDefinitionStandalone']/@defaultLayer/@toolSections.0/@ownedTools[name='DropFunctionToAction'] //@ownedViewpoints[name='Behaviour%20Tree%20Viewpoint']/@ownedRepresentations[name='BTreeDefinitionStandalone']/@defaultLayer/@toolSections.0/@ownedTools[name='DropBTreeToContainer']">
-          <style xsi:type="style:SquareDescription" labelExpression="aql:self.eContainer().ownedNodes->indexOf(self).toString().concat('. ').concat(self.name)" iconPath="/rds.capella.btree.design/icons/full/obj16/BTree.gif" labelAlignment="LEFT" labelPosition="node" resizeKind="NSEW" width="10" height="5">
+          <style xsi:type="style:SquareDescription" labelExpression="aql:self.eContainer().ownedNodes->indexOf(self).toString().concat('. ').concat(self.name)" iconPath="/rds.capella.btree.design/icons/full/obj16/BTree.gif" labelAlignment="LEFT" labelPosition="node" resizeKind="NSEW" width="14" height="5">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
@@ -1480,7 +1480,7 @@
               <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:container">
                 <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:containerView.setBTreeNodePositionHint()"/>
                 <subModelOperations xsi:type="tool_1:CreateInstance" typeName="Action" referenceName="ownedNodes">
-                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="Action"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'Action '.concat(self.eContainer().ownedNodes->filter(BehaviourTree::Action)->indexOf(self).toString())"/>
                   <subModelOperations xsi:type="tool_1:SetValue" featureName="function" valueExpression="aql:instance.createBtreeActionFunction()"/>
                 </subModelOperations>
               </firstModelOperations>
@@ -1495,7 +1495,7 @@
               <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:container">
                 <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:containerView.setBTreeNodePositionHint()"/>
                 <subModelOperations xsi:type="tool_1:CreateInstance" typeName="Condition" referenceName="ownedNodes">
-                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="Condition"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'Condition '.concat(self.eContainer().ownedNodes->filter(BehaviourTree::Condition)->indexOf(self).toString())"/>
                 </subModelOperations>
               </firstModelOperations>
             </initialOperation>
@@ -1509,7 +1509,7 @@
               <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:container">
                 <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:containerView.setBTreeNodePositionHint()"/>
                 <subModelOperations xsi:type="tool_1:CreateInstance" typeName="Parallel" referenceName="ownedNodes">
-                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="Condition"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'Parallel '.concat(self.eContainer().ownedNodes->filter(BehaviourTree::Parallel)->indexOf(self).toString())"/>
                 </subModelOperations>
               </firstModelOperations>
             </initialOperation>
@@ -1525,7 +1525,7 @@
                   <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:containerView.setBTreeNodePositionHint()"/>
                   <subModelOperations xsi:type="tool_1:If" conditionExpression="aql:not(self.eClass().name = 'BTreeRoot')">
                     <subModelOperations xsi:type="tool_1:CreateInstance" typeName="Sequence" referenceName="ownedNodes">
-                      <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="Sequence"/>
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'Sequence '.concat(self.eContainer().ownedNodes->filter(BehaviourTree::Sequence)->indexOf(self).toString())"/>
                     </subModelOperations>
                   </subModelOperations>
                   <subModelOperations xsi:type="tool_1:If" conditionExpression="aql:self.eClass().name = 'BTreeRoot'">
@@ -1545,7 +1545,7 @@
                 <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:container">
                   <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:containerView.setBTreeNodePositionHint()"/>
                   <subModelOperations xsi:type="tool_1:CreateInstance" typeName="Sequence" referenceName="ownedNodes">
-                    <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="ReactiveSequence"/>
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'ReactiveSequence '.concat(self.eContainer().ownedNodes->filter(BehaviourTree::ReactiveSequence)->indexOf(self).toString())"/>
                   </subModelOperations>
                 </firstModelOperations>
               </initialOperation>
@@ -1559,7 +1559,7 @@
                 <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:container">
                   <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:containerView.setBTreeNodePositionHint()"/>
                   <subModelOperations xsi:type="tool_1:CreateInstance" typeName="SequenceStar" referenceName="ownedNodes">
-                    <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="SequenceStar"/>
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'SequenceStar '.concat(self.eContainer().ownedNodes->filter(BehaviourTree::SequenceStar)->indexOf(self).toString())"/>
                   </subModelOperations>
                 </firstModelOperations>
               </initialOperation>
@@ -1575,7 +1575,7 @@
                 <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:container">
                   <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:containerView.setBTreeNodePositionHint()"/>
                   <subModelOperations xsi:type="tool_1:CreateInstance" typeName="Fallback" referenceName="ownedNodes">
-                    <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="Fallback"/>
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'Fallback '.concat(self.eContainer().ownedNodes->filter(BehaviourTree::Fallback)->indexOf(self).toString())"/>
                   </subModelOperations>
                 </firstModelOperations>
               </initialOperation>
@@ -1589,7 +1589,7 @@
                 <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:container">
                   <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:containerView.setBTreeNodePositionHint()"/>
                   <subModelOperations xsi:type="tool_1:CreateInstance" typeName="ReactiveFallback" referenceName="ownedNodes">
-                    <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="ReactiveFallback"/>
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'ReactiveFallback '.concat(self.eContainer().ownedNodes->filter(BehaviourTree::ReactiveFallback)->indexOf(self).toString())"/>
                   </subModelOperations>
                 </firstModelOperations>
               </initialOperation>
@@ -1634,7 +1634,7 @@
               <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:container">
                 <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:containerView.eContainer().target.eContainer()">
                   <subModelOperations xsi:type="tool_1:CreateInstance" typeName="BTreeRoot" referenceName="ownedExtensions" variableName="newBTreeRoot">
-                    <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="Behaviour Tree"/>
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'Behaviour Tree '.concat(self.eContainer().ownedExtensions->filter(BehaviourTree::BTreeRoot)->indexOf(self).toString())"/>
                   </subModelOperations>
                 </subModelOperations>
                 <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:containerView.setBTreeNodePositionHint()"/>
@@ -1761,14 +1761,14 @@
         </toolSections>
       </defaultLayer>
     </ownedRepresentations>
-    <ownedRepresentations xsi:type="description_1:SequenceDiagramDescription" dropDescriptions="//@ownedViewpoints[name='Behaviour%20Tree%20Viewpoint']/@ownedRepresentations[name='BTtree%20Sequenece%20Diagram2']/@defaultLayer/@toolSections.0/@ownedTools[name='BTreeElementDragDropId']" name="BTtree Sequenece Diagram2" label="Behaviour Tree Sequence Diagram2" domainClass="interaction.Scenario" endsOrdering="aql:self.makeIntersection(self.ownedInteractionFragments, eventEnds)" instanceRolesOrdering="feature:ownedInstanceRoles">
+    <ownedRepresentations xsi:type="description_1:SequenceDiagramDescription" dropDescriptions="//@ownedViewpoints[name='Behaviour%20Tree%20Viewpoint']/@ownedRepresentations[name='BTtreeSeqDiagramStandalone']/@defaultLayer/@toolSections.0/@ownedTools[name='BTreeElementDragDropId']" name="BTtreeSeqDiagramStandalone" label="Behaviour Tree Sequence Diagram" domainClass="interaction.Scenario" endsOrdering="aql:self.makeIntersection(self.ownedInteractionFragments, eventEnds)" instanceRolesOrdering="feature:ownedInstanceRoles">
       <defaultLayer name="Default">
         <nodeMappings xsi:type="description_1:InstanceRoleMapping" name="Instancerole Mapping FS3" semanticCandidatesExpression="feature:ownedInstanceRoles" semanticElements="service:getAssociatedSemanticElements()" synchronizationLock="true" domainClass="interaction.InstanceRole">
           <deletionDescription href="platform:/plugin/org.polarsys.capella.core.sirius.analysis/description/common.odesign#//@ownedViewpoints[name='Common']/@ownedRepresentations[name='Functional%20Scenario']/@defaultLayer/@toolSections.0/@ownedTools[name='delete%20capella%20elements']"/>
           <labelDirectEdit href="platform:/plugin/org.polarsys.capella.core.sirius.analysis/description/common.odesign#//@ownedViewpoints[name='Common']/@ownedRepresentations[name='Functional%20Scenario']/@defaultLayer/@toolSections.0/@ownedTools[name='rename%20instance%20role%20FS']"/>
-          <borderedNodeMappings xsi:type="description_1:ExecutionMapping" name="default execution FS3" semanticCandidatesExpression="aql:self" semanticElements="service:getAssociatedSemanticElements()" synchronizationLock="true" domainClass="interaction.InstanceRole" reusedBorderedNodeMappings="//@ownedViewpoints[name='Behaviour%20Tree%20Viewpoint']/@ownedRepresentations[name='BTtree%20Sequenece%20Diagram2']/@defaultLayer/@nodeMappings[name='Instancerole%20Mapping%20FS3']/@borderedNodeMappings[name='default%20execution%20FS3']/@borderedNodeMappings[name='Execution%20FS2']/@borderedNodeMappings[name='InteractionState%20Mapping%20FS']" startingEndFinderExpression="aql:self" finishingEndFinderExpression="aql:self">
+          <borderedNodeMappings xsi:type="description_1:ExecutionMapping" name="default execution FS3" semanticCandidatesExpression="aql:self" semanticElements="service:getAssociatedSemanticElements()" synchronizationLock="true" domainClass="interaction.InstanceRole" reusedBorderedNodeMappings="//@ownedViewpoints[name='Behaviour%20Tree%20Viewpoint']/@ownedRepresentations[name='BTtreeSeqDiagramStandalone']/@defaultLayer/@nodeMappings[name='Instancerole%20Mapping%20FS3']/@borderedNodeMappings[name='default%20execution%20FS3']/@borderedNodeMappings[name='Execution%20FS2']/@borderedNodeMappings[name='InteractionState%20Mapping%20FS']" startingEndFinderExpression="aql:self" finishingEndFinderExpression="aql:self">
             <deletionDescription href="platform:/plugin/org.polarsys.capella.core.sirius.analysis/description/common.odesign#//@ownedViewpoints[name='Common']/@ownedRepresentations[name='Functional%20Scenario']/@defaultLayer/@toolSections.0/@ownedTools[name='delete%20capella%20elements']"/>
-            <borderedNodeMappings xsi:type="description_1:ExecutionMapping" name="Execution FS2" semanticCandidatesExpression="aql:self.getExecutionsFromInstanceRoleOrParentExecution()" synchronizationLock="true" domainClass="interaction.Execution" reusedBorderedNodeMappings="//@ownedViewpoints[name='Behaviour%20Tree%20Viewpoint']/@ownedRepresentations[name='BTtree%20Sequenece%20Diagram2']/@defaultLayer/@nodeMappings[name='Instancerole%20Mapping%20FS3']/@borderedNodeMappings[name='default%20execution%20FS3']/@borderedNodeMappings[name='Execution%20FS2']" startingEndFinderExpression="feature:start" finishingEndFinderExpression="feature:finish">
+            <borderedNodeMappings xsi:type="description_1:ExecutionMapping" name="Execution FS2" semanticCandidatesExpression="aql:self.getExecutionsFromInstanceRoleOrParentExecution()" synchronizationLock="true" domainClass="interaction.Execution" reusedBorderedNodeMappings="//@ownedViewpoints[name='Behaviour%20Tree%20Viewpoint']/@ownedRepresentations[name='BTtreeSeqDiagramStandalone']/@defaultLayer/@nodeMappings[name='Instancerole%20Mapping%20FS3']/@borderedNodeMappings[name='default%20execution%20FS3']/@borderedNodeMappings[name='Execution%20FS2']" startingEndFinderExpression="feature:start" finishingEndFinderExpression="feature:finish">
               <deletionDescription href="platform:/plugin/org.polarsys.capella.core.sirius.analysis/description/common.odesign#//@ownedViewpoints[name='Common']/@ownedRepresentations[name='Functional%20Scenario']/@defaultLayer/@toolSections.0/@ownedTools[name='delete%20capella%20elements']"/>
               <borderedNodeMappings xsi:type="description_1:StateMapping" name="InteractionState Mapping FS" semanticCandidatesExpression="aql:self.getInteractionStatesOnExecution()" semanticElements="service:getAssociatedSemanticElements()" domainClass="interaction.StateFragment" startingEndFinderExpression="feature:start" finishingEndFinderExpression="feature:finish">
                 <deletionDescription href="platform:/plugin/org.polarsys.capella.core.sirius.analysis/description/context.odesign#//@ownedViewpoints[name='System%20Analysis']/@ownedRepresentations[name='System%20Function%20Breakdown']/@defaultLayer/@toolSections.0/@ownedTools[name='capellaElement']"/>
@@ -2022,7 +2022,7 @@
             </style>
           </conditionnalStyles>
         </nodeMappings>
-        <edgeMappings xsi:type="description_1:BasicMessageMapping" name="Basic message mapping FS2" semanticCandidatesExpression="aql:self.ownedMessages->select(ownedMessage | ownedMessage.kind = interaction::MessageKind::SYNCHRONOUS_CALL or ownedMessage.kind = interaction::MessageKind::ASYNCHRONOUS_CALL or ownedMessage.kind = interaction::MessageKind::UNSET)" semanticElements="service:getAssociatedSemanticElements()" synchronizationLock="true" sourceMapping="//@ownedViewpoints[name='Behaviour%20Tree%20Viewpoint']/@ownedRepresentations[name='BTtree%20Sequenece%20Diagram2']/@defaultLayer/@nodeMappings[name='Instancerole%20Mapping%20FS3']/@borderedNodeMappings[name='default%20execution%20FS3'] //@ownedViewpoints[name='Behaviour%20Tree%20Viewpoint']/@ownedRepresentations[name='BTtree%20Sequenece%20Diagram2']/@defaultLayer/@nodeMappings[name='Instancerole%20Mapping%20FS3']/@borderedNodeMappings[name='default%20execution%20FS3']/@borderedNodeMappings[name='Execution%20FS2']" targetMapping="//@ownedViewpoints[name='Behaviour%20Tree%20Viewpoint']/@ownedRepresentations[name='BTtree%20Sequenece%20Diagram2']/@defaultLayer/@nodeMappings[name='Instancerole%20Mapping%20FS3']/@borderedNodeMappings[name='default%20execution%20FS3'] //@ownedViewpoints[name='Behaviour%20Tree%20Viewpoint']/@ownedRepresentations[name='BTtree%20Sequenece%20Diagram2']/@defaultLayer/@nodeMappings[name='Instancerole%20Mapping%20FS3']/@borderedNodeMappings[name='default%20execution%20FS3']/@borderedNodeMappings[name='Execution%20FS2']" targetFinderExpression="aql:self.getReceivingEnd()" sourceFinderExpression="aql:self.getSendingEnd()" domainClass="interaction.SequenceMessage" useDomainElement="true" sendingEndFinderExpression="feature:sendingEnd" receivingEndFinderExpression="feature:receivingEnd">
+        <edgeMappings xsi:type="description_1:BasicMessageMapping" name="Basic message mapping FS2" semanticCandidatesExpression="aql:self.ownedMessages->select(ownedMessage | ownedMessage.kind = interaction::MessageKind::SYNCHRONOUS_CALL or ownedMessage.kind = interaction::MessageKind::ASYNCHRONOUS_CALL or ownedMessage.kind = interaction::MessageKind::UNSET)" semanticElements="service:getAssociatedSemanticElements()" synchronizationLock="true" sourceMapping="//@ownedViewpoints[name='Behaviour%20Tree%20Viewpoint']/@ownedRepresentations[name='BTtreeSeqDiagramStandalone']/@defaultLayer/@nodeMappings[name='Instancerole%20Mapping%20FS3']/@borderedNodeMappings[name='default%20execution%20FS3'] //@ownedViewpoints[name='Behaviour%20Tree%20Viewpoint']/@ownedRepresentations[name='BTtreeSeqDiagramStandalone']/@defaultLayer/@nodeMappings[name='Instancerole%20Mapping%20FS3']/@borderedNodeMappings[name='default%20execution%20FS3']/@borderedNodeMappings[name='Execution%20FS2']" targetMapping="//@ownedViewpoints[name='Behaviour%20Tree%20Viewpoint']/@ownedRepresentations[name='BTtreeSeqDiagramStandalone']/@defaultLayer/@nodeMappings[name='Instancerole%20Mapping%20FS3']/@borderedNodeMappings[name='default%20execution%20FS3'] //@ownedViewpoints[name='Behaviour%20Tree%20Viewpoint']/@ownedRepresentations[name='BTtreeSeqDiagramStandalone']/@defaultLayer/@nodeMappings[name='Instancerole%20Mapping%20FS3']/@borderedNodeMappings[name='default%20execution%20FS3']/@borderedNodeMappings[name='Execution%20FS2']" targetFinderExpression="aql:self.getReceivingEnd()" sourceFinderExpression="aql:self.getSendingEnd()" domainClass="interaction.SequenceMessage" useDomainElement="true" sendingEndFinderExpression="feature:sendingEnd" receivingEndFinderExpression="feature:receivingEnd">
           <deletionDescription href="platform:/plugin/org.polarsys.capella.core.sirius.analysis/description/common.odesign#//@ownedViewpoints[name='Common']/@ownedRepresentations[name='Contextual%20Component%20Detailed%20Interfaces']/@defaultLayer/@toolSections.0/@ownedTools[name='delete%20capella%20elements']"/>
           <labelDirectEdit href="platform:/plugin/org.polarsys.capella.core.sirius.analysis/description/common.odesign#//@ownedViewpoints[name='Common']/@ownedRepresentations[name='Functional%20Scenario']/@defaultLayer/@toolSections.0/@ownedTools[name='rename%20basic%20message%20FS']"/>
           <style>
@@ -2065,7 +2065,7 @@
           </conditionnalStyles>
         </edgeMappings>
         <toolSections>
-          <ownedTools xsi:type="tool:InstanceRoleCreationTool" documentation="Insert/Remove Functions. Creates or delete semantic Lifelines representing existing Functions. Removing a Lifeline from a scenario deletes incoming and outgoing sequence messages, but does not delete from model the represented Functions and related Functional Exchanges." name="functions" label="Functions" nodeMappings="//@ownedViewpoints[name='Behaviour%20Tree%20Viewpoint']/@ownedRepresentations[name='BTtree%20Sequenece%20Diagram2']/@defaultLayer/@nodeMappings[name='Instancerole%20Mapping%20FS3']" iconPath="/org.polarsys.capella.core.sirius.analysis/icons/full/obj16/ShowHide.gif">
+          <ownedTools xsi:type="tool:InstanceRoleCreationTool" documentation="Insert/Remove Functions. Creates or delete semantic Lifelines representing existing Functions. Removing a Lifeline from a scenario deletes incoming and outgoing sequence messages, but does not delete from model the represented Functions and related Functional Exchanges." name="functions" label="Functions" nodeMappings="//@ownedViewpoints[name='Behaviour%20Tree%20Viewpoint']/@ownedRepresentations[name='BTtreeSeqDiagramStandalone']/@defaultLayer/@nodeMappings[name='Instancerole%20Mapping%20FS3']" iconPath="/org.polarsys.capella.core.sirius.analysis/icons/full/obj16/ShowHide.gif">
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
@@ -2099,7 +2099,7 @@
             </initialOperation>
             <predecessor name="predecessor"/>
           </ownedTools>
-          <ownedTools xsi:type="tool:MessageCreationTool" documentation="Creates a new Sequence Message invoking a  Functional Exchange without return branch between the Source and Target Lifelines. This tool opens a selection wizard to select an available existing Functional Exchange or to create a new one.&#xD;&#xA;" name="functional.exchange3" label="Tick message" precondition="aql:preTarget.representedInstance.eContainer() == preSource.representedInstance or preTarget.representedInstance.eContainer() == preSource.covered.representedInstance" forceRefresh="true" edgeMappings="//@ownedViewpoints[name='Behaviour%20Tree%20Viewpoint']/@ownedRepresentations[name='BTtree%20Sequenece%20Diagram2']/@defaultLayer/@edgeMappings[name='Basic%20message%20mapping%20FS2']" iconPath="/org.polarsys.capella.core.sirius.analysis/icons/full/obj16/AsyncSequenceMessage.gif">
+          <ownedTools xsi:type="tool:MessageCreationTool" documentation="Creates a new Sequence Message invoking a  Functional Exchange without return branch between the Source and Target Lifelines. This tool opens a selection wizard to select an available existing Functional Exchange or to create a new one.&#xD;&#xA;" name="functional.exchange3" label="Tick message" precondition="aql:preTarget.representedInstance.eContainer() == preSource.representedInstance or preTarget.representedInstance.eContainer() == preSource.covered.representedInstance" forceRefresh="true" edgeMappings="//@ownedViewpoints[name='Behaviour%20Tree%20Viewpoint']/@ownedRepresentations[name='BTtreeSeqDiagramStandalone']/@defaultLayer/@edgeMappings[name='Basic%20message%20mapping%20FS2']" iconPath="/org.polarsys.capella.core.sirius.analysis/icons/full/obj16/AsyncSequenceMessage.gif">
             <sourceVariable name="source">
               <subVariables xsi:type="tool_1:AcceleoVariable" name="sourceIR" computationExpression="aql:if (self->filter(interaction::Execution)->size() > 0) then self.covered else self endif"/>
             </sourceVariable>
@@ -2184,7 +2184,7 @@
             <startingEndPredecessor name="messageEndBefore"/>
             <finishingEndPredecessor name="messageEndAfter"/>
           </ownedTools>
-          <ownedTools xsi:type="tool:MessageCreationTool" documentation="Creates a new Sequence Message invoking a  Functional Exchange without return branch between the Source and Target Lifelines. This tool opens a selection wizard to select an available existing Functional Exchange or to create a new one.&#xD;&#xA;" name="functional.exchange.successtick" label="Seccess tick" precondition="aql:preTarget.representedInstance.eContainer() == preSource.representedInstance or preTarget.representedInstance.eContainer() == preSource.covered.representedInstance" forceRefresh="true" edgeMappings="//@ownedViewpoints[name='Behaviour%20Tree%20Viewpoint']/@ownedRepresentations[name='BTtree%20Sequenece%20Diagram2']/@defaultLayer/@edgeMappings[name='Basic%20message%20mapping%20FS2']" iconPath="/org.polarsys.capella.core.sirius.analysis/icons/full/obj16/AsyncSequenceMessage.gif">
+          <ownedTools xsi:type="tool:MessageCreationTool" documentation="Creates a new Sequence Message invoking a  Functional Exchange without return branch between the Source and Target Lifelines. This tool opens a selection wizard to select an available existing Functional Exchange or to create a new one.&#xD;&#xA;" name="functional.exchange.successtick" label="Seccess tick" precondition="aql:preTarget.representedInstance.eContainer() == preSource.representedInstance or preTarget.representedInstance.eContainer() == preSource.covered.representedInstance" forceRefresh="true" edgeMappings="//@ownedViewpoints[name='Behaviour%20Tree%20Viewpoint']/@ownedRepresentations[name='BTtreeSeqDiagramStandalone']/@defaultLayer/@edgeMappings[name='Basic%20message%20mapping%20FS2']" iconPath="/org.polarsys.capella.core.sirius.analysis/icons/full/obj16/AsyncSequenceMessage.gif">
             <sourceVariable name="source">
               <subVariables xsi:type="tool_1:AcceleoVariable" name="sourceIR" computationExpression="aql:if (self->filter(interaction::Execution)->size() > 0) then self.covered else self endif"/>
             </sourceVariable>
@@ -2270,7 +2270,7 @@
             <startingEndPredecessor name="messageEndBefore"/>
             <finishingEndPredecessor name="messageEndAfter"/>
           </ownedTools>
-          <ownedTools xsi:type="tool:MessageCreationTool" documentation="Creates a new Sequence Message invoking a  Functional Exchange without return branch between the Source and Target Lifelines. This tool opens a selection wizard to select an available existing Functional Exchange or to create a new one.&#xD;&#xA;" name="functional.exchange.failuretick" label="Failure tick" precondition="aql:preTarget.representedInstance.eContainer() == preSource.representedInstance or preTarget.representedInstance.eContainer() == preSource.covered.representedInstance" forceRefresh="true" edgeMappings="//@ownedViewpoints[name='Behaviour%20Tree%20Viewpoint']/@ownedRepresentations[name='BTtree%20Sequenece%20Diagram2']/@defaultLayer/@edgeMappings[name='Basic%20message%20mapping%20FS2']" iconPath="/org.polarsys.capella.core.sirius.analysis/icons/full/obj16/AsyncSequenceMessage.gif">
+          <ownedTools xsi:type="tool:MessageCreationTool" documentation="Creates a new Sequence Message invoking a  Functional Exchange without return branch between the Source and Target Lifelines. This tool opens a selection wizard to select an available existing Functional Exchange or to create a new one.&#xD;&#xA;" name="functional.exchange.failuretick" label="Failure tick" precondition="aql:preTarget.representedInstance.eContainer() == preSource.representedInstance or preTarget.representedInstance.eContainer() == preSource.covered.representedInstance" forceRefresh="true" edgeMappings="//@ownedViewpoints[name='Behaviour%20Tree%20Viewpoint']/@ownedRepresentations[name='BTtreeSeqDiagramStandalone']/@defaultLayer/@edgeMappings[name='Basic%20message%20mapping%20FS2']" iconPath="/org.polarsys.capella.core.sirius.analysis/icons/full/obj16/AsyncSequenceMessage.gif">
             <sourceVariable name="source">
               <subVariables xsi:type="tool_1:AcceleoVariable" name="sourceIR" computationExpression="aql:if (self->filter(interaction::Execution)->size() > 0) then self.covered else self endif"/>
             </sourceVariable>
@@ -2356,7 +2356,7 @@
             <startingEndPredecessor name="messageEndBefore"/>
             <finishingEndPredecessor name="messageEndAfter"/>
           </ownedTools>
-          <ownedTools xsi:type="tool:MessageCreationTool" documentation="Creates a new Sequence Message invoking a  Functional Exchange without return branch between the Source and Target Lifelines. This tool opens a selection wizard to select an available existing Functional Exchange or to create a new one.&#xD;&#xA;" name="functional.exchange.runningtick" label="Running tick" precondition="aql:preTarget.representedInstance.eContainer() == preSource.representedInstance or preTarget.representedInstance.eContainer() == preSource.covered.representedInstance" forceRefresh="true" edgeMappings="//@ownedViewpoints[name='Behaviour%20Tree%20Viewpoint']/@ownedRepresentations[name='BTtree%20Sequenece%20Diagram2']/@defaultLayer/@edgeMappings[name='Basic%20message%20mapping%20FS2']" iconPath="/org.polarsys.capella.core.sirius.analysis/icons/full/obj16/AsyncSequenceMessage.gif">
+          <ownedTools xsi:type="tool:MessageCreationTool" documentation="Creates a new Sequence Message invoking a  Functional Exchange without return branch between the Source and Target Lifelines. This tool opens a selection wizard to select an available existing Functional Exchange or to create a new one.&#xD;&#xA;" name="functional.exchange.runningtick" label="Running tick" precondition="aql:preTarget.representedInstance.eContainer() == preSource.representedInstance or preTarget.representedInstance.eContainer() == preSource.covered.representedInstance" forceRefresh="true" edgeMappings="//@ownedViewpoints[name='Behaviour%20Tree%20Viewpoint']/@ownedRepresentations[name='BTtreeSeqDiagramStandalone']/@defaultLayer/@edgeMappings[name='Basic%20message%20mapping%20FS2']" iconPath="/org.polarsys.capella.core.sirius.analysis/icons/full/obj16/AsyncSequenceMessage.gif">
             <sourceVariable name="source">
               <subVariables xsi:type="tool_1:AcceleoVariable" name="sourceIR" computationExpression="aql:if (self->filter(interaction::Execution)->size() > 0) then self.covered else self endif"/>
             </sourceVariable>
@@ -2442,7 +2442,7 @@
             <startingEndPredecessor name="messageEndBefore"/>
             <finishingEndPredecessor name="messageEndAfter"/>
           </ownedTools>
-          <ownedTools xsi:type="tool:MessageCreationTool" documentation="Creates a new Sequence Message invoking a  Functional Exchange without return branch between the Source and Target Lifelines. This tool opens a selection wizard to select an available existing Functional Exchange or to create a new one.&#xD;&#xA;" name="functional.exchange2" label="Data flow" forceRefresh="true" edgeMappings="//@ownedViewpoints[name='Behaviour%20Tree%20Viewpoint']/@ownedRepresentations[name='BTtree%20Sequenece%20Diagram2']/@defaultLayer/@edgeMappings[name='Basic%20message%20mapping%20FS2']" iconPath="/org.polarsys.capella.core.sirius.analysis/icons/full/obj16/AsyncSequenceMessage.gif">
+          <ownedTools xsi:type="tool:MessageCreationTool" documentation="Creates a new Sequence Message invoking a  Functional Exchange without return branch between the Source and Target Lifelines. This tool opens a selection wizard to select an available existing Functional Exchange or to create a new one.&#xD;&#xA;" name="functional.exchange2" label="Data flow" forceRefresh="true" edgeMappings="//@ownedViewpoints[name='Behaviour%20Tree%20Viewpoint']/@ownedRepresentations[name='BTtreeSeqDiagramStandalone']/@defaultLayer/@edgeMappings[name='Basic%20message%20mapping%20FS2']" iconPath="/org.polarsys.capella.core.sirius.analysis/icons/full/obj16/AsyncSequenceMessage.gif">
             <sourceVariable name="source">
               <subVariables xsi:type="tool_1:AcceleoVariable" name="sourceIR" computationExpression="aql:if (self->filter(interaction::Execution)->size() > 0) then self.covered else self endif"/>
             </sourceVariable>
@@ -2534,7 +2534,7 @@
             <startingEndPredecessor name="messageEndBefore"/>
             <finishingEndPredecessor name="messageEndAfter"/>
           </ownedTools>
-          <ownedTools xsi:type="tool_2:ContainerDropDescription" name="BTreeElementDragDropId" mappings="//@ownedViewpoints[name='Behaviour%20Tree%20Viewpoint']/@ownedRepresentations[name='BTtree%20Sequenece%20Diagram2']/@defaultLayer/@nodeMappings[name='Instancerole%20Mapping%20FS3']" dragSource="PROJECT_EXPLORER">
+          <ownedTools xsi:type="tool_2:ContainerDropDescription" name="BTreeElementDragDropId" mappings="//@ownedViewpoints[name='Behaviour%20Tree%20Viewpoint']/@ownedRepresentations[name='BTtreeSeqDiagramStandalone']/@defaultLayer/@nodeMappings[name='Instancerole%20Mapping%20FS3']" dragSource="PROJECT_EXPLORER">
             <oldContainer name="oldSemanticContainer"/>
             <newContainer name="newSemanticContainer"/>
             <element name="element"/>

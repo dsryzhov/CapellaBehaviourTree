@@ -7,7 +7,7 @@
     <details key="useUUIDs" value="true"/>
     <details key="useIDAttributes" value="false"/>
   </eAnnotations>
-  <eClassifiers xsi:type="ecore:EClass" name="BTreeElement" abstract="true" eSuperTypes="platform:/plugin/org.polarsys.capella.core.data.gen/model/Information.ecore#//AbstractInstance"/>
+  <eClassifiers xsi:type="ecore:EClass" name="BTreeElement" abstract="true" eSuperTypes="platform:/plugin/org.polarsys.capella.core.data.gen/model/CapellaCore.ecore#//NamedElement"/>
   <eClassifiers xsi:type="ecore:EClass" name="BTreeNode" abstract="true" eSuperTypes="#//BTreeElement"/>
   <eClassifiers xsi:type="ecore:EClass" name="BTreeContainer" abstract="true" eSuperTypes="#//BTreeNode">
     <eStructuralFeatures xsi:type="ecore:EReference" name="ownedNodes" upperBound="-1"
@@ -34,8 +34,7 @@
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="BTreeInclude" eSuperTypes="#//BTreeNode">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="btreeReference" lowerBound="1"
-        eType="#//BTreeRoot"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="btreeReference" eType="#//BTreeRoot"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Action" eSuperTypes="#//BTreeLeaf"/>
   <eClassifiers xsi:type="ecore:EClass" name="Condition" eSuperTypes="#//BTreeLeaf"/>
@@ -50,9 +49,4 @@
   <eClassifiers xsi:type="ecore:EClass" name="ForceFailure" eSuperTypes="#//BTreeDecorator"/>
   <eClassifiers xsi:type="ecore:EClass" name="Repeat" eSuperTypes="#//BTreeDecorator"/>
   <eClassifiers xsi:type="ecore:EClass" name="Retry" eSuperTypes="#//BTreeDecorator"/>
-  <eClassifiers xsi:type="ecore:EEnum" name="TickResult">
-    <eLiterals name="SUCCESS" literal="SUCCESS"/>
-    <eLiterals name="FAILURE" value="1" literal="FAILURE"/>
-    <eLiterals name="RUNNING" value="2" literal="RUNNING"/>
-  </eClassifiers>
 </ecore:EPackage>

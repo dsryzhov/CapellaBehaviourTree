@@ -232,13 +232,6 @@ public class BehaviourTreePackageImpl extends EPackageImpl implements BehaviourT
 	private EClass retryEClass = null;
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EEnum tickResultEEnum = null;
-
-	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
 	 * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
 	 * package URI value.
@@ -598,16 +591,6 @@ public class BehaviourTreePackageImpl extends EPackageImpl implements BehaviourT
 	 * @generated
 	 */
 	@Override
-	public EEnum getTickResult() {
-		return tickResultEEnum;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public BehaviourTreeFactory getBehaviourTreeFactory() {
 		return (BehaviourTreeFactory) getEFactoryInstance();
 	}
@@ -680,9 +663,6 @@ public class BehaviourTreePackageImpl extends EPackageImpl implements BehaviourT
 		repeatEClass = createEClass(REPEAT);
 
 		retryEClass = createEClass(RETRY);
-
-		// Create enums
-		tickResultEEnum = createEEnum(TICK_RESULT);
 	}
 
 	/**
@@ -710,8 +690,8 @@ public class BehaviourTreePackageImpl extends EPackageImpl implements BehaviourT
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
-		InformationPackage theInformationPackage = (InformationPackage) EPackage.Registry.INSTANCE
-				.getEPackage(InformationPackage.eNS_URI);
+		CapellacorePackage theCapellacorePackage = (CapellacorePackage) EPackage.Registry.INSTANCE
+				.getEPackage(CapellacorePackage.eNS_URI);
 		FaPackage theFaPackage = (FaPackage) EPackage.Registry.INSTANCE.getEPackage(FaPackage.eNS_URI);
 		EmdePackage theEmdePackage = (EmdePackage) EPackage.Registry.INSTANCE.getEPackage(EmdePackage.eNS_URI);
 
@@ -720,7 +700,7 @@ public class BehaviourTreePackageImpl extends EPackageImpl implements BehaviourT
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		bTreeElementEClass.getESuperTypes().add(theInformationPackage.getAbstractInstance());
+		bTreeElementEClass.getESuperTypes().add(theCapellacorePackage.getNamedElement());
 		bTreeNodeEClass.getESuperTypes().add(this.getBTreeElement());
 		bTreeContainerEClass.getESuperTypes().add(this.getBTreeNode());
 		bTreeLeafEClass.getESuperTypes().add(this.getBTreeNode());
@@ -783,7 +763,7 @@ public class BehaviourTreePackageImpl extends EPackageImpl implements BehaviourT
 
 		initEClass(bTreeIncludeEClass, BTreeInclude.class, "BTreeInclude", !IS_ABSTRACT, !IS_INTERFACE, //$NON-NLS-1$
 				IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getBTreeInclude_BtreeReference(), this.getBTreeRoot(), null, "btreeReference", null, 1, 1, //$NON-NLS-1$
+		initEReference(getBTreeInclude_BtreeReference(), this.getBTreeRoot(), null, "btreeReference", null, 0, 1, //$NON-NLS-1$
 				BTreeInclude.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -822,12 +802,6 @@ public class BehaviourTreePackageImpl extends EPackageImpl implements BehaviourT
 		initEClass(repeatEClass, Repeat.class, "Repeat", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
 
 		initEClass(retryEClass, Retry.class, "Retry", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
-
-		// Initialize enums and add enum literals
-		initEEnum(tickResultEEnum, TickResult.class, "TickResult"); //$NON-NLS-1$
-		addEEnumLiteral(tickResultEEnum, TickResult.SUCCESS);
-		addEEnumLiteral(tickResultEEnum, TickResult.FAILURE);
-		addEEnumLiteral(tickResultEEnum, TickResult.RUNNING);
 
 		// Create resource
 		createResource(eNS_URI);

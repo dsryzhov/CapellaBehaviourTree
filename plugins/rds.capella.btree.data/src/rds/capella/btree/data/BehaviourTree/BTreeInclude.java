@@ -28,7 +28,7 @@ public interface BTreeInclude extends BTreeNode {
 	 * @return the value of the '<em>Btree Reference</em>' reference.
 	 * @see #setBtreeReference(BTreeRoot)
 	 * @see rds.capella.btree.data.BehaviourTree.BehaviourTreePackage#getBTreeInclude_BtreeReference()
-	 * @model required="true"
+	 * @model
 	 * @generated
 	 */
 

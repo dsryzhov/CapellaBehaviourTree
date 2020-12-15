@@ -15,6 +15,6 @@ import org.polarsys.capella.core.data.capellacore.NamedElement;
  * @generated
  */
 
-public interface BTreeElement extends AbstractInstance {
+public interface BTreeElement extends NamedElement {
 
 } // BTreeElement
