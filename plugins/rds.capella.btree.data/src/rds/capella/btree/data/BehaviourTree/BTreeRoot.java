@@ -16,7 +16,7 @@ import org.polarsys.kitalpha.emde.model.ElementExtension;
  * </ul>
  *
  * @see rds.capella.btree.data.BehaviourTree.BehaviourTreePackage#getBTreeRoot()
- * @model annotation="http://www.polarsys.org/kitalpha/emde/1.0.0/constraint ExtendedElement='http://www.polarsys.org/capella/core/interaction/1.4.0#//AbstractCapability http://www.polarsys.org/capella/core/cs/1.4.0#//Component http://www.polarsys.org/capella/core/fa/1.4.0#//AbstractFunction'"
+ * @model annotation="http://www.polarsys.org/kitalpha/emde/1.0.0/constraint ExtendedElement='http://www.polarsys.org/capella/core/interaction/5.0.0#//AbstractCapability http://www.polarsys.org/capella/core/cs/5.0.0#//Component http://www.polarsys.org/capella/core/fa/5.0.0#//AbstractFunction'"
  *        annotation="http://www.polarsys.org/kitalpha/emde/1.0.0/constraintMapping Mapping='platform:/plugin/org.polarsys.capella.core.data.gen/model/Interaction.ecore#//AbstractCapability platform:/plugin/org.polarsys.capella.core.data.gen/model/CompositeStructure.ecore#//Component platform:/plugin/org.polarsys.capella.core.data.gen/model/FunctionalAnalysis.ecore#//AbstractFunction'"
  * @generated
  */

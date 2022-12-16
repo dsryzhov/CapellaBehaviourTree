@@ -839,7 +839,7 @@ public class BehaviourTreePackageImpl extends EPackageImpl implements BehaviourT
 	protected void createConstraintAnnotations() {
 		String source = "http://www.polarsys.org/kitalpha/emde/1.0.0/constraint"; //$NON-NLS-1$
 		addAnnotation(bTreeRootEClass, source, new String[] { "ExtendedElement", //$NON-NLS-1$
-				"http://www.polarsys.org/capella/core/interaction/1.4.0#//AbstractCapability http://www.polarsys.org/capella/core/cs/1.4.0#//Component http://www.polarsys.org/capella/core/fa/1.4.0#//AbstractFunction" //$NON-NLS-1$
+				"http://www.polarsys.org/capella/core/interaction/5.0.0#//AbstractCapability http://www.polarsys.org/capella/core/cs/5.0.0#//Component http://www.polarsys.org/capella/core/fa/5.0.0#//AbstractFunction" //$NON-NLS-1$
 		});
 	}
 
