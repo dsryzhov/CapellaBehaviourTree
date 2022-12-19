@@ -1664,7 +1664,7 @@
             </initialOperation>
             <edgeView name="edgeView"/>
           </ownedTools>
-          <ownedTools xsi:type="tool_2:ContainerDropDescription" name="DropFunctionToContainer" precondition="aql:self.eClass().name = 'LogicalFunction'" mappings="//@ownedViewpoints[name='Behaviour%20Tree%20Viewpoint']/@ownedRepresentations[name='BTreeDefinitionStandalone']/@defaultLayer/@nodeMappings[name='BTreeLeaf']" dragSource="PROJECT_EXPLORER">
+          <ownedTools xsi:type="tool_2:ContainerDropDescription" name="DropFunctionToContainer" precondition="aql:self.oclIsKindOf(fa::AbstractFunction)" mappings="//@ownedViewpoints[name='Behaviour%20Tree%20Viewpoint']/@ownedRepresentations[name='BTreeDefinitionStandalone']/@defaultLayer/@nodeMappings[name='BTreeLeaf']" dragSource="PROJECT_EXPLORER">
             <oldContainer name="oldSemanticContainer"/>
             <newContainer name="newSemanticContainer"/>
             <element name="element"/>

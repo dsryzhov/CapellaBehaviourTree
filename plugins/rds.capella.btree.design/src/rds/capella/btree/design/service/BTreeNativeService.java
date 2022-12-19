@@ -24,11 +24,18 @@ import org.polarsys.capella.core.data.capellacore.CapellaElement;
 import org.polarsys.capella.core.data.capellacore.NamedElement;
 import org.polarsys.capella.core.data.capellamodeller.SystemEngineering;
 import org.polarsys.capella.core.data.cs.ComponentArchitecture;
+import org.polarsys.capella.core.data.cs.CsFactory;
+import org.polarsys.capella.core.data.ctx.CtxFactory;
+import org.polarsys.capella.core.data.ctx.SystemFunction;
+import org.polarsys.capella.core.data.ctx.SystemFunctionPkg;
 import org.polarsys.capella.core.data.fa.AbstractFunction;
 import org.polarsys.capella.core.data.fa.FunctionPkg;
 import org.polarsys.capella.core.data.la.LaFactory;
 import org.polarsys.capella.core.data.la.LogicalFunction;
 import org.polarsys.capella.core.data.la.LogicalFunctionPkg;
+import org.polarsys.capella.core.data.pa.PaFactory;
+import org.polarsys.capella.core.data.pa.PhysicalFunction;
+import org.polarsys.capella.core.data.pa.PhysicalFunctionPkg;
 
 import rds.capella.btree.data.BehaviourTree.Action;
 import rds.capella.btree.data.BehaviourTree.BTreeContainer;
@@ -198,9 +205,17 @@ public class BTreeNativeService {
     		
     		FunctionPkg fnc_pkg = ca.getOwnedFunctionPkg();
     		
-    		if (fnc_pkg instanceof LogicalFunctionPkg) {
-    			root_fnc = ((LogicalFunctionPkg)fnc_pkg).getOwnedLogicalFunctions().get(0);
-    		}
+    		if (fnc_pkg instanceof SystemFunctionPkg) {
+    			root_fnc = ((SystemFunctionPkg)fnc_pkg).getOwnedSystemFunctions().get(0);
+    		} else
+	    		if (fnc_pkg instanceof LogicalFunctionPkg) {
+	    			root_fnc = ((LogicalFunctionPkg)fnc_pkg).getOwnedLogicalFunctions().get(0);
+	    		}
+	    		else
+		    		if (fnc_pkg instanceof PhysicalFunctionPkg) {
+		    			root_fnc = ((PhysicalFunctionPkg)fnc_pkg).getOwnedPhysicalFunctions().get(0);
+		    		}
+
     	} else 
     		if (parent.eContainer() instanceof AbstractFunction) {
     			root_fnc = (AbstractFunction) parent.eContainer();
@@ -212,18 +227,24 @@ public class BTreeNativeService {
     	
     	AbstractFunction root_fnc = findRootFunction(btree_action_node);
     	if (root_fnc != null) {
-    		if (root_fnc instanceof LogicalFunction) {
-    			LogicalFunction node_fnc = LaFactory.eINSTANCE.createLogicalFunction();
-    			node_fnc.setName(btree_action_node.getName());
-    			root_fnc.getOwnedFunctions().add(node_fnc);
-    			return node_fnc;
+    		AbstractFunction node_fnc = null;
+    		if (root_fnc instanceof SystemFunction) {
+    			node_fnc = CtxFactory.eINSTANCE.createSystemFunction();
     		}
+    		else
+	    		if (root_fnc instanceof LogicalFunction) {
+	    			node_fnc = LaFactory.eINSTANCE.createLogicalFunction();
+	    		}
+		    		if (root_fnc instanceof PhysicalFunction) {
+		    			node_fnc = PaFactory.eINSTANCE.createPhysicalFunction();
+		    		}
+    		
+		    if (node_fnc != null) { 
+				node_fnc.setName(btree_action_node.getName());
+				root_fnc.getOwnedFunctions().add(node_fnc);
+				return node_fnc;
+		    }
     	}
-    	
     	return null;
     }
-    
-    
-
-
 }
