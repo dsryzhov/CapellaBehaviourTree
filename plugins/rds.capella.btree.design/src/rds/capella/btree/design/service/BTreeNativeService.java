@@ -65,8 +65,10 @@ public class BTreeNativeService {
 			((BTreeContainer)target).getOwnedNodes().add(element);
 		} else
 			if (source instanceof BTreeContainer && target instanceof BTreeDecorator) {
-				((BTreeContainer)source).getOwnedNodes().remove(element);
-				((BTreeDecorator)target).setOwnedNode(element);
+				if (((BTreeDecorator)target).getOwnedNode() == null) {
+					((BTreeContainer)source).getOwnedNodes().remove(element);
+					((BTreeDecorator)target).setOwnedNode(element);
+				}
 			} else
 				if (source instanceof BTreeDecorator && target instanceof BTreeContainer) {
 					((BTreeDecorator)source).setOwnedNode(null);

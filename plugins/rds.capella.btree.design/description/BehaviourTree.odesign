@@ -1448,15 +1448,17 @@
             </style>
           </conditionnalStyles>
         </nodeMappings>
-        <nodeMappings name="BTreeInclude" detailDescriptions="//@ownedViewpoints[name='Behaviour%20Tree%20Viewpoint']/@ownedRepresentations[name='BTreeDefinitionStandalone']/@defaultLayer/@toolSections.0/@ownedTools[name='btree.create.diagram']" navigationDescriptions="//@ownedViewpoints[name='Behaviour%20Tree%20Viewpoint']/@ownedRepresentations[name='BTreeDefinitionStandalone']/@defaultLayer/@toolSections.0/@ownedTools[name='BTreeDiagramNavigate']" semanticCandidatesExpression="aql:self.eAllContents()" domainClass="BTreeInclude" dropDescriptions="//@ownedViewpoints[name='Behaviour%20Tree%20Viewpoint']/@ownedRepresentations[name='BTreeDefinitionStandalone']/@defaultLayer/@toolSections.0/@ownedTools[name='DropFunctionToAction'] //@ownedViewpoints[name='Behaviour%20Tree%20Viewpoint']/@ownedRepresentations[name='BTreeDefinitionStandalone']/@defaultLayer/@toolSections.0/@ownedTools[name='DropBTreeToContainer']">
-          <style xsi:type="style:SquareDescription" borderLineStyle="dash" labelExpression="aql:self.eContainer().ownedNodes->indexOf(self).toString().concat('. ').concat(self.name)" iconPath="/rds.capella.btree.design/icons/full/obj16/BTree.gif" labelAlignment="LEFT" labelPosition="node" resizeKind="NSEW" width="14" height="5">
-            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
-          </style>
+        <nodeMappings name="BTreeInclude" detailDescriptions="//@ownedViewpoints[name='Behaviour%20Tree%20Viewpoint']/@ownedRepresentations[name='BTreeDefinitionStandalone']/@defaultLayer/@toolSections.0/@ownedTools[name='btree.create.diagram']" navigationDescriptions="//@ownedViewpoints[name='Behaviour%20Tree%20Viewpoint']/@ownedRepresentations[name='BTreeDefinitionStandalone']/@defaultLayer/@toolSections.0/@ownedTools[name='BTreeDiagramNavigate']" labelDirectEdit="//@ownedViewpoints[name='Behaviour%20Tree%20Viewpoint']/@ownedRepresentations[name='BTreeDefinitionStandalone']/@defaultLayer/@toolSections.0/@ownedTools[name='renameBTreeInclude']" semanticCandidatesExpression="aql:self.eAllContents()" domainClass="BTreeInclude" dropDescriptions="//@ownedViewpoints[name='Behaviour%20Tree%20Viewpoint']/@ownedRepresentations[name='BTreeDefinitionStandalone']/@defaultLayer/@toolSections.0/@ownedTools[name='DropFunctionToAction'] //@ownedViewpoints[name='Behaviour%20Tree%20Viewpoint']/@ownedRepresentations[name='BTreeDefinitionStandalone']/@defaultLayer/@toolSections.0/@ownedTools[name='DropBTreeToContainer']">
           <conditionnalStyles predicateExpression="aql:self.btreeReference = null">
-            <style xsi:type="style:SquareDescription" labelExpression="aql:self.eContainer().ownedNodes->indexOf(self).toString().concat('. ').concat(self.name)" iconPath="/rds.capella.btree.design/icons/full/obj16/BTree.gif" labelAlignment="LEFT" labelPosition="node" resizeKind="NSEW" width="10" height="5">
+            <style xsi:type="style:SquareDescription" labelExpression="aql:self.eContainer().ownedNodes->indexOf(self).toString().concat('. ').concat('Ссылка не определена')" iconPath="/rds.capella.btree.design/icons/full/obj16/BTree.gif" labelAlignment="LEFT" labelPosition="node" resizeKind="NSEW" width="10" height="5">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='red']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+            </style>
+          </conditionnalStyles>
+          <conditionnalStyles predicateExpression="aql:not(self.btreeReference = null)">
+            <style xsi:type="style:SquareDescription" borderLineStyle="dash" labelExpression="aql:self.eContainer().ownedNodes->indexOf(self).toString().concat('. ').concat(self.btreeReference.name)" iconPath="/rds.capella.btree.design/icons/full/obj16/BTree.gif" labelAlignment="LEFT" labelPosition="node" resizeKind="NSEW" width="14" height="5">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
             </style>
@@ -1967,6 +1969,17 @@
             <initialOperation/>
             <containerViewVariable name="containerView"/>
             <representationNameVariable name="diagramName"/>
+          </ownedTools>
+          <ownedTools xsi:type="tool_2:DirectEditLabel" name="renameBTreeInclude" precondition="aql:self.oclIsKindOf(BehaviourTree::BTreeInclude)" inputLabelExpression="aql:self.btreeReference.name">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:arg0"/>
+                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self.btreeReference">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:arg0"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
           </ownedTools>
         </toolSections>
       </defaultLayer>
