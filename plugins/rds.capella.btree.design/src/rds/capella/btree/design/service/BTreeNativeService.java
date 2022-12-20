@@ -2,6 +2,8 @@ package rds.capella.btree.design.service;
 
 
 import java.util.Map;
+
+import org.eclipse.draw2d.geometry.Dimension;
 import org.eclipse.draw2d.geometry.Point;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
@@ -39,6 +41,7 @@ import org.polarsys.capella.core.data.pa.PhysicalFunctionPkg;
 
 import rds.capella.btree.data.BehaviourTree.Action;
 import rds.capella.btree.data.BehaviourTree.BTreeContainer;
+import rds.capella.btree.data.BehaviourTree.BTreeDecorator;
 import rds.capella.btree.data.BehaviourTree.BTreeElement;
 import rds.capella.btree.data.BehaviourTree.BTreeLeaf;
 import rds.capella.btree.data.BehaviourTree.BTreeNode;
@@ -60,8 +63,15 @@ public class BTreeNativeService {
 		if (source instanceof BTreeContainer && target instanceof BTreeContainer) {
 			((BTreeContainer)source).getOwnedNodes().remove(element);
 			((BTreeContainer)target).getOwnedNodes().add(element);
-		}
-		
+		} else
+			if (source instanceof BTreeContainer && target instanceof BTreeDecorator) {
+				((BTreeContainer)source).getOwnedNodes().remove(element);
+				((BTreeDecorator)target).setOwnedNode(element);
+			} else
+				if (source instanceof BTreeDecorator && target instanceof BTreeContainer) {
+					((BTreeDecorator)source).setOwnedNode(null);
+					((BTreeContainer)target).getOwnedNodes().add(element);
+				} 
 	}
 	
 	public boolean checkBTreeNodeRelationExist(BTreeElement parent, BTreeElement child) {
@@ -90,8 +100,10 @@ public class BTreeNativeService {
 		    ShapeEditPart part = (ShapeEditPart)editPart;
 		    
 			Point pos = part.getLocation();
+			Dimension dim = new Dimension(part.getSize());
+
+			BTreeNode last_sub_node = findLastSubNodeReqursive(element);
 			
-			BTreeNode last_sub_node = findLastSubFunction(element);			
 			if (last_sub_node != null) {
 				
 				  DNode last_sub_fnc_node = findElementDNode(parentView.getParentDiagram(), last_sub_node);
@@ -107,24 +119,64 @@ public class BTreeNativeService {
 						  //pos.x = last_sub_fnc_pos.x + part.getSize().width + 30;
 						  
 						  pos.y = last_sub_fnc_pos.y + part.getSize().height + 20;
-						  pos.x = pos.x + 20;//part.getSize().width+0;
-					  
+						  //pos.x = pos.x + 20;//part.getSize().width+0;
 					  }
 				  }
 				  
 			  } else {
 				  //pos.y += 80;
-				  pos.x += 20;//part.getSize().width+0;
+				  //pos.x += 20;//part.getSize().width+0;
 			  }
+
+			BTreeNode last_sub_node_1level = findLastSubNodeOneLevel(element);
+			if (last_sub_node_1level != null) {
+				DNode last_sub_fnc_node = findElementDNode(parentView.getParentDiagram(), last_sub_node_1level);
+				  if (last_sub_fnc_node != null) {
+					  IGraphicalEditPart last_sub_fnc_editPart = getEditPart(last_sub_fnc_node);
+					  
+					  if (last_sub_fnc_editPart instanceof ShapeEditPart) {
+						  
+						  ShapeEditPart last_sub_fnc_part = (ShapeEditPart)last_sub_fnc_editPart;
+						  Point last_sub_fnc_pos =  last_sub_fnc_part.getLocation();
+						  pos.x = last_sub_fnc_pos.x;// + part.getSize().width + 20+20;
+						  dim.setSize(last_sub_fnc_part.getSize());
+					  }
+				  }
+				
+			} else pos.x += part.getSize().width+20+20;
 			
-			pos.x += part.getSize().width+20;
-		    SiriusLayoutDataManager.INSTANCE.addData((AbstractLayoutData)new RootLayoutData(parentView.eContainer(), pos, part.getSize()));
+			
+			//pos.x += part.getSize().width+20;
+		    SiriusLayoutDataManager.INSTANCE.addData((AbstractLayoutData)new RootLayoutData(parentView.eContainer(), pos, dim));
 		  }
 		  
 		  
 	}
+
+	private BTreeNode findLastSubNodeOneLevel(BTreeElement element) {
+		
+		BTreeNode last_sub_node = null; 
+		
+		if (element instanceof BTreeRoot) 
+			last_sub_node = ((BTreeRoot)element).getOwnedBTreeContainer();
+		else {
+			if (element instanceof BTreeContainer) {
+						
+				int child_count = ((BTreeContainer)element).getOwnedNodes().size();
+				if (child_count > 0) {
+					 last_sub_node = ((BTreeContainer)element).getOwnedNodes().get(child_count-1);
+				} 
+			} else 
+			  if (element instanceof BTreeLeaf) {
+				  return (BTreeNode) element;
+				  
+			  }
+		}
+		return last_sub_node;
+	}
 	
-	private BTreeNode findLastSubFunction(BTreeElement element) {
+	
+	private BTreeNode findLastSubNodeReqursive(BTreeElement element) {
 		
 		BTreeNode last_sub_node = null; 
 		
@@ -137,7 +189,7 @@ public class BTreeNativeService {
 				if (child_count > 0) {
 					 last_sub_node = ((BTreeContainer)element).getOwnedNodes().get(child_count-1);
 					 
-					 BTreeNode child_last_sub_node = findLastSubFunction((BTreeElement)last_sub_node);
+					 BTreeNode child_last_sub_node = findLastSubNodeReqursive((BTreeElement)last_sub_node);
 					 if (child_last_sub_node != null) last_sub_node =  child_last_sub_node;
 					
 				} 
