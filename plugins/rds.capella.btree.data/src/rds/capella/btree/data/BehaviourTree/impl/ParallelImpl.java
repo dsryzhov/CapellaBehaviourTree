@@ -20,9 +20,7 @@ public class ParallelImpl extends BTreeContainerImpl implements Parallel {
 	 * @generated
 	 */
 	protected ParallelImpl() {
-
 		super();
-
 	}
 
 	/**

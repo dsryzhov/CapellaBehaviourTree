@@ -20,9 +20,7 @@ public class ActionImpl extends BTreeLeafImpl implements Action {
 	 * @generated
 	 */
 	protected ActionImpl() {
-
 		super();
-
 	}
 
 	/**

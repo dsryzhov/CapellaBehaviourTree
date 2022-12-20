@@ -20,9 +20,7 @@ public class ReactiveSequenceImpl extends BTreeSequenceImpl implements ReactiveS
 	 * @generated
 	 */
 	protected ReactiveSequenceImpl() {
-
 		super();
-
 	}
 
 	/**

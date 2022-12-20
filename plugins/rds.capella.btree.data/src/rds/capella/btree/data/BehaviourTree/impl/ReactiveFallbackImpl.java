@@ -20,9 +20,7 @@ public class ReactiveFallbackImpl extends BTreeFallbackImpl implements ReactiveF
 	 * @generated
 	 */
 	protected ReactiveFallbackImpl() {
-
 		super();
-
 	}
 
 	/**

@@ -41,9 +41,7 @@ public abstract class BTreeDecoratorImpl extends BTreeNodeImpl implements BTreeD
 	 * @generated
 	 */
 	protected BTreeDecoratorImpl() {
-
 		super();
-
 	}
 
 	/**
@@ -64,7 +62,6 @@ public abstract class BTreeDecoratorImpl extends BTreeNodeImpl implements BTreeD
 
 	@Override
 	public BTreeNode getOwnedNode() {
-
 		return ownedNode;
 	}
 
@@ -75,7 +72,6 @@ public abstract class BTreeDecoratorImpl extends BTreeNodeImpl implements BTreeD
 	 */
 
 	public NotificationChain basicSetOwnedNode(BTreeNode newOwnedNode, NotificationChain msgs) {
-
 		BTreeNode oldOwnedNode = ownedNode;
 		ownedNode = newOwnedNode;
 		if (eNotificationRequired()) {
@@ -86,7 +82,6 @@ public abstract class BTreeDecoratorImpl extends BTreeNodeImpl implements BTreeD
 			else
 				msgs.add(notification);
 		}
-
 		return msgs;
 	}
 
@@ -98,7 +93,6 @@ public abstract class BTreeDecoratorImpl extends BTreeNodeImpl implements BTreeD
 
 	@Override
 	public void setOwnedNode(BTreeNode newOwnedNode) {
-
 		if (newOwnedNode != ownedNode) {
 			NotificationChain msgs = null;
 			if (ownedNode != null)
@@ -113,7 +107,6 @@ public abstract class BTreeDecoratorImpl extends BTreeNodeImpl implements BTreeD
 		} else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, BehaviourTreePackage.BTREE_DECORATOR__OWNED_NODE,
 					newOwnedNode, newOwnedNode));
-
 	}
 
 	/**

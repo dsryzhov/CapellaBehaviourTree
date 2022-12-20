@@ -14,12 +14,19 @@
     <genClasses image="false" ecoreClass="../../rds.capella.btree/models/BehaviourTree.ecore#//BTreeContainer">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ../../rds.capella.btree/models/BehaviourTree.ecore#//BTreeContainer/ownedNodes"/>
     </genClasses>
-    <genClasses image="false" ecoreClass="../../rds.capella.btree/models/BehaviourTree.ecore#//BTreeLeaf"/>
-    <genClasses image="false" ecoreClass="../../rds.capella.btree/models/BehaviourTree.ecore#//BTreeDecorator"/>
+    <genClasses image="false" ecoreClass="../../rds.capella.btree/models/BehaviourTree.ecore#//BTreeLeaf">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ../../rds.capella.btree/models/BehaviourTree.ecore#//BTreeLeaf/function"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="../../rds.capella.btree/models/BehaviourTree.ecore#//BTreeDecorator">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ../../rds.capella.btree/models/BehaviourTree.ecore#//BTreeDecorator/ownedNode"/>
+    </genClasses>
     <genClasses image="false" ecoreClass="../../rds.capella.btree/models/BehaviourTree.ecore#//BTreeSequence"/>
     <genClasses image="false" ecoreClass="../../rds.capella.btree/models/BehaviourTree.ecore#//BTreeFallback"/>
     <genClasses ecoreClass="../../rds.capella.btree/models/BehaviourTree.ecore#//BTreeRoot">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ../../rds.capella.btree/models/BehaviourTree.ecore#//BTreeRoot/ownedBTreeContainer"/>
+    </genClasses>
+    <genClasses ecoreClass="../../rds.capella.btree/models/BehaviourTree.ecore#//BTreeInclude">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ../../rds.capella.btree/models/BehaviourTree.ecore#//BTreeInclude/btreeReference"/>
     </genClasses>
     <genClasses ecoreClass="../../rds.capella.btree/models/BehaviourTree.ecore#//Action"/>
     <genClasses ecoreClass="../../rds.capella.btree/models/BehaviourTree.ecore#//Condition"/>

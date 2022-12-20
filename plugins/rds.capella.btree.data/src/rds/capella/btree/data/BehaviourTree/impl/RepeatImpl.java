@@ -20,9 +20,7 @@ public class RepeatImpl extends BTreeDecoratorImpl implements Repeat {
 	 * @generated
 	 */
 	protected RepeatImpl() {
-
 		super();
-
 	}
 
 	/**

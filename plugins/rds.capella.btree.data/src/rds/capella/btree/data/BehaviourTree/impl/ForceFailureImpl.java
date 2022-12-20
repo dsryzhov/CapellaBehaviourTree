@@ -20,9 +20,7 @@ public class ForceFailureImpl extends BTreeDecoratorImpl implements ForceFailure
 	 * @generated
 	 */
 	protected ForceFailureImpl() {
-
 		super();
-
 	}
 
 	/**

@@ -22,7 +22,6 @@ public interface BTreeInclude extends BTreeNode {
 
 	/**
 	 * Returns the value of the '<em><b>Btree Reference</b></em>' reference.
-	
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Btree Reference</em>' reference.
@@ -36,7 +35,6 @@ public interface BTreeInclude extends BTreeNode {
 
 	/**
 	 * Sets the value of the '{@link rds.capella.btree.data.BehaviourTree.BTreeInclude#getBtreeReference <em>Btree Reference</em>}' reference.
-	
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Btree Reference</em>' reference.

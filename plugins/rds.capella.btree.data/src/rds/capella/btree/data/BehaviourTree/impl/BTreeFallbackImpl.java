@@ -20,9 +20,7 @@ public abstract class BTreeFallbackImpl extends BTreeContainerImpl implements BT
 	 * @generated
 	 */
 	protected BTreeFallbackImpl() {
-
 		super();
-
 	}
 
 	/**

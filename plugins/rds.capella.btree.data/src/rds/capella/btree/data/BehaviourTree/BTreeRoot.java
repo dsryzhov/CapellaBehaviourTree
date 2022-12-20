@@ -25,28 +25,25 @@ public interface BTreeRoot extends ElementExtension, BTreeElement {
 
 	/**
 	 * Returns the value of the '<em><b>Owned BTree Container</b></em>' containment reference.
-	
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Owned BTree Container</em>' containment reference.
-	 * @see #setOwnedBTreeContainer(BTreeContainer)
+	 * @see #setOwnedBTreeContainer(BTreeNode)
 	 * @see rds.capella.btree.data.BehaviourTree.BehaviourTreePackage#getBTreeRoot_OwnedBTreeContainer()
 	 * @model containment="true"
 	 * @generated
 	 */
 
-	BTreeContainer getOwnedBTreeContainer();
+	BTreeNode getOwnedBTreeContainer();
 
 	/**
 	 * Sets the value of the '{@link rds.capella.btree.data.BehaviourTree.BTreeRoot#getOwnedBTreeContainer <em>Owned BTree Container</em>}' containment reference.
-	
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Owned BTree Container</em>' containment reference.
 	 * @see #getOwnedBTreeContainer()
 	 * @generated
 	 */
-
-	void setOwnedBTreeContainer(BTreeContainer value);
+	void setOwnedBTreeContainer(BTreeNode value);
 
 } // BTreeRoot

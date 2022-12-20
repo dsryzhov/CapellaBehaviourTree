@@ -20,9 +20,7 @@ public class RetryImpl extends BTreeDecoratorImpl implements Retry {
 	 * @generated
 	 */
 	protected RetryImpl() {
-
 		super();
-
 	}
 
 	/**

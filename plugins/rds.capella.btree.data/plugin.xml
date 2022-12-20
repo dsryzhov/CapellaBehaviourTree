@@ -7,16 +7,21 @@
 
    
 <!--@generated-->
-  <extension point="org.eclipse.emf.ecore.generated_package">
+   <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated BehaviourTree -->
-      <package class="rds.capella.btree.data.BehaviourTree.BehaviourTreePackage" genModel="models/BehaviourTree.genmodel" uri="http://rds/capella/btree/1.0"/>
+      <package
+            uri="http://rds/capella/btree/1.0"
+            class="rds.capella.btree.data.BehaviourTree.BehaviourTreePackage"
+            genModel="models/BehaviourTree.genmodel"/>
    </extension>
 
    
 <!--@generated-->
-  <extension point="org.eclipse.emf.ecore.extension_parser">
+   <extension point="org.eclipse.emf.ecore.extension_parser">
       <!-- @generated BehaviourTree -->
-      <parser class="rds.capella.btree.data.BehaviourTree.util.BehaviourTreeResourceFactoryImpl" type="behaviourtree"/>
+      <parser
+            type="behaviourtree"
+            class="rds.capella.btree.data.BehaviourTree.util.BehaviourTreeResourceFactoryImpl"/>
    </extension>
 
 

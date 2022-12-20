@@ -30,7 +30,7 @@
     <eAnnotations source="http://www.polarsys.org/kitalpha/emde/1.0.0/constraintMapping">
       <details key="Mapping" value="platform:/plugin/org.polarsys.capella.core.data.gen/model/Interaction.ecore#//AbstractCapability platform:/plugin/org.polarsys.capella.core.data.gen/model/CompositeStructure.ecore#//Component platform:/plugin/org.polarsys.capella.core.data.gen/model/FunctionalAnalysis.ecore#//AbstractFunction"/>
     </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="ownedBTreeContainer" eType="#//BTreeContainer"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ownedBTreeContainer" eType="#//BTreeNode"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="BTreeInclude" eSuperTypes="#//BTreeNode">

@@ -48,9 +48,7 @@ public abstract class BTreeContainerImpl extends BTreeNodeImpl implements BTreeC
 	 * @generated
 	 */
 	protected BTreeContainerImpl() {
-
 		super();
-
 	}
 
 	/**
@@ -71,7 +69,6 @@ public abstract class BTreeContainerImpl extends BTreeNodeImpl implements BTreeC
 
 	@Override
 	public EList<BTreeNode> getOwnedNodes() {
-
 		if (ownedNodes == null) {
 			ownedNodes = new EObjectContainmentEList<BTreeNode>(BTreeNode.class, this,
 					BehaviourTreePackage.BTREE_CONTAINER__OWNED_NODES);

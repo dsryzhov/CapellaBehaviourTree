@@ -40,9 +40,7 @@ public abstract class BTreeLeafImpl extends BTreeNodeImpl implements BTreeLeaf {
 	 * @generated
 	 */
 	protected BTreeLeafImpl() {
-
 		super();
-
 	}
 
 	/**
@@ -63,7 +61,6 @@ public abstract class BTreeLeafImpl extends BTreeNodeImpl implements BTreeLeaf {
 
 	@Override
 	public AbstractFunction getFunction() {
-
 		if (function != null && function.eIsProxy()) {
 			InternalEObject oldFunction = (InternalEObject) function;
 			function = (AbstractFunction) eResolveProxy(oldFunction);
@@ -83,7 +80,6 @@ public abstract class BTreeLeafImpl extends BTreeNodeImpl implements BTreeLeaf {
 	 */
 
 	public AbstractFunction basicGetFunction() {
-
 		return function;
 	}
 
@@ -95,13 +91,11 @@ public abstract class BTreeLeafImpl extends BTreeNodeImpl implements BTreeLeaf {
 
 	@Override
 	public void setFunction(AbstractFunction newFunction) {
-
 		AbstractFunction oldFunction = function;
 		function = newFunction;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, BehaviourTreePackage.BTREE_LEAF__FUNCTION,
 					oldFunction, function));
-
 	}
 
 	/**

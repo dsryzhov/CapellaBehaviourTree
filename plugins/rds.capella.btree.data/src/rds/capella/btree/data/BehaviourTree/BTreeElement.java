@@ -1,7 +1,6 @@
 
 package rds.capella.btree.data.BehaviourTree;
 
-import org.polarsys.capella.core.data.information.AbstractInstance;
 import org.polarsys.capella.core.data.capellacore.NamedElement;
 
 /**

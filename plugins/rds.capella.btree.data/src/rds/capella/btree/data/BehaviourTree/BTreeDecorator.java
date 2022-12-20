@@ -22,7 +22,6 @@ public interface BTreeDecorator extends BTreeNode {
 
 	/**
 	 * Returns the value of the '<em><b>Owned Node</b></em>' containment reference.
-	
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Owned Node</em>' containment reference.
@@ -36,7 +35,6 @@ public interface BTreeDecorator extends BTreeNode {
 
 	/**
 	 * Sets the value of the '{@link rds.capella.btree.data.BehaviourTree.BTreeDecorator#getOwnedNode <em>Owned Node</em>}' containment reference.
-	
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Owned Node</em>' containment reference.

@@ -20,9 +20,7 @@ public class ConditionImpl extends BTreeLeafImpl implements Condition {
 	 * @generated
 	 */
 	protected ConditionImpl() {
-
 		super();
-
 	}
 
 	/**

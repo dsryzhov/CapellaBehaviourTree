@@ -25,7 +25,6 @@ public interface BTreeContainer extends BTreeNode {
 	/**
 	 * Returns the value of the '<em><b>Owned Nodes</b></em>' containment reference list.
 	 * The list contents are of type {@link rds.capella.btree.data.BehaviourTree.BTreeNode}.
-	
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Owned Nodes</em>' containment reference list.

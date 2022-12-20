@@ -8,17 +8,8 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EStructuralFeature;
-import org.eclipse.emf.edit.command.CommandParameter;
-import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
-import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.IItemPropertySource;
-import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
-import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
-
 import org.eclipse.emf.edit.provider.ViewerNotification;
-import org.polarsys.capella.core.data.information.InformationPackage;
-import org.polarsys.kitalpha.emde.model.edit.provider.NewChildDescriptorHelper;
 import rds.capella.btree.data.BehaviourTree.BTreeDecorator;
 import rds.capella.btree.data.BehaviourTree.BehaviourTreeFactory;
 import rds.capella.btree.data.BehaviourTree.BehaviourTreePackage;
@@ -29,8 +20,7 @@ import rds.capella.btree.data.BehaviourTree.BehaviourTreePackage;
  * <!-- end-user-doc -->
  * @generated
  */
-public class BTreeDecoratorItemProvider extends BTreeNodeItemProvider implements IEditingDomainItemProvider,
-		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+public class BTreeDecoratorItemProvider extends BTreeNodeItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -53,9 +43,6 @@ public class BTreeDecoratorItemProvider extends BTreeNodeItemProvider implements
 			super.getPropertyDescriptors(object);
 
 		}
-		// begin-extension-code
-		checkChildCreationExtender(object);
-		// end-extension-code
 		return itemPropertyDescriptors;
 	}
 
@@ -97,11 +84,9 @@ public class BTreeDecoratorItemProvider extends BTreeNodeItemProvider implements
 	 */
 	@Override
 	public String getText(Object object) {
-
 		String label = ((BTreeDecorator) object).getName();
-		// begin-extension-code
-		return label == null || label.length() == 0 ? "[" + getString("_UI_BTreeDecorator_type") + "]" : label; //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-		// end-extension-code
+		return label == null || label.length() == 0 ? getString("_UI_BTreeDecorator_type") : //$NON-NLS-1$
+				getString("_UI_BTreeDecorator_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
 	}
 
 	/**
@@ -133,160 +118,48 @@ public class BTreeDecoratorItemProvider extends BTreeNodeItemProvider implements
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-		// begin-extension-code
-		{
-			CommandParameter commandParameter = createChildParameter(
-					BehaviourTreePackage.Literals.BTREE_DECORATOR__OWNED_NODE,
-					BehaviourTreeFactory.eINSTANCE.createBTreeInclude());
-			if (NewChildDescriptorHelper.isValidCommand(object, commandParameter)) {
-				newChildDescriptors.add(commandParameter);
-			}
-		}
-		// end-extension-code
 
-		// begin-extension-code
-		{
-			CommandParameter commandParameter = createChildParameter(
-					BehaviourTreePackage.Literals.BTREE_DECORATOR__OWNED_NODE,
-					BehaviourTreeFactory.eINSTANCE.createAction());
-			if (NewChildDescriptorHelper.isValidCommand(object, commandParameter)) {
-				newChildDescriptors.add(commandParameter);
-			}
-		}
-		// end-extension-code
+		newChildDescriptors.add(createChildParameter(BehaviourTreePackage.Literals.BTREE_DECORATOR__OWNED_NODE,
+				BehaviourTreeFactory.eINSTANCE.createBTreeInclude()));
 
-		// begin-extension-code
-		{
-			CommandParameter commandParameter = createChildParameter(
-					BehaviourTreePackage.Literals.BTREE_DECORATOR__OWNED_NODE,
-					BehaviourTreeFactory.eINSTANCE.createCondition());
-			if (NewChildDescriptorHelper.isValidCommand(object, commandParameter)) {
-				newChildDescriptors.add(commandParameter);
-			}
-		}
-		// end-extension-code
+		newChildDescriptors.add(createChildParameter(BehaviourTreePackage.Literals.BTREE_DECORATOR__OWNED_NODE,
+				BehaviourTreeFactory.eINSTANCE.createAction()));
 
-		// begin-extension-code
-		{
-			CommandParameter commandParameter = createChildParameter(
-					BehaviourTreePackage.Literals.BTREE_DECORATOR__OWNED_NODE,
-					BehaviourTreeFactory.eINSTANCE.createParallel());
-			if (NewChildDescriptorHelper.isValidCommand(object, commandParameter)) {
-				newChildDescriptors.add(commandParameter);
-			}
-		}
-		// end-extension-code
+		newChildDescriptors.add(createChildParameter(BehaviourTreePackage.Literals.BTREE_DECORATOR__OWNED_NODE,
+				BehaviourTreeFactory.eINSTANCE.createCondition()));
 
-		// begin-extension-code
-		{
-			CommandParameter commandParameter = createChildParameter(
-					BehaviourTreePackage.Literals.BTREE_DECORATOR__OWNED_NODE,
-					BehaviourTreeFactory.eINSTANCE.createSequence());
-			if (NewChildDescriptorHelper.isValidCommand(object, commandParameter)) {
-				newChildDescriptors.add(commandParameter);
-			}
-		}
-		// end-extension-code
+		newChildDescriptors.add(createChildParameter(BehaviourTreePackage.Literals.BTREE_DECORATOR__OWNED_NODE,
+				BehaviourTreeFactory.eINSTANCE.createParallel()));
 
-		// begin-extension-code
-		{
-			CommandParameter commandParameter = createChildParameter(
-					BehaviourTreePackage.Literals.BTREE_DECORATOR__OWNED_NODE,
-					BehaviourTreeFactory.eINSTANCE.createReactiveSequence());
-			if (NewChildDescriptorHelper.isValidCommand(object, commandParameter)) {
-				newChildDescriptors.add(commandParameter);
-			}
-		}
-		// end-extension-code
+		newChildDescriptors.add(createChildParameter(BehaviourTreePackage.Literals.BTREE_DECORATOR__OWNED_NODE,
+				BehaviourTreeFactory.eINSTANCE.createSequence()));
 
-		// begin-extension-code
-		{
-			CommandParameter commandParameter = createChildParameter(
-					BehaviourTreePackage.Literals.BTREE_DECORATOR__OWNED_NODE,
-					BehaviourTreeFactory.eINSTANCE.createSequenceStar());
-			if (NewChildDescriptorHelper.isValidCommand(object, commandParameter)) {
-				newChildDescriptors.add(commandParameter);
-			}
-		}
-		// end-extension-code
+		newChildDescriptors.add(createChildParameter(BehaviourTreePackage.Literals.BTREE_DECORATOR__OWNED_NODE,
+				BehaviourTreeFactory.eINSTANCE.createReactiveSequence()));
 
-		// begin-extension-code
-		{
-			CommandParameter commandParameter = createChildParameter(
-					BehaviourTreePackage.Literals.BTREE_DECORATOR__OWNED_NODE,
-					BehaviourTreeFactory.eINSTANCE.createFallback());
-			if (NewChildDescriptorHelper.isValidCommand(object, commandParameter)) {
-				newChildDescriptors.add(commandParameter);
-			}
-		}
-		// end-extension-code
+		newChildDescriptors.add(createChildParameter(BehaviourTreePackage.Literals.BTREE_DECORATOR__OWNED_NODE,
+				BehaviourTreeFactory.eINSTANCE.createSequenceStar()));
 
-		// begin-extension-code
-		{
-			CommandParameter commandParameter = createChildParameter(
-					BehaviourTreePackage.Literals.BTREE_DECORATOR__OWNED_NODE,
-					BehaviourTreeFactory.eINSTANCE.createReactiveFallback());
-			if (NewChildDescriptorHelper.isValidCommand(object, commandParameter)) {
-				newChildDescriptors.add(commandParameter);
-			}
-		}
-		// end-extension-code
+		newChildDescriptors.add(createChildParameter(BehaviourTreePackage.Literals.BTREE_DECORATOR__OWNED_NODE,
+				BehaviourTreeFactory.eINSTANCE.createFallback()));
 
-		// begin-extension-code
-		{
-			CommandParameter commandParameter = createChildParameter(
-					BehaviourTreePackage.Literals.BTREE_DECORATOR__OWNED_NODE,
-					BehaviourTreeFactory.eINSTANCE.createInverter());
-			if (NewChildDescriptorHelper.isValidCommand(object, commandParameter)) {
-				newChildDescriptors.add(commandParameter);
-			}
-		}
-		// end-extension-code
+		newChildDescriptors.add(createChildParameter(BehaviourTreePackage.Literals.BTREE_DECORATOR__OWNED_NODE,
+				BehaviourTreeFactory.eINSTANCE.createReactiveFallback()));
 
-		// begin-extension-code
-		{
-			CommandParameter commandParameter = createChildParameter(
-					BehaviourTreePackage.Literals.BTREE_DECORATOR__OWNED_NODE,
-					BehaviourTreeFactory.eINSTANCE.createForceSuccess());
-			if (NewChildDescriptorHelper.isValidCommand(object, commandParameter)) {
-				newChildDescriptors.add(commandParameter);
-			}
-		}
-		// end-extension-code
+		newChildDescriptors.add(createChildParameter(BehaviourTreePackage.Literals.BTREE_DECORATOR__OWNED_NODE,
+				BehaviourTreeFactory.eINSTANCE.createInverter()));
 
-		// begin-extension-code
-		{
-			CommandParameter commandParameter = createChildParameter(
-					BehaviourTreePackage.Literals.BTREE_DECORATOR__OWNED_NODE,
-					BehaviourTreeFactory.eINSTANCE.createForceFailure());
-			if (NewChildDescriptorHelper.isValidCommand(object, commandParameter)) {
-				newChildDescriptors.add(commandParameter);
-			}
-		}
-		// end-extension-code
+		newChildDescriptors.add(createChildParameter(BehaviourTreePackage.Literals.BTREE_DECORATOR__OWNED_NODE,
+				BehaviourTreeFactory.eINSTANCE.createForceSuccess()));
 
-		// begin-extension-code
-		{
-			CommandParameter commandParameter = createChildParameter(
-					BehaviourTreePackage.Literals.BTREE_DECORATOR__OWNED_NODE,
-					BehaviourTreeFactory.eINSTANCE.createRepeat());
-			if (NewChildDescriptorHelper.isValidCommand(object, commandParameter)) {
-				newChildDescriptors.add(commandParameter);
-			}
-		}
-		// end-extension-code
+		newChildDescriptors.add(createChildParameter(BehaviourTreePackage.Literals.BTREE_DECORATOR__OWNED_NODE,
+				BehaviourTreeFactory.eINSTANCE.createForceFailure()));
 
-		// begin-extension-code
-		{
-			CommandParameter commandParameter = createChildParameter(
-					BehaviourTreePackage.Literals.BTREE_DECORATOR__OWNED_NODE,
-					BehaviourTreeFactory.eINSTANCE.createRetry());
-			if (NewChildDescriptorHelper.isValidCommand(object, commandParameter)) {
-				newChildDescriptors.add(commandParameter);
-			}
-		}
-		// end-extension-code
+		newChildDescriptors.add(createChildParameter(BehaviourTreePackage.Literals.BTREE_DECORATOR__OWNED_NODE,
+				BehaviourTreeFactory.eINSTANCE.createRepeat()));
 
+		newChildDescriptors.add(createChildParameter(BehaviourTreePackage.Literals.BTREE_DECORATOR__OWNED_NODE,
+				BehaviourTreeFactory.eINSTANCE.createRetry()));
 	}
 
 }

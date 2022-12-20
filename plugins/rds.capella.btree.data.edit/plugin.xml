@@ -7,17 +7,29 @@
 
    
 <!--@generated-->
-  <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
+   <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
       <!-- @generated BehaviourTree -->
-      <factory class="rds.capella.btree.data.BehaviourTree.provider.BehaviourTreeItemProviderAdapterFactory" supportedTypes="org.eclipse.emf.edit.provider.IEditingDomainItemProvider                org.eclipse.emf.edit.provider.IStructuredItemContentProvider                org.eclipse.emf.edit.provider.ITreeItemContentProvider                org.eclipse.emf.edit.provider.IItemLabelProvider                org.eclipse.emf.edit.provider.IItemPropertySource" uri="http://rds/capella/btree/1.0"/>
+      <factory
+            uri="http://rds/capella/btree/1.0"
+            class="rds.capella.btree.data.BehaviourTree.provider.BehaviourTreeItemProviderAdapterFactory"
+            supportedTypes=
+              "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
+               org.eclipse.emf.edit.provider.IStructuredItemContentProvider
+               org.eclipse.emf.edit.provider.ITreeItemContentProvider
+               org.eclipse.emf.edit.provider.IItemLabelProvider
+               org.eclipse.emf.edit.provider.IItemPropertySource"/>
    </extension>
 
    
 <!--@generated-->
-  <extension point="org.eclipse.emf.edit.childCreationExtenders">
+   <extension point="org.eclipse.emf.edit.childCreationExtenders">
       <!-- @generated BehaviourTree -->
-      <extender class="rds.capella.btree.data.BehaviourTree.provider.BehaviourTreeItemProviderAdapterFactory$EmdeChildCreationExtender" uri="http://www.polarsys.org/kitalpha/emde/1.0.0"/>
-      <extender class="rds.capella.btree.data.BehaviourTree.provider.BehaviourTreeItemProviderAdapterFactory$SharedmodelChildCreationExtender" uri="http://www.polarsys.org/capella/core/sharedmodel/5.0.0"/>
+      <extender
+            uri="http://www.polarsys.org/kitalpha/emde/1.0.0"
+            class="rds.capella.btree.data.BehaviourTree.provider.BehaviourTreeItemProviderAdapterFactory$EmdeChildCreationExtender"/>
+      <extender
+            uri="http://www.polarsys.org/capella/core/sharedmodel/5.0.0"
+            class="rds.capella.btree.data.BehaviourTree.provider.BehaviourTreeItemProviderAdapterFactory$SharedmodelChildCreationExtender"/>
    </extension>
 
 

@@ -7,8 +7,6 @@ import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
@@ -23,9 +21,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
 import org.polarsys.capella.common.data.modellingcore.AbstractConstraint;
 import org.polarsys.capella.common.data.modellingcore.AbstractNamedElement;
 import org.polarsys.capella.common.data.modellingcore.AbstractTrace;
-import org.polarsys.capella.common.data.modellingcore.AbstractType;
-import org.polarsys.capella.common.data.modellingcore.AbstractTypedElement;
-import org.polarsys.capella.common.data.modellingcore.FinalizableElement;
 import org.polarsys.capella.common.data.modellingcore.ModelElement;
 import org.polarsys.capella.common.data.modellingcore.ModellingcorePackage;
 import org.polarsys.capella.common.data.modellingcore.PublishableElement;
@@ -36,28 +31,13 @@ import org.polarsys.capella.core.data.capellacore.CapellaElement;
 import org.polarsys.capella.core.data.capellacore.CapellacorePackage;
 import org.polarsys.capella.core.data.capellacore.EnumerationPropertyLiteral;
 import org.polarsys.capella.core.data.capellacore.EnumerationPropertyType;
-import org.polarsys.capella.core.data.capellacore.Feature;
 import org.polarsys.capella.core.data.capellacore.NamedElement;
 import org.polarsys.capella.core.data.capellacore.PropertyValueGroup;
-
-import org.polarsys.capella.core.data.capellacore.Type;
-import org.polarsys.capella.core.data.capellacore.TypedElement;
-import org.polarsys.capella.core.data.capellacore.VisibilityKind;
-import org.polarsys.capella.core.data.information.AbstractInstance;
-import org.polarsys.capella.core.data.information.AggregationKind;
-import org.polarsys.capella.core.data.information.Association;
-import org.polarsys.capella.core.data.information.InformationPackage;
-import org.polarsys.capella.core.data.information.MultiplicityElement;
-import org.polarsys.capella.core.data.information.Property;
-import org.polarsys.capella.core.data.information.datavalue.DataValue;
-import org.polarsys.capella.core.data.information.datavalue.NumericValue;
-import org.polarsys.capella.core.data.interaction.InstanceRole;
 import org.polarsys.capella.core.data.requirement.Requirement;
 
 import org.polarsys.kitalpha.emde.model.impl.ElementExtensionImpl;
-
-import rds.capella.btree.data.BehaviourTree.BTreeContainer;
 import rds.capella.btree.data.BehaviourTree.BTreeElement;
+import rds.capella.btree.data.BehaviourTree.BTreeNode;
 import rds.capella.btree.data.BehaviourTree.BTreeRoot;
 import rds.capella.btree.data.BehaviourTree.BehaviourTreePackage;
 
@@ -355,7 +335,7 @@ public class BTreeRootImpl extends ElementExtensionImpl implements BTreeRoot {
 	 * @generated
 	 * @ordered
 	 */
-	protected BTreeContainer ownedBTreeContainer;
+	protected BTreeNode ownedBTreeContainer;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -363,9 +343,7 @@ public class BTreeRootImpl extends ElementExtensionImpl implements BTreeRoot {
 	 * @generated
 	 */
 	protected BTreeRootImpl() {
-
 		super();
-
 	}
 
 	/**
@@ -386,7 +364,6 @@ public class BTreeRootImpl extends ElementExtensionImpl implements BTreeRoot {
 
 	@Override
 	public String getId() {
-
 		return id;
 	}
 
@@ -398,12 +375,10 @@ public class BTreeRootImpl extends ElementExtensionImpl implements BTreeRoot {
 
 	@Override
 	public void setId(String newId) {
-
 		String oldId = id;
 		id = newId;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, BehaviourTreePackage.BTREE_ROOT__ID, oldId, id));
-
 	}
 
 	/**
@@ -414,7 +389,6 @@ public class BTreeRootImpl extends ElementExtensionImpl implements BTreeRoot {
 
 	@Override
 	public String getSid() {
-
 		return sid;
 	}
 
@@ -426,12 +400,10 @@ public class BTreeRootImpl extends ElementExtensionImpl implements BTreeRoot {
 
 	@Override
 	public void setSid(String newSid) {
-
 		String oldSid = sid;
 		sid = newSid;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, BehaviourTreePackage.BTREE_ROOT__SID, oldSid, sid));
-
 	}
 
 	/**
@@ -442,13 +414,11 @@ public class BTreeRootImpl extends ElementExtensionImpl implements BTreeRoot {
 
 	@Override
 	public EList<AbstractConstraint> getConstraints() {
-
 		// TODO: implement this method to return the 'Constraints' reference list
 		// Ensure that you remove @generated or mark it @generated NOT
 		// The list is expected to implement org.eclipse.emf.ecore.util.InternalEList and org.eclipse.emf.ecore.EStructuralFeature.Setting
 		// so it's likely that an appropriate subclass of org.eclipse.emf.ecore.util.EcoreEList should be used.
 		throw new UnsupportedOperationException();
-
 	}
 
 	/**
@@ -459,7 +429,6 @@ public class BTreeRootImpl extends ElementExtensionImpl implements BTreeRoot {
 
 	@Override
 	public EList<AbstractConstraint> getOwnedConstraints() {
-
 		if (ownedConstraints == null) {
 			ownedConstraints = new EObjectContainmentEList.Resolving<AbstractConstraint>(AbstractConstraint.class, this,
 					BehaviourTreePackage.BTREE_ROOT__OWNED_CONSTRAINTS);
@@ -475,7 +444,6 @@ public class BTreeRootImpl extends ElementExtensionImpl implements BTreeRoot {
 
 	@Override
 	public EList<ModelElement> getOwnedMigratedElements() {
-
 		if (ownedMigratedElements == null) {
 			ownedMigratedElements = new EObjectContainmentEList.Resolving<ModelElement>(ModelElement.class, this,
 					BehaviourTreePackage.BTREE_ROOT__OWNED_MIGRATED_ELEMENTS);
@@ -491,7 +459,6 @@ public class BTreeRootImpl extends ElementExtensionImpl implements BTreeRoot {
 
 	@Override
 	public String getName() {
-
 		return name;
 	}
 
@@ -503,13 +470,11 @@ public class BTreeRootImpl extends ElementExtensionImpl implements BTreeRoot {
 
 	@Override
 	public void setName(String newName) {
-
 		String oldName = name;
 		name = newName;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, BehaviourTreePackage.BTREE_ROOT__NAME, oldName,
 					name));
-
 	}
 
 	/**
@@ -520,11 +485,11 @@ public class BTreeRootImpl extends ElementExtensionImpl implements BTreeRoot {
 
 	@Override
 	public EList<AbstractTrace> getIncomingTraces() {
-
-		//INJECTED-CODE-BEGIN
-		return new BasicEList<AbstractTrace>();
-		//INJECTED-CODE-END
-
+		// TODO: implement this method to return the 'Incoming Traces' reference list
+		// Ensure that you remove @generated or mark it @generated NOT
+		// The list is expected to implement org.eclipse.emf.ecore.util.InternalEList and org.eclipse.emf.ecore.EStructuralFeature.Setting
+		// so it's likely that an appropriate subclass of org.eclipse.emf.ecore.util.EcoreEList should be used.
+		throw new UnsupportedOperationException();
 	}
 
 	/**
@@ -535,11 +500,11 @@ public class BTreeRootImpl extends ElementExtensionImpl implements BTreeRoot {
 
 	@Override
 	public EList<AbstractTrace> getOutgoingTraces() {
-
-		//INJECTED-CODE-BEGIN
-		return new BasicEList<AbstractTrace>();
-		//INJECTED-CODE-END
-
+		// TODO: implement this method to return the 'Outgoing Traces' reference list
+		// Ensure that you remove @generated or mark it @generated NOT
+		// The list is expected to implement org.eclipse.emf.ecore.util.InternalEList and org.eclipse.emf.ecore.EStructuralFeature.Setting
+		// so it's likely that an appropriate subclass of org.eclipse.emf.ecore.util.EcoreEList should be used.
+		throw new UnsupportedOperationException();
 	}
 
 	/**
@@ -550,7 +515,6 @@ public class BTreeRootImpl extends ElementExtensionImpl implements BTreeRoot {
 
 	@Override
 	public boolean isVisibleInDoc() {
-
 		return visibleInDoc;
 	}
 
@@ -562,13 +526,11 @@ public class BTreeRootImpl extends ElementExtensionImpl implements BTreeRoot {
 
 	@Override
 	public void setVisibleInDoc(boolean newVisibleInDoc) {
-
 		boolean oldVisibleInDoc = visibleInDoc;
 		visibleInDoc = newVisibleInDoc;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, BehaviourTreePackage.BTREE_ROOT__VISIBLE_IN_DOC,
 					oldVisibleInDoc, visibleInDoc));
-
 	}
 
 	/**
@@ -579,7 +541,6 @@ public class BTreeRootImpl extends ElementExtensionImpl implements BTreeRoot {
 
 	@Override
 	public boolean isVisibleInLM() {
-
 		return visibleInLM;
 	}
 
@@ -591,13 +552,11 @@ public class BTreeRootImpl extends ElementExtensionImpl implements BTreeRoot {
 
 	@Override
 	public void setVisibleInLM(boolean newVisibleInLM) {
-
 		boolean oldVisibleInLM = visibleInLM;
 		visibleInLM = newVisibleInLM;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, BehaviourTreePackage.BTREE_ROOT__VISIBLE_IN_LM,
 					oldVisibleInLM, visibleInLM));
-
 	}
 
 	/**
@@ -608,7 +567,6 @@ public class BTreeRootImpl extends ElementExtensionImpl implements BTreeRoot {
 
 	@Override
 	public String getSummary() {
-
 		return summary;
 	}
 
@@ -620,13 +578,11 @@ public class BTreeRootImpl extends ElementExtensionImpl implements BTreeRoot {
 
 	@Override
 	public void setSummary(String newSummary) {
-
 		String oldSummary = summary;
 		summary = newSummary;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, BehaviourTreePackage.BTREE_ROOT__SUMMARY, oldSummary,
 					summary));
-
 	}
 
 	/**
@@ -637,7 +593,6 @@ public class BTreeRootImpl extends ElementExtensionImpl implements BTreeRoot {
 
 	@Override
 	public String getDescription() {
-
 		return description;
 	}
 
@@ -649,13 +604,11 @@ public class BTreeRootImpl extends ElementExtensionImpl implements BTreeRoot {
 
 	@Override
 	public void setDescription(String newDescription) {
-
 		String oldDescription = description;
 		description = newDescription;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, BehaviourTreePackage.BTREE_ROOT__DESCRIPTION,
 					oldDescription, description));
-
 	}
 
 	/**
@@ -666,7 +619,6 @@ public class BTreeRootImpl extends ElementExtensionImpl implements BTreeRoot {
 
 	@Override
 	public String getReview() {
-
 		return review;
 	}
 
@@ -678,13 +630,11 @@ public class BTreeRootImpl extends ElementExtensionImpl implements BTreeRoot {
 
 	@Override
 	public void setReview(String newReview) {
-
 		String oldReview = review;
 		review = newReview;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, BehaviourTreePackage.BTREE_ROOT__REVIEW, oldReview,
 					review));
-
 	}
 
 	/**
@@ -695,7 +645,6 @@ public class BTreeRootImpl extends ElementExtensionImpl implements BTreeRoot {
 
 	@Override
 	public EList<AbstractPropertyValue> getOwnedPropertyValues() {
-
 		if (ownedPropertyValues == null) {
 			ownedPropertyValues = new EObjectContainmentEList.Resolving<AbstractPropertyValue>(
 					AbstractPropertyValue.class, this, BehaviourTreePackage.BTREE_ROOT__OWNED_PROPERTY_VALUES);
@@ -711,7 +660,6 @@ public class BTreeRootImpl extends ElementExtensionImpl implements BTreeRoot {
 
 	@Override
 	public EList<EnumerationPropertyType> getOwnedEnumerationPropertyTypes() {
-
 		if (ownedEnumerationPropertyTypes == null) {
 			ownedEnumerationPropertyTypes = new EObjectContainmentEList.Resolving<EnumerationPropertyType>(
 					EnumerationPropertyType.class, this,
@@ -728,7 +676,6 @@ public class BTreeRootImpl extends ElementExtensionImpl implements BTreeRoot {
 
 	@Override
 	public EList<AbstractPropertyValue> getAppliedPropertyValues() {
-
 		if (appliedPropertyValues == null) {
 			appliedPropertyValues = new EObjectResolvingEList<AbstractPropertyValue>(AbstractPropertyValue.class, this,
 					BehaviourTreePackage.BTREE_ROOT__APPLIED_PROPERTY_VALUES);
@@ -744,7 +691,6 @@ public class BTreeRootImpl extends ElementExtensionImpl implements BTreeRoot {
 
 	@Override
 	public EList<PropertyValueGroup> getOwnedPropertyValueGroups() {
-
 		if (ownedPropertyValueGroups == null) {
 			ownedPropertyValueGroups = new EObjectContainmentEList.Resolving<PropertyValueGroup>(
 					PropertyValueGroup.class, this, BehaviourTreePackage.BTREE_ROOT__OWNED_PROPERTY_VALUE_GROUPS);
@@ -760,7 +706,6 @@ public class BTreeRootImpl extends ElementExtensionImpl implements BTreeRoot {
 
 	@Override
 	public EList<PropertyValueGroup> getAppliedPropertyValueGroups() {
-
 		if (appliedPropertyValueGroups == null) {
 			appliedPropertyValueGroups = new EObjectResolvingEList<PropertyValueGroup>(PropertyValueGroup.class, this,
 					BehaviourTreePackage.BTREE_ROOT__APPLIED_PROPERTY_VALUE_GROUPS);
@@ -776,7 +721,6 @@ public class BTreeRootImpl extends ElementExtensionImpl implements BTreeRoot {
 
 	@Override
 	public EnumerationPropertyLiteral getStatus() {
-
 		if (status != null && status.eIsProxy()) {
 			InternalEObject oldStatus = (InternalEObject) status;
 			status = (EnumerationPropertyLiteral) eResolveProxy(oldStatus);
@@ -796,7 +740,6 @@ public class BTreeRootImpl extends ElementExtensionImpl implements BTreeRoot {
 	 */
 
 	public EnumerationPropertyLiteral basicGetStatus() {
-
 		return status;
 	}
 
@@ -808,13 +751,11 @@ public class BTreeRootImpl extends ElementExtensionImpl implements BTreeRoot {
 
 	@Override
 	public void setStatus(EnumerationPropertyLiteral newStatus) {
-
 		EnumerationPropertyLiteral oldStatus = status;
 		status = newStatus;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, BehaviourTreePackage.BTREE_ROOT__STATUS, oldStatus,
 					status));
-
 	}
 
 	/**
@@ -825,7 +766,6 @@ public class BTreeRootImpl extends ElementExtensionImpl implements BTreeRoot {
 
 	@Override
 	public EList<EnumerationPropertyLiteral> getFeatures() {
-
 		if (features == null) {
 			features = new EObjectResolvingEList<EnumerationPropertyLiteral>(EnumerationPropertyLiteral.class, this,
 					BehaviourTreePackage.BTREE_ROOT__FEATURES);
@@ -841,13 +781,11 @@ public class BTreeRootImpl extends ElementExtensionImpl implements BTreeRoot {
 
 	@Override
 	public EList<Requirement> getAppliedRequirements() {
-
 		// TODO: implement this method to return the 'Applied Requirements' reference list
 		// Ensure that you remove @generated or mark it @generated NOT
 		// The list is expected to implement org.eclipse.emf.ecore.util.InternalEList and org.eclipse.emf.ecore.EStructuralFeature.Setting
 		// so it's likely that an appropriate subclass of org.eclipse.emf.ecore.util.EcoreEList should be used.
 		throw new UnsupportedOperationException();
-
 	}
 
 	/**
@@ -857,8 +795,7 @@ public class BTreeRootImpl extends ElementExtensionImpl implements BTreeRoot {
 	 */
 
 	@Override
-	public BTreeContainer getOwnedBTreeContainer() {
-
+	public BTreeNode getOwnedBTreeContainer() {
 		return ownedBTreeContainer;
 	}
 
@@ -867,11 +804,8 @@ public class BTreeRootImpl extends ElementExtensionImpl implements BTreeRoot {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-
-	public NotificationChain basicSetOwnedBTreeContainer(BTreeContainer newOwnedBTreeContainer,
-			NotificationChain msgs) {
-
-		BTreeContainer oldOwnedBTreeContainer = ownedBTreeContainer;
+	public NotificationChain basicSetOwnedBTreeContainer(BTreeNode newOwnedBTreeContainer, NotificationChain msgs) {
+		BTreeNode oldOwnedBTreeContainer = ownedBTreeContainer;
 		ownedBTreeContainer = newOwnedBTreeContainer;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
@@ -882,7 +816,6 @@ public class BTreeRootImpl extends ElementExtensionImpl implements BTreeRoot {
 			else
 				msgs.add(notification);
 		}
-
 		return msgs;
 	}
 
@@ -891,10 +824,8 @@ public class BTreeRootImpl extends ElementExtensionImpl implements BTreeRoot {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-
 	@Override
-	public void setOwnedBTreeContainer(BTreeContainer newOwnedBTreeContainer) {
-
+	public void setOwnedBTreeContainer(BTreeNode newOwnedBTreeContainer) {
 		if (newOwnedBTreeContainer != ownedBTreeContainer) {
 			NotificationChain msgs = null;
 			if (ownedBTreeContainer != null)
@@ -910,7 +841,6 @@ public class BTreeRootImpl extends ElementExtensionImpl implements BTreeRoot {
 			eNotify(new ENotificationImpl(this, Notification.SET,
 					BehaviourTreePackage.BTREE_ROOT__OWNED_BTREE_CONTAINER, newOwnedBTreeContainer,
 					newOwnedBTreeContainer));
-
 	}
 
 	/**
@@ -1108,7 +1038,7 @@ public class BTreeRootImpl extends ElementExtensionImpl implements BTreeRoot {
 			getFeatures().addAll((Collection<? extends EnumerationPropertyLiteral>) newValue);
 			return;
 		case BehaviourTreePackage.BTREE_ROOT__OWNED_BTREE_CONTAINER:
-			setOwnedBTreeContainer((BTreeContainer) newValue);
+			setOwnedBTreeContainer((BTreeNode) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -1174,7 +1104,7 @@ public class BTreeRootImpl extends ElementExtensionImpl implements BTreeRoot {
 			getFeatures().clear();
 			return;
 		case BehaviourTreePackage.BTREE_ROOT__OWNED_BTREE_CONTAINER:
-			setOwnedBTreeContainer((BTreeContainer) null);
+			setOwnedBTreeContainer((BTreeNode) null);
 			return;
 		}
 		super.eUnset(featureID);

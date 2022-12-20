@@ -6,15 +6,7 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
-import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
-import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.IItemPropertySource;
-import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
-import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
-
-import org.polarsys.capella.core.data.information.InformationPackage;
 import rds.capella.btree.data.BehaviourTree.Condition;
 
 /**
@@ -23,8 +15,7 @@ import rds.capella.btree.data.BehaviourTree.Condition;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ConditionItemProvider extends BTreeLeafItemProvider implements IEditingDomainItemProvider,
-		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+public class ConditionItemProvider extends BTreeLeafItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -47,9 +38,6 @@ public class ConditionItemProvider extends BTreeLeafItemProvider implements IEdi
 			super.getPropertyDescriptors(object);
 
 		}
-		// begin-extension-code
-		checkChildCreationExtender(object);
-		// end-extension-code
 		return itemPropertyDescriptors;
 	}
 
@@ -72,11 +60,9 @@ public class ConditionItemProvider extends BTreeLeafItemProvider implements IEdi
 	 */
 	@Override
 	public String getText(Object object) {
-
 		String label = ((Condition) object).getName();
-		// begin-extension-code
-		return label == null || label.length() == 0 ? "[" + getString("_UI_Condition_type") + "]" : label; //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-		// end-extension-code
+		return label == null || label.length() == 0 ? getString("_UI_Condition_type") : //$NON-NLS-1$
+				getString("_UI_Condition_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
 	}
 
 	/**

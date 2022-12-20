@@ -20,9 +20,7 @@ public class FallbackImpl extends BTreeFallbackImpl implements Fallback {
 	 * @generated
 	 */
 	protected FallbackImpl() {
-
 		super();
-
 	}
 
 	/**

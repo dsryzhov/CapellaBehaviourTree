@@ -20,9 +20,7 @@ public class InverterImpl extends BTreeDecoratorImpl implements Inverter {
 	 * @generated
 	 */
 	protected InverterImpl() {
-
 		super();
-
 	}
 
 	/**

@@ -24,7 +24,6 @@ public interface BTreeLeaf extends BTreeNode {
 
 	/**
 	 * Returns the value of the '<em><b>Function</b></em>' reference.
-	
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Function</em>' reference.
@@ -38,7 +37,6 @@ public interface BTreeLeaf extends BTreeNode {
 
 	/**
 	 * Sets the value of the '{@link rds.capella.btree.data.BehaviourTree.BTreeLeaf#getFunction <em>Function</em>}' reference.
-	
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Function</em>' reference.

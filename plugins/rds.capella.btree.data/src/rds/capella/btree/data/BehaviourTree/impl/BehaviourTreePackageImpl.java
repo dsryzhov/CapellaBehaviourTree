@@ -2,7 +2,6 @@
 package rds.capella.btree.data.BehaviourTree.impl;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -68,7 +67,6 @@ import rds.capella.btree.data.BehaviourTree.Repeat;
 import rds.capella.btree.data.BehaviourTree.Retry;
 import rds.capella.btree.data.BehaviourTree.Sequence;
 import rds.capella.btree.data.BehaviourTree.SequenceStar;
-import rds.capella.btree.data.BehaviourTree.TickResult;
 
 /**
  * <!-- begin-user-doc -->
@@ -757,8 +755,8 @@ public class BehaviourTreePackageImpl extends EPackageImpl implements BehaviourT
 
 		initEClass(bTreeRootEClass, BTreeRoot.class, "BTreeRoot", !IS_ABSTRACT, !IS_INTERFACE, //$NON-NLS-1$
 				IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getBTreeRoot_OwnedBTreeContainer(), this.getBTreeContainer(), null, "ownedBTreeContainer", null, //$NON-NLS-1$
-				0, 1, BTreeRoot.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
+		initEReference(getBTreeRoot_OwnedBTreeContainer(), this.getBTreeNode(), null, "ownedBTreeContainer", null, 0, 1, //$NON-NLS-1$
+				BTreeRoot.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(bTreeIncludeEClass, BTreeInclude.class, "BTreeInclude", !IS_ABSTRACT, !IS_INTERFACE, //$NON-NLS-1$

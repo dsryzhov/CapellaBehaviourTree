@@ -43,9 +43,7 @@ public class BTreeIncludeImpl extends BTreeNodeImpl implements BTreeInclude {
 	 * @generated
 	 */
 	protected BTreeIncludeImpl() {
-
 		super();
-
 	}
 
 	/**
@@ -66,7 +64,6 @@ public class BTreeIncludeImpl extends BTreeNodeImpl implements BTreeInclude {
 
 	@Override
 	public BTreeRoot getBtreeReference() {
-
 		if (btreeReference != null && btreeReference.eIsProxy()) {
 			InternalEObject oldBtreeReference = (InternalEObject) btreeReference;
 			btreeReference = (BTreeRoot) eResolveProxy(oldBtreeReference);
@@ -86,7 +83,6 @@ public class BTreeIncludeImpl extends BTreeNodeImpl implements BTreeInclude {
 	 */
 
 	public BTreeRoot basicGetBtreeReference() {
-
 		return btreeReference;
 	}
 
@@ -98,13 +94,11 @@ public class BTreeIncludeImpl extends BTreeNodeImpl implements BTreeInclude {
 
 	@Override
 	public void setBtreeReference(BTreeRoot newBtreeReference) {
-
 		BTreeRoot oldBtreeReference = btreeReference;
 		btreeReference = newBtreeReference;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, BehaviourTreePackage.BTREE_INCLUDE__BTREE_REFERENCE,
 					oldBtreeReference, btreeReference));
-
 	}
 
 	/**

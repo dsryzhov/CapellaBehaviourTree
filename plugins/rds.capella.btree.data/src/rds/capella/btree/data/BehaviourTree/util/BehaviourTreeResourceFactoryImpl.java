@@ -33,10 +33,8 @@ public class BehaviourTreeResourceFactoryImpl extends ResourceFactoryImpl {
 	 */
 	@Override
 	public Resource createResource(URI uri) {
-
 		Resource result = new BehaviourTreeResourceImpl(uri);
 		return result;
-
 	}
 
 } //BehaviourTreeResourceFactoryImpl

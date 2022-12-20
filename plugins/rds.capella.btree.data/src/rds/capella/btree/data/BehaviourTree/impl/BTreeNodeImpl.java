@@ -20,9 +20,7 @@ public abstract class BTreeNodeImpl extends BTreeElementImpl implements BTreeNod
 	 * @generated
 	 */
 	protected BTreeNodeImpl() {
-
 		super();
-
 	}
 
 	/**

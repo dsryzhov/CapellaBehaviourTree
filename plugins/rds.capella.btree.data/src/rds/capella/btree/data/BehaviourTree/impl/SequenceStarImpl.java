@@ -20,9 +20,7 @@ public class SequenceStarImpl extends BTreeSequenceImpl implements SequenceStar 
 	 * @generated
 	 */
 	protected SequenceStarImpl() {
-
 		super();
-
 	}
 
 	/**

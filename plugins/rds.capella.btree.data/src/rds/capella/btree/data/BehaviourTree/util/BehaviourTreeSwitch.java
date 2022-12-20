@@ -7,20 +7,12 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.Switch;
 
 import org.polarsys.capella.common.data.modellingcore.AbstractNamedElement;
-import org.polarsys.capella.common.data.modellingcore.AbstractTypedElement;
-import org.polarsys.capella.common.data.modellingcore.FinalizableElement;
 import org.polarsys.capella.common.data.modellingcore.ModelElement;
 import org.polarsys.capella.common.data.modellingcore.PublishableElement;
 import org.polarsys.capella.common.data.modellingcore.TraceableElement;
 
 import org.polarsys.capella.core.data.capellacore.CapellaElement;
-import org.polarsys.capella.core.data.capellacore.Feature;
 import org.polarsys.capella.core.data.capellacore.NamedElement;
-
-import org.polarsys.capella.core.data.capellacore.TypedElement;
-import org.polarsys.capella.core.data.information.AbstractInstance;
-import org.polarsys.capella.core.data.information.MultiplicityElement;
-import org.polarsys.capella.core.data.information.Property;
 import org.polarsys.kitalpha.emde.model.Element;
 import org.polarsys.kitalpha.emde.model.ElementExtension;
 import org.polarsys.kitalpha.emde.model.ExtensibleElement;

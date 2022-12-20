@@ -20,9 +20,7 @@ public abstract class BTreeSequenceImpl extends BTreeContainerImpl implements BT
 	 * @generated
 	 */
 	protected BTreeSequenceImpl() {
-
 		super();
-
 	}
 
 	/**

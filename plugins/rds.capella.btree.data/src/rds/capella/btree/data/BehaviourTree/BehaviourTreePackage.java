@@ -2,11 +2,8 @@
 package rds.capella.btree.data.BehaviourTree;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
-
-import org.polarsys.capella.core.data.information.InformationPackage;
 import org.polarsys.capella.core.data.capellacore.CapellacorePackage;
 
 import org.polarsys.kitalpha.emde.model.EmdePackage;

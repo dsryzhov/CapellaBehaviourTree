@@ -12,9 +12,6 @@ import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.common.util.ResourceLocator;
 
 import org.eclipse.emf.ecore.EObject;
-
-import org.eclipse.emf.ecore.util.EcoreUtil;
-
 import org.eclipse.emf.edit.command.CommandParameter;
 
 import org.eclipse.emf.edit.domain.EditingDomain;
@@ -31,33 +28,12 @@ import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.INotifyChangedListener;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
-
-import org.polarsys.capella.core.data.capellacore.CapellacorePackage;
-import org.polarsys.capella.core.data.capellacore.Classifier;
-import org.polarsys.capella.core.data.capellacore.util.CapellacoreSwitch;
-import org.polarsys.capella.core.data.cs.CsPackage;
-import org.polarsys.capella.core.data.cs.util.CsSwitch;
-import org.polarsys.capella.core.data.epbs.EpbsPackage;
-import org.polarsys.capella.core.data.epbs.util.EpbsSwitch;
-import org.polarsys.capella.core.data.information.Association;
-import org.polarsys.capella.core.data.information.InformationPackage;
-import org.polarsys.capella.core.data.information.util.InformationSwitch;
-import org.polarsys.capella.core.data.pa.PaPackage;
-import org.polarsys.capella.core.data.pa.util.PaSwitch;
 import org.polarsys.capella.core.data.sharedmodel.GenericPkg;
 import org.polarsys.capella.core.data.sharedmodel.SharedmodelPackage;
 
 import org.polarsys.capella.core.data.sharedmodel.util.SharedmodelSwitch;
-
-import org.polarsys.kitalpha.emde.extension.ModelExtensionHelper;
-
-import org.polarsys.kitalpha.emde.extension.edit.ChildCreationExtenderManager;
-
 import org.polarsys.kitalpha.emde.model.EmdePackage;
 import org.polarsys.kitalpha.emde.model.ExtensibleElement;
-
-import org.polarsys.kitalpha.emde.model.edit.provider.NewChildDescriptorHelper;
-
 import org.polarsys.kitalpha.emde.model.util.EmdeSwitch;
 
 import rds.capella.btree.data.BehaviourTree.BehaviourTreeFactory;
@@ -98,7 +74,7 @@ public class BehaviourTreeItemProviderAdapterFactory extends BehaviourTreeAdapte
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ChildCreationExtenderManager childCreationExtenderManager = new ChildCreationExtenderManager(
+	protected org.eclipse.emf.edit.provider.ChildCreationExtenderManager childCreationExtenderManager = new org.eclipse.emf.edit.provider.ChildCreationExtenderManager(
 			BehaviourTreeEditPlugin.INSTANCE, BehaviourTreePackage.eNS_URI);
 
 	/**
@@ -680,23 +656,8 @@ public class BehaviourTreeItemProviderAdapterFactory extends BehaviourTreeAdapte
 			 */
 			@Override
 			public Object caseExtensibleElement(ExtensibleElement object) {
-				// begin-extension-code
-				if (ModelExtensionHelper.getInstance(object).isExtensionModelDisabled(
-						EcoreUtil.getRootContainer(object).eClass().getEPackage().getNsURI(),
-						"http://rds/capella/btree/1.0")) { //$NON-NLS-1$
-					return null;
-				}
-				// end-extension-code
-				// begin-extension-code
-				{
-					CommandParameter commandParameter = createChildParameter(
-							EmdePackage.Literals.EXTENSIBLE_ELEMENT__OWNED_EXTENSIONS,
-							BehaviourTreeFactory.eINSTANCE.createBTreeRoot());
-					if (NewChildDescriptorHelper.isValidCommand(object, commandParameter)) {
-						newChildDescriptors.add(commandParameter);
-					}
-				}
-				// end-extension-code
+				newChildDescriptors.add(createChildParameter(EmdePackage.Literals.EXTENSIBLE_ELEMENT__OWNED_EXTENSIONS,
+						BehaviourTreeFactory.eINSTANCE.createBTreeRoot()));
 
 				return null;
 			}
@@ -781,177 +742,50 @@ public class BehaviourTreeItemProviderAdapterFactory extends BehaviourTreeAdapte
 			 */
 			@Override
 			public Object caseGenericPkg(GenericPkg object) {
-				// begin-extension-code
-				if (ModelExtensionHelper.getInstance(object).isExtensionModelDisabled(
-						EcoreUtil.getRootContainer(object).eClass().getEPackage().getNsURI(),
-						"http://rds/capella/btree/1.0")) { //$NON-NLS-1$
-					return null;
-				}
-				// end-extension-code
-				// begin-extension-code
-				{
-					CommandParameter commandParameter = createChildParameter(
-							SharedmodelPackage.Literals.GENERIC_PKG__CAPELLA_ELEMENTS,
-							BehaviourTreeFactory.eINSTANCE.createBTreeRoot());
-					if (NewChildDescriptorHelper.isValidCommand(object, commandParameter)) {
-						newChildDescriptors.add(commandParameter);
-					}
-				}
-				// end-extension-code
+				newChildDescriptors.add(createChildParameter(SharedmodelPackage.Literals.GENERIC_PKG__CAPELLA_ELEMENTS,
+						BehaviourTreeFactory.eINSTANCE.createBTreeRoot()));
 
-				// begin-extension-code
-				{
-					CommandParameter commandParameter = createChildParameter(
-							SharedmodelPackage.Literals.GENERIC_PKG__CAPELLA_ELEMENTS,
-							BehaviourTreeFactory.eINSTANCE.createBTreeInclude());
-					if (NewChildDescriptorHelper.isValidCommand(object, commandParameter)) {
-						newChildDescriptors.add(commandParameter);
-					}
-				}
-				// end-extension-code
+				newChildDescriptors.add(createChildParameter(SharedmodelPackage.Literals.GENERIC_PKG__CAPELLA_ELEMENTS,
+						BehaviourTreeFactory.eINSTANCE.createBTreeInclude()));
 
-				// begin-extension-code
-				{
-					CommandParameter commandParameter = createChildParameter(
-							SharedmodelPackage.Literals.GENERIC_PKG__CAPELLA_ELEMENTS,
-							BehaviourTreeFactory.eINSTANCE.createAction());
-					if (NewChildDescriptorHelper.isValidCommand(object, commandParameter)) {
-						newChildDescriptors.add(commandParameter);
-					}
-				}
-				// end-extension-code
+				newChildDescriptors.add(createChildParameter(SharedmodelPackage.Literals.GENERIC_PKG__CAPELLA_ELEMENTS,
+						BehaviourTreeFactory.eINSTANCE.createAction()));
 
-				// begin-extension-code
-				{
-					CommandParameter commandParameter = createChildParameter(
-							SharedmodelPackage.Literals.GENERIC_PKG__CAPELLA_ELEMENTS,
-							BehaviourTreeFactory.eINSTANCE.createCondition());
-					if (NewChildDescriptorHelper.isValidCommand(object, commandParameter)) {
-						newChildDescriptors.add(commandParameter);
-					}
-				}
-				// end-extension-code
+				newChildDescriptors.add(createChildParameter(SharedmodelPackage.Literals.GENERIC_PKG__CAPELLA_ELEMENTS,
+						BehaviourTreeFactory.eINSTANCE.createCondition()));
 
-				// begin-extension-code
-				{
-					CommandParameter commandParameter = createChildParameter(
-							SharedmodelPackage.Literals.GENERIC_PKG__CAPELLA_ELEMENTS,
-							BehaviourTreeFactory.eINSTANCE.createParallel());
-					if (NewChildDescriptorHelper.isValidCommand(object, commandParameter)) {
-						newChildDescriptors.add(commandParameter);
-					}
-				}
-				// end-extension-code
+				newChildDescriptors.add(createChildParameter(SharedmodelPackage.Literals.GENERIC_PKG__CAPELLA_ELEMENTS,
+						BehaviourTreeFactory.eINSTANCE.createParallel()));
 
-				// begin-extension-code
-				{
-					CommandParameter commandParameter = createChildParameter(
-							SharedmodelPackage.Literals.GENERIC_PKG__CAPELLA_ELEMENTS,
-							BehaviourTreeFactory.eINSTANCE.createSequence());
-					if (NewChildDescriptorHelper.isValidCommand(object, commandParameter)) {
-						newChildDescriptors.add(commandParameter);
-					}
-				}
-				// end-extension-code
+				newChildDescriptors.add(createChildParameter(SharedmodelPackage.Literals.GENERIC_PKG__CAPELLA_ELEMENTS,
+						BehaviourTreeFactory.eINSTANCE.createSequence()));
 
-				// begin-extension-code
-				{
-					CommandParameter commandParameter = createChildParameter(
-							SharedmodelPackage.Literals.GENERIC_PKG__CAPELLA_ELEMENTS,
-							BehaviourTreeFactory.eINSTANCE.createReactiveSequence());
-					if (NewChildDescriptorHelper.isValidCommand(object, commandParameter)) {
-						newChildDescriptors.add(commandParameter);
-					}
-				}
-				// end-extension-code
+				newChildDescriptors.add(createChildParameter(SharedmodelPackage.Literals.GENERIC_PKG__CAPELLA_ELEMENTS,
+						BehaviourTreeFactory.eINSTANCE.createReactiveSequence()));
 
-				// begin-extension-code
-				{
-					CommandParameter commandParameter = createChildParameter(
-							SharedmodelPackage.Literals.GENERIC_PKG__CAPELLA_ELEMENTS,
-							BehaviourTreeFactory.eINSTANCE.createSequenceStar());
-					if (NewChildDescriptorHelper.isValidCommand(object, commandParameter)) {
-						newChildDescriptors.add(commandParameter);
-					}
-				}
-				// end-extension-code
+				newChildDescriptors.add(createChildParameter(SharedmodelPackage.Literals.GENERIC_PKG__CAPELLA_ELEMENTS,
+						BehaviourTreeFactory.eINSTANCE.createSequenceStar()));
 
-				// begin-extension-code
-				{
-					CommandParameter commandParameter = createChildParameter(
-							SharedmodelPackage.Literals.GENERIC_PKG__CAPELLA_ELEMENTS,
-							BehaviourTreeFactory.eINSTANCE.createFallback());
-					if (NewChildDescriptorHelper.isValidCommand(object, commandParameter)) {
-						newChildDescriptors.add(commandParameter);
-					}
-				}
-				// end-extension-code
+				newChildDescriptors.add(createChildParameter(SharedmodelPackage.Literals.GENERIC_PKG__CAPELLA_ELEMENTS,
+						BehaviourTreeFactory.eINSTANCE.createFallback()));
 
-				// begin-extension-code
-				{
-					CommandParameter commandParameter = createChildParameter(
-							SharedmodelPackage.Literals.GENERIC_PKG__CAPELLA_ELEMENTS,
-							BehaviourTreeFactory.eINSTANCE.createReactiveFallback());
-					if (NewChildDescriptorHelper.isValidCommand(object, commandParameter)) {
-						newChildDescriptors.add(commandParameter);
-					}
-				}
-				// end-extension-code
+				newChildDescriptors.add(createChildParameter(SharedmodelPackage.Literals.GENERIC_PKG__CAPELLA_ELEMENTS,
+						BehaviourTreeFactory.eINSTANCE.createReactiveFallback()));
 
-				// begin-extension-code
-				{
-					CommandParameter commandParameter = createChildParameter(
-							SharedmodelPackage.Literals.GENERIC_PKG__CAPELLA_ELEMENTS,
-							BehaviourTreeFactory.eINSTANCE.createInverter());
-					if (NewChildDescriptorHelper.isValidCommand(object, commandParameter)) {
-						newChildDescriptors.add(commandParameter);
-					}
-				}
-				// end-extension-code
+				newChildDescriptors.add(createChildParameter(SharedmodelPackage.Literals.GENERIC_PKG__CAPELLA_ELEMENTS,
+						BehaviourTreeFactory.eINSTANCE.createInverter()));
 
-				// begin-extension-code
-				{
-					CommandParameter commandParameter = createChildParameter(
-							SharedmodelPackage.Literals.GENERIC_PKG__CAPELLA_ELEMENTS,
-							BehaviourTreeFactory.eINSTANCE.createForceSuccess());
-					if (NewChildDescriptorHelper.isValidCommand(object, commandParameter)) {
-						newChildDescriptors.add(commandParameter);
-					}
-				}
-				// end-extension-code
+				newChildDescriptors.add(createChildParameter(SharedmodelPackage.Literals.GENERIC_PKG__CAPELLA_ELEMENTS,
+						BehaviourTreeFactory.eINSTANCE.createForceSuccess()));
 
-				// begin-extension-code
-				{
-					CommandParameter commandParameter = createChildParameter(
-							SharedmodelPackage.Literals.GENERIC_PKG__CAPELLA_ELEMENTS,
-							BehaviourTreeFactory.eINSTANCE.createForceFailure());
-					if (NewChildDescriptorHelper.isValidCommand(object, commandParameter)) {
-						newChildDescriptors.add(commandParameter);
-					}
-				}
-				// end-extension-code
+				newChildDescriptors.add(createChildParameter(SharedmodelPackage.Literals.GENERIC_PKG__CAPELLA_ELEMENTS,
+						BehaviourTreeFactory.eINSTANCE.createForceFailure()));
 
-				// begin-extension-code
-				{
-					CommandParameter commandParameter = createChildParameter(
-							SharedmodelPackage.Literals.GENERIC_PKG__CAPELLA_ELEMENTS,
-							BehaviourTreeFactory.eINSTANCE.createRepeat());
-					if (NewChildDescriptorHelper.isValidCommand(object, commandParameter)) {
-						newChildDescriptors.add(commandParameter);
-					}
-				}
-				// end-extension-code
+				newChildDescriptors.add(createChildParameter(SharedmodelPackage.Literals.GENERIC_PKG__CAPELLA_ELEMENTS,
+						BehaviourTreeFactory.eINSTANCE.createRepeat()));
 
-				// begin-extension-code
-				{
-					CommandParameter commandParameter = createChildParameter(
-							SharedmodelPackage.Literals.GENERIC_PKG__CAPELLA_ELEMENTS,
-							BehaviourTreeFactory.eINSTANCE.createRetry());
-					if (NewChildDescriptorHelper.isValidCommand(object, commandParameter)) {
-						newChildDescriptors.add(commandParameter);
-					}
-				}
-				// end-extension-code
+				newChildDescriptors.add(createChildParameter(SharedmodelPackage.Literals.GENERIC_PKG__CAPELLA_ELEMENTS,
+						BehaviourTreeFactory.eINSTANCE.createRetry()));
 
 				return null;
 			}

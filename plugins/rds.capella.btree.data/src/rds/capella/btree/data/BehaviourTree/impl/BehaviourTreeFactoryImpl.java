@@ -2,15 +2,12 @@
 package rds.capella.btree.data.BehaviourTree.impl;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-
-import org.polarsys.capella.common.lib.IdGenerator;
 import rds.capella.btree.data.BehaviourTree.*;
 
 /**
@@ -100,11 +97,6 @@ public class BehaviourTreeFactoryImpl extends EFactoryImpl implements BehaviourT
 	@Override
 	public BTreeRoot createBTreeRoot() {
 		BTreeRootImpl bTreeRoot = new BTreeRootImpl();
-		//begin-capella-code
-
-		bTreeRoot.setId(IdGenerator.createId());
-
-		//end-capella-code
 		return bTreeRoot;
 	}
 
@@ -113,13 +105,9 @@ public class BehaviourTreeFactoryImpl extends EFactoryImpl implements BehaviourT
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public BTreeInclude createBTreeInclude() {
 		BTreeIncludeImpl bTreeInclude = new BTreeIncludeImpl();
-		//begin-capella-code
-
-		bTreeInclude.setId(IdGenerator.createId());
-
-		//end-capella-code
 		return bTreeInclude;
 	}
 
@@ -131,11 +119,6 @@ public class BehaviourTreeFactoryImpl extends EFactoryImpl implements BehaviourT
 	@Override
 	public Action createAction() {
 		ActionImpl action = new ActionImpl();
-		//begin-capella-code
-
-		action.setId(IdGenerator.createId());
-
-		//end-capella-code
 		return action;
 	}
 
@@ -147,11 +130,6 @@ public class BehaviourTreeFactoryImpl extends EFactoryImpl implements BehaviourT
 	@Override
 	public Condition createCondition() {
 		ConditionImpl condition = new ConditionImpl();
-		//begin-capella-code
-
-		condition.setId(IdGenerator.createId());
-
-		//end-capella-code
 		return condition;
 	}
 
@@ -163,11 +141,6 @@ public class BehaviourTreeFactoryImpl extends EFactoryImpl implements BehaviourT
 	@Override
 	public Parallel createParallel() {
 		ParallelImpl parallel = new ParallelImpl();
-		//begin-capella-code
-
-		parallel.setId(IdGenerator.createId());
-
-		//end-capella-code
 		return parallel;
 	}
 
@@ -179,11 +152,6 @@ public class BehaviourTreeFactoryImpl extends EFactoryImpl implements BehaviourT
 	@Override
 	public Sequence createSequence() {
 		SequenceImpl sequence = new SequenceImpl();
-		//begin-capella-code
-
-		sequence.setId(IdGenerator.createId());
-
-		//end-capella-code
 		return sequence;
 	}
 
@@ -195,11 +163,6 @@ public class BehaviourTreeFactoryImpl extends EFactoryImpl implements BehaviourT
 	@Override
 	public ReactiveSequence createReactiveSequence() {
 		ReactiveSequenceImpl reactiveSequence = new ReactiveSequenceImpl();
-		//begin-capella-code
-
-		reactiveSequence.setId(IdGenerator.createId());
-
-		//end-capella-code
 		return reactiveSequence;
 	}
 
@@ -211,11 +174,6 @@ public class BehaviourTreeFactoryImpl extends EFactoryImpl implements BehaviourT
 	@Override
 	public SequenceStar createSequenceStar() {
 		SequenceStarImpl sequenceStar = new SequenceStarImpl();
-		//begin-capella-code
-
-		sequenceStar.setId(IdGenerator.createId());
-
-		//end-capella-code
 		return sequenceStar;
 	}
 
@@ -227,11 +185,6 @@ public class BehaviourTreeFactoryImpl extends EFactoryImpl implements BehaviourT
 	@Override
 	public Fallback createFallback() {
 		FallbackImpl fallback = new FallbackImpl();
-		//begin-capella-code
-
-		fallback.setId(IdGenerator.createId());
-
-		//end-capella-code
 		return fallback;
 	}
 
@@ -243,11 +196,6 @@ public class BehaviourTreeFactoryImpl extends EFactoryImpl implements BehaviourT
 	@Override
 	public ReactiveFallback createReactiveFallback() {
 		ReactiveFallbackImpl reactiveFallback = new ReactiveFallbackImpl();
-		//begin-capella-code
-
-		reactiveFallback.setId(IdGenerator.createId());
-
-		//end-capella-code
 		return reactiveFallback;
 	}
 
@@ -259,11 +207,6 @@ public class BehaviourTreeFactoryImpl extends EFactoryImpl implements BehaviourT
 	@Override
 	public Inverter createInverter() {
 		InverterImpl inverter = new InverterImpl();
-		//begin-capella-code
-
-		inverter.setId(IdGenerator.createId());
-
-		//end-capella-code
 		return inverter;
 	}
 
@@ -275,11 +218,6 @@ public class BehaviourTreeFactoryImpl extends EFactoryImpl implements BehaviourT
 	@Override
 	public ForceSuccess createForceSuccess() {
 		ForceSuccessImpl forceSuccess = new ForceSuccessImpl();
-		//begin-capella-code
-
-		forceSuccess.setId(IdGenerator.createId());
-
-		//end-capella-code
 		return forceSuccess;
 	}
 
@@ -291,11 +229,6 @@ public class BehaviourTreeFactoryImpl extends EFactoryImpl implements BehaviourT
 	@Override
 	public ForceFailure createForceFailure() {
 		ForceFailureImpl forceFailure = new ForceFailureImpl();
-		//begin-capella-code
-
-		forceFailure.setId(IdGenerator.createId());
-
-		//end-capella-code
 		return forceFailure;
 	}
 
@@ -307,11 +240,6 @@ public class BehaviourTreeFactoryImpl extends EFactoryImpl implements BehaviourT
 	@Override
 	public Repeat createRepeat() {
 		RepeatImpl repeat = new RepeatImpl();
-		//begin-capella-code
-
-		repeat.setId(IdGenerator.createId());
-
-		//end-capella-code
 		return repeat;
 	}
 
@@ -323,11 +251,6 @@ public class BehaviourTreeFactoryImpl extends EFactoryImpl implements BehaviourT
 	@Override
 	public Retry createRetry() {
 		RetryImpl retry = new RetryImpl();
-		//begin-capella-code
-
-		retry.setId(IdGenerator.createId());
-
-		//end-capella-code
 		return retry;
 	}
 
@@ -350,201 +273,6 @@ public class BehaviourTreeFactoryImpl extends EFactoryImpl implements BehaviourT
 	@Deprecated
 	public static BehaviourTreePackage getPackage() {
 		return BehaviourTreePackage.eINSTANCE;
-	}
-
-	/**
-	 * Creates class and sets its name
-	 * (This method comes from a customization of the standard EMF generator)
-	 *
-	 * @param name_p : default name of created element
-	 * @generated
-	 */
-	public BTreeRoot createBTreeRoot(String name_p) {
-		BTreeRoot bTreeRoot = createBTreeRoot();
-		bTreeRoot.setName(name_p);
-		return bTreeRoot;
-	}
-
-	/**
-	 * Creates class and sets its name
-	 * (This method comes from a customization of the standard EMF generator)
-	 *
-	 * @param name_p : default name of created element
-	 * @generated
-	 */
-	public BTreeInclude createBTreeInclude(String name_p) {
-		BTreeInclude bTreeInclude = createBTreeInclude();
-		bTreeInclude.setName(name_p);
-		return bTreeInclude;
-	}
-
-	/**
-	 * Creates class and sets its name
-	 * (This method comes from a customization of the standard EMF generator)
-	 *
-	 * @param name_p : default name of created element
-	 * @generated
-	 */
-	public Action createAction(String name_p) {
-		Action action = createAction();
-		action.setName(name_p);
-		return action;
-	}
-
-	/**
-	 * Creates class and sets its name
-	 * (This method comes from a customization of the standard EMF generator)
-	 *
-	 * @param name_p : default name of created element
-	 * @generated
-	 */
-	public Condition createCondition(String name_p) {
-		Condition condition = createCondition();
-		condition.setName(name_p);
-		return condition;
-	}
-
-	/**
-	 * Creates class and sets its name
-	 * (This method comes from a customization of the standard EMF generator)
-	 *
-	 * @param name_p : default name of created element
-	 * @generated
-	 */
-	public Parallel createParallel(String name_p) {
-		Parallel parallel = createParallel();
-		parallel.setName(name_p);
-		return parallel;
-	}
-
-	/**
-	 * Creates class and sets its name
-	 * (This method comes from a customization of the standard EMF generator)
-	 *
-	 * @param name_p : default name of created element
-	 * @generated
-	 */
-	public Sequence createSequence(String name_p) {
-		Sequence sequence = createSequence();
-		sequence.setName(name_p);
-		return sequence;
-	}
-
-	/**
-	 * Creates class and sets its name
-	 * (This method comes from a customization of the standard EMF generator)
-	 *
-	 * @param name_p : default name of created element
-	 * @generated
-	 */
-	public ReactiveSequence createReactiveSequence(String name_p) {
-		ReactiveSequence reactiveSequence = createReactiveSequence();
-		reactiveSequence.setName(name_p);
-		return reactiveSequence;
-	}
-
-	/**
-	 * Creates class and sets its name
-	 * (This method comes from a customization of the standard EMF generator)
-	 *
-	 * @param name_p : default name of created element
-	 * @generated
-	 */
-	public SequenceStar createSequenceStar(String name_p) {
-		SequenceStar sequenceStar = createSequenceStar();
-		sequenceStar.setName(name_p);
-		return sequenceStar;
-	}
-
-	/**
-	 * Creates class and sets its name
-	 * (This method comes from a customization of the standard EMF generator)
-	 *
-	 * @param name_p : default name of created element
-	 * @generated
-	 */
-	public Fallback createFallback(String name_p) {
-		Fallback fallback = createFallback();
-		fallback.setName(name_p);
-		return fallback;
-	}
-
-	/**
-	 * Creates class and sets its name
-	 * (This method comes from a customization of the standard EMF generator)
-	 *
-	 * @param name_p : default name of created element
-	 * @generated
-	 */
-	public ReactiveFallback createReactiveFallback(String name_p) {
-		ReactiveFallback reactiveFallback = createReactiveFallback();
-		reactiveFallback.setName(name_p);
-		return reactiveFallback;
-	}
-
-	/**
-	 * Creates class and sets its name
-	 * (This method comes from a customization of the standard EMF generator)
-	 *
-	 * @param name_p : default name of created element
-	 * @generated
-	 */
-	public Inverter createInverter(String name_p) {
-		Inverter inverter = createInverter();
-		inverter.setName(name_p);
-		return inverter;
-	}
-
-	/**
-	 * Creates class and sets its name
-	 * (This method comes from a customization of the standard EMF generator)
-	 *
-	 * @param name_p : default name of created element
-	 * @generated
-	 */
-	public ForceSuccess createForceSuccess(String name_p) {
-		ForceSuccess forceSuccess = createForceSuccess();
-		forceSuccess.setName(name_p);
-		return forceSuccess;
-	}
-
-	/**
-	 * Creates class and sets its name
-	 * (This method comes from a customization of the standard EMF generator)
-	 *
-	 * @param name_p : default name of created element
-	 * @generated
-	 */
-	public ForceFailure createForceFailure(String name_p) {
-		ForceFailure forceFailure = createForceFailure();
-		forceFailure.setName(name_p);
-		return forceFailure;
-	}
-
-	/**
-	 * Creates class and sets its name
-	 * (This method comes from a customization of the standard EMF generator)
-	 *
-	 * @param name_p : default name of created element
-	 * @generated
-	 */
-	public Repeat createRepeat(String name_p) {
-		Repeat repeat = createRepeat();
-		repeat.setName(name_p);
-		return repeat;
-	}
-
-	/**
-	 * Creates class and sets its name
-	 * (This method comes from a customization of the standard EMF generator)
-	 *
-	 * @param name_p : default name of created element
-	 * @generated
-	 */
-	public Retry createRetry(String name_p) {
-		Retry retry = createRetry();
-		retry.setName(name_p);
-		return retry;
 	}
 
 } //BehaviourTreeFactoryImpl
