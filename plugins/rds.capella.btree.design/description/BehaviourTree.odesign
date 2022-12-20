@@ -1679,8 +1679,15 @@
               <initialOperation>
                 <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:container">
                   <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:containerView.setBTreeNodePositionHint()"/>
-                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="Repeat" referenceName="ownedNodes">
-                    <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="Repeat"/>
+                  <subModelOperations xsi:type="tool_1:If" conditionExpression="aql:self.oclIsKindOf(BehaviourTree::BTreeContainer)">
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="Repeat" referenceName="ownedNodes">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'Repeat '.concat(self.eContainer().ownedNodes->filter(BehaviourTree::BTreeDecorator)->indexOf(self).toString())"/>
+                    </subModelOperations>
+                  </subModelOperations>
+                  <subModelOperations xsi:type="tool_1:If" conditionExpression="aql:self.oclIsKindOf(BehaviourTree::BTreeRoot)">
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="Repeat" referenceName="ownedBTreeContainer">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="Repeat"/>
+                    </subModelOperations>
                   </subModelOperations>
                 </firstModelOperations>
               </initialOperation>
@@ -1693,8 +1700,15 @@
               <initialOperation>
                 <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:container">
                   <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:containerView.setBTreeNodePositionHint()"/>
-                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="Retry" referenceName="ownedNodes">
-                    <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="Retry"/>
+                  <subModelOperations xsi:type="tool_1:If" conditionExpression="aql:self.oclIsKindOf(BehaviourTree::BTreeContainer)">
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="Retry" referenceName="ownedNodes">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'Retry '.concat(self.eContainer().ownedNodes->filter(BehaviourTree::BTreeDecorator)->indexOf(self).toString())"/>
+                    </subModelOperations>
+                  </subModelOperations>
+                  <subModelOperations xsi:type="tool_1:If" conditionExpression="aql:self.oclIsKindOf(BehaviourTree::BTreeRoot)">
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="Retry" referenceName="ownedBTreeContainer">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="Retry"/>
+                    </subModelOperations>
                   </subModelOperations>
                 </firstModelOperations>
               </initialOperation>
@@ -1707,8 +1721,15 @@
               <initialOperation>
                 <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:container">
                   <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:containerView.setBTreeNodePositionHint()"/>
-                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="Inverter" referenceName="ownedNodes">
-                    <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="Inverter"/>
+                  <subModelOperations xsi:type="tool_1:If" conditionExpression="aql:self.oclIsKindOf(BehaviourTree::BTreeContainer)">
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="Inverter" referenceName="ownedNodes">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'Inverter '.concat(self.eContainer().ownedNodes->filter(BehaviourTree::BTreeDecorator)->indexOf(self).toString())"/>
+                    </subModelOperations>
+                  </subModelOperations>
+                  <subModelOperations xsi:type="tool_1:If" conditionExpression="aql:self.oclIsKindOf(BehaviourTree::BTreeRoot)">
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="Inverter" referenceName="ownedBTreeContainer">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="Inverter"/>
+                    </subModelOperations>
                   </subModelOperations>
                 </firstModelOperations>
               </initialOperation>
@@ -1721,8 +1742,15 @@
               <initialOperation>
                 <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:container">
                   <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:containerView.setBTreeNodePositionHint()"/>
-                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="ForceSuccess" referenceName="ownedNodes">
-                    <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="ForceSuccess"/>
+                  <subModelOperations xsi:type="tool_1:If" conditionExpression="aql:self.oclIsKindOf(BehaviourTree::BTreeContainer)">
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="ForceSuccess" referenceName="ownedNodes">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'ForceSuccess '.concat(self.eContainer().ownedNodes->filter(BehaviourTree::BTreeDecorator)->indexOf(self).toString())"/>
+                    </subModelOperations>
+                  </subModelOperations>
+                  <subModelOperations xsi:type="tool_1:If" conditionExpression="aql:self.oclIsKindOf(BehaviourTree::BTreeRoot)">
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="ForceSuccess" referenceName="ownedBTreeContainer">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="ForceSuccess"/>
+                    </subModelOperations>
                   </subModelOperations>
                 </firstModelOperations>
               </initialOperation>
@@ -1735,8 +1763,15 @@
               <initialOperation>
                 <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:container">
                   <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:containerView.setBTreeNodePositionHint()"/>
-                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="ForceFailure" referenceName="ownedNodes">
-                    <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="ForceFailure"/>
+                  <subModelOperations xsi:type="tool_1:If" conditionExpression="aql:self.oclIsKindOf(BehaviourTree::BTreeContainer)">
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="ForceFailure" referenceName="ownedNodes">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'ForceFailure '.concat(self.eContainer().ownedNodes->filter(BehaviourTree::BTreeDecorator)->indexOf(self).toString())"/>
+                    </subModelOperations>
+                  </subModelOperations>
+                  <subModelOperations xsi:type="tool_1:If" conditionExpression="aql:self.oclIsKindOf(BehaviourTree::BTreeRoot)">
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="ForceFailure" referenceName="ownedBTreeContainer">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="ForceFailure"/>
+                    </subModelOperations>
                   </subModelOperations>
                 </firstModelOperations>
               </initialOperation>
