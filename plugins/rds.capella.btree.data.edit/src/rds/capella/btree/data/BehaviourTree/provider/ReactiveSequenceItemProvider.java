@@ -56,13 +56,13 @@ public class ReactiveSequenceItemProvider extends BTreeSequenceItemProvider {
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated not
 	 */
 	@Override
 	public String getText(Object object) {
 		String label = ((ReactiveSequence) object).getName();
 		return label == null || label.length() == 0 ? getString("_UI_ReactiveSequence_type") : //$NON-NLS-1$
-				getString("_UI_ReactiveSequence_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
+				label; //$NON-NLS-1$ //$NON-NLS-2$
 	}
 
 	/**
