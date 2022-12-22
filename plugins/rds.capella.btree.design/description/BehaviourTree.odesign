@@ -1619,7 +1619,7 @@
             </tools>
           </ownedTools>
           <ownedTools xsi:type="tool_2:ToolGroup" name="FallbackGroup">
-            <tools xsi:type="tool_2:NodeCreationDescription" name="btree.create.fallback" label="Fallback" precondition="aql:true" forceRefresh="true" nodeMappings="//@ownedViewpoints[name='Behaviour%20Tree%20Viewpoint']/@ownedRepresentations[name='BTreeDefinitionStandalone']/@defaultLayer/@nodeMappings[name='BTreeContainer']" iconPath="/rds.capella.btree.design/icons/full/obj16/Fallback.gif" extraMappings="//@ownedViewpoints[name='Behaviour%20Tree%20Viewpoint']/@ownedRepresentations[name='BTreeDefinitionStandalone']/@defaultLayer/@nodeMappings[name='BTreeContainer'] //@ownedViewpoints[name='Behaviour%20Tree%20Viewpoint']/@ownedRepresentations[name='BTreeDefinitionStandalone']/@defaultLayer/@nodeMappings[name='BTreeRoot']">
+            <tools xsi:type="tool_2:NodeCreationDescription" name="btree.create.fallback" label="Fallback" precondition="aql:true" forceRefresh="true" nodeMappings="//@ownedViewpoints[name='Behaviour%20Tree%20Viewpoint']/@ownedRepresentations[name='BTreeDefinitionStandalone']/@defaultLayer/@nodeMappings[name='BTreeContainer']" iconPath="/rds.capella.btree.design/icons/full/obj16/Fallback.gif" extraMappings="//@ownedViewpoints[name='Behaviour%20Tree%20Viewpoint']/@ownedRepresentations[name='BTreeDefinitionStandalone']/@defaultLayer/@nodeMappings[name='BTreeContainer'] //@ownedViewpoints[name='Behaviour%20Tree%20Viewpoint']/@ownedRepresentations[name='BTreeDefinitionStandalone']/@defaultLayer/@nodeMappings[name='BTreeRoot'] //@ownedViewpoints[name='Behaviour%20Tree%20Viewpoint']/@ownedRepresentations[name='BTreeDefinitionStandalone']/@defaultLayer/@nodeMappings[name='BTreeDecorator']">
               <variable name="container">
                 <subVariables xsi:type="tool_1:AcceleoVariable" name="tool" computationExpression="Logical Function"/>
               </variable>
@@ -1645,7 +1645,7 @@
                 </firstModelOperations>
               </initialOperation>
             </tools>
-            <tools xsi:type="tool_2:NodeCreationDescription" name="btree.create.reactivefallback" label="ReactiveFallback" precondition="aql:true" forceRefresh="true" nodeMappings="//@ownedViewpoints[name='Behaviour%20Tree%20Viewpoint']/@ownedRepresentations[name='BTreeDefinitionStandalone']/@defaultLayer/@nodeMappings[name='BTreeContainer']" iconPath="/rds.capella.btree.design/icons/full/obj16/ReactiveFallback.gif" extraMappings="//@ownedViewpoints[name='Behaviour%20Tree%20Viewpoint']/@ownedRepresentations[name='BTreeDefinitionStandalone']/@defaultLayer/@nodeMappings[name='BTreeContainer'] //@ownedViewpoints[name='Behaviour%20Tree%20Viewpoint']/@ownedRepresentations[name='BTreeDefinitionStandalone']/@defaultLayer/@nodeMappings[name='BTreeRoot']">
+            <tools xsi:type="tool_2:NodeCreationDescription" name="btree.create.reactivefallback" label="ReactiveFallback" precondition="aql:true" forceRefresh="true" nodeMappings="//@ownedViewpoints[name='Behaviour%20Tree%20Viewpoint']/@ownedRepresentations[name='BTreeDefinitionStandalone']/@defaultLayer/@nodeMappings[name='BTreeContainer']" iconPath="/rds.capella.btree.design/icons/full/obj16/ReactiveFallback.gif" extraMappings="//@ownedViewpoints[name='Behaviour%20Tree%20Viewpoint']/@ownedRepresentations[name='BTreeDefinitionStandalone']/@defaultLayer/@nodeMappings[name='BTreeContainer'] //@ownedViewpoints[name='Behaviour%20Tree%20Viewpoint']/@ownedRepresentations[name='BTreeDefinitionStandalone']/@defaultLayer/@nodeMappings[name='BTreeRoot'] //@ownedViewpoints[name='Behaviour%20Tree%20Viewpoint']/@ownedRepresentations[name='BTreeDefinitionStandalone']/@defaultLayer/@nodeMappings[name='BTreeDecorator']">
               <variable name="container">
                 <subVariables xsi:type="tool_1:AcceleoVariable" name="tool" computationExpression="Logical Function"/>
               </variable>
@@ -1673,7 +1673,7 @@
             </tools>
           </ownedTools>
           <ownedTools xsi:type="tool_2:ToolGroup" name="DecoratorGroup">
-            <tools xsi:type="tool_2:NodeCreationDescription" name="btree.create.repeat" label="Repeat" precondition="aql:true" forceRefresh="true" nodeMappings="//@ownedViewpoints[name='Behaviour%20Tree%20Viewpoint']/@ownedRepresentations[name='BTreeDefinitionStandalone']/@defaultLayer/@nodeMappings[name='BTreeDecorator']" iconPath="/rds.capella.btree.design/icons/full/obj16/Repeat.gif" extraMappings="//@ownedViewpoints[name='Behaviour%20Tree%20Viewpoint']/@ownedRepresentations[name='BTreeDefinitionStandalone']/@defaultLayer/@nodeMappings[name='BTreeContainer'] //@ownedViewpoints[name='Behaviour%20Tree%20Viewpoint']/@ownedRepresentations[name='BTreeDefinitionStandalone']/@defaultLayer/@nodeMappings[name='BTreeRoot']">
+            <tools xsi:type="tool_2:NodeCreationDescription" name="btree.create.repeat" label="Repeat" precondition="aql:true" forceRefresh="true" nodeMappings="//@ownedViewpoints[name='Behaviour%20Tree%20Viewpoint']/@ownedRepresentations[name='BTreeDefinitionStandalone']/@defaultLayer/@nodeMappings[name='BTreeDecorator']" iconPath="/rds.capella.btree.design/icons/full/obj16/Repeat.gif" extraMappings="//@ownedViewpoints[name='Behaviour%20Tree%20Viewpoint']/@ownedRepresentations[name='BTreeDefinitionStandalone']/@defaultLayer/@nodeMappings[name='BTreeContainer'] //@ownedViewpoints[name='Behaviour%20Tree%20Viewpoint']/@ownedRepresentations[name='BTreeDefinitionStandalone']/@defaultLayer/@nodeMappings[name='BTreeRoot'] //@ownedViewpoints[name='Behaviour%20Tree%20Viewpoint']/@ownedRepresentations[name='BTreeDefinitionStandalone']/@defaultLayer/@nodeMappings[name='BTreeDecorator']">
               <variable name="container">
                 <subVariables xsi:type="tool_1:AcceleoVariable" name="tool" computationExpression="Logical Function"/>
               </variable>
@@ -1691,10 +1691,15 @@
                       <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="Repeat"/>
                     </subModelOperations>
                   </subModelOperations>
+                  <subModelOperations xsi:type="tool_1:If" conditionExpression="aql:self.oclIsKindOf(BehaviourTree::BTreeDecorator)">
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="Repeat" referenceName="ownedNode">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'Repeat'"/>
+                    </subModelOperations>
+                  </subModelOperations>
                 </firstModelOperations>
               </initialOperation>
             </tools>
-            <tools xsi:type="tool_2:NodeCreationDescription" name="btree.create.retry" label="Retry" precondition="aql:true" forceRefresh="true" nodeMappings="//@ownedViewpoints[name='Behaviour%20Tree%20Viewpoint']/@ownedRepresentations[name='BTreeDefinitionStandalone']/@defaultLayer/@nodeMappings[name='BTreeDecorator']" iconPath="/rds.capella.btree.design/icons/full/obj16/Retry.gif" extraMappings="//@ownedViewpoints[name='Behaviour%20Tree%20Viewpoint']/@ownedRepresentations[name='BTreeDefinitionStandalone']/@defaultLayer/@nodeMappings[name='BTreeContainer'] //@ownedViewpoints[name='Behaviour%20Tree%20Viewpoint']/@ownedRepresentations[name='BTreeDefinitionStandalone']/@defaultLayer/@nodeMappings[name='BTreeRoot']">
+            <tools xsi:type="tool_2:NodeCreationDescription" name="btree.create.retry" label="Retry" precondition="aql:true" forceRefresh="true" nodeMappings="//@ownedViewpoints[name='Behaviour%20Tree%20Viewpoint']/@ownedRepresentations[name='BTreeDefinitionStandalone']/@defaultLayer/@nodeMappings[name='BTreeDecorator']" iconPath="/rds.capella.btree.design/icons/full/obj16/Retry.gif" extraMappings="//@ownedViewpoints[name='Behaviour%20Tree%20Viewpoint']/@ownedRepresentations[name='BTreeDefinitionStandalone']/@defaultLayer/@nodeMappings[name='BTreeContainer'] //@ownedViewpoints[name='Behaviour%20Tree%20Viewpoint']/@ownedRepresentations[name='BTreeDefinitionStandalone']/@defaultLayer/@nodeMappings[name='BTreeRoot'] //@ownedViewpoints[name='Behaviour%20Tree%20Viewpoint']/@ownedRepresentations[name='BTreeDefinitionStandalone']/@defaultLayer/@nodeMappings[name='BTreeDecorator']">
               <variable name="container">
                 <subVariables xsi:type="tool_1:AcceleoVariable" name="tool" computationExpression="Logical Function"/>
               </variable>
@@ -1712,10 +1717,15 @@
                       <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="Retry"/>
                     </subModelOperations>
                   </subModelOperations>
+                  <subModelOperations xsi:type="tool_1:If" conditionExpression="aql:self.oclIsKindOf(BehaviourTree::BTreeDecorator)">
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="Retry" referenceName="ownedNode">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'Retry'"/>
+                    </subModelOperations>
+                  </subModelOperations>
                 </firstModelOperations>
               </initialOperation>
             </tools>
-            <tools xsi:type="tool_2:NodeCreationDescription" name="btree.create.iverter" label="Inverter" precondition="aql:true" forceRefresh="true" nodeMappings="//@ownedViewpoints[name='Behaviour%20Tree%20Viewpoint']/@ownedRepresentations[name='BTreeDefinitionStandalone']/@defaultLayer/@nodeMappings[name='BTreeDecorator']" iconPath="/rds.capella.btree.design/icons/full/obj16/Retry.gif" extraMappings="//@ownedViewpoints[name='Behaviour%20Tree%20Viewpoint']/@ownedRepresentations[name='BTreeDefinitionStandalone']/@defaultLayer/@nodeMappings[name='BTreeContainer'] //@ownedViewpoints[name='Behaviour%20Tree%20Viewpoint']/@ownedRepresentations[name='BTreeDefinitionStandalone']/@defaultLayer/@nodeMappings[name='BTreeRoot']">
+            <tools xsi:type="tool_2:NodeCreationDescription" name="btree.create.iverter" label="Inverter" precondition="aql:true" forceRefresh="true" nodeMappings="//@ownedViewpoints[name='Behaviour%20Tree%20Viewpoint']/@ownedRepresentations[name='BTreeDefinitionStandalone']/@defaultLayer/@nodeMappings[name='BTreeDecorator']" iconPath="/rds.capella.btree.design/icons/full/obj16/Retry.gif" extraMappings="//@ownedViewpoints[name='Behaviour%20Tree%20Viewpoint']/@ownedRepresentations[name='BTreeDefinitionStandalone']/@defaultLayer/@nodeMappings[name='BTreeContainer'] //@ownedViewpoints[name='Behaviour%20Tree%20Viewpoint']/@ownedRepresentations[name='BTreeDefinitionStandalone']/@defaultLayer/@nodeMappings[name='BTreeRoot'] //@ownedViewpoints[name='Behaviour%20Tree%20Viewpoint']/@ownedRepresentations[name='BTreeDefinitionStandalone']/@defaultLayer/@nodeMappings[name='BTreeDecorator']">
               <variable name="container">
                 <subVariables xsi:type="tool_1:AcceleoVariable" name="tool" computationExpression="Logical Function"/>
               </variable>
@@ -1733,10 +1743,15 @@
                       <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="Inverter"/>
                     </subModelOperations>
                   </subModelOperations>
+                  <subModelOperations xsi:type="tool_1:If" conditionExpression="aql:self.oclIsKindOf(BehaviourTree::BTreeDecorator)">
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="Inverter" referenceName="ownedNode">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'Inverter'"/>
+                    </subModelOperations>
+                  </subModelOperations>
                 </firstModelOperations>
               </initialOperation>
             </tools>
-            <tools xsi:type="tool_2:NodeCreationDescription" name="btree.create.forceSuccess" label="ForceSuccess" precondition="aql:true" forceRefresh="true" nodeMappings="//@ownedViewpoints[name='Behaviour%20Tree%20Viewpoint']/@ownedRepresentations[name='BTreeDefinitionStandalone']/@defaultLayer/@nodeMappings[name='BTreeDecorator']" iconPath="/rds.capella.btree.design/icons/full/obj16/Retry.gif" extraMappings="//@ownedViewpoints[name='Behaviour%20Tree%20Viewpoint']/@ownedRepresentations[name='BTreeDefinitionStandalone']/@defaultLayer/@nodeMappings[name='BTreeContainer'] //@ownedViewpoints[name='Behaviour%20Tree%20Viewpoint']/@ownedRepresentations[name='BTreeDefinitionStandalone']/@defaultLayer/@nodeMappings[name='BTreeRoot']">
+            <tools xsi:type="tool_2:NodeCreationDescription" name="btree.create.forceSuccess" label="ForceSuccess" precondition="aql:true" forceRefresh="true" nodeMappings="//@ownedViewpoints[name='Behaviour%20Tree%20Viewpoint']/@ownedRepresentations[name='BTreeDefinitionStandalone']/@defaultLayer/@nodeMappings[name='BTreeDecorator']" iconPath="/rds.capella.btree.design/icons/full/obj16/Retry.gif" extraMappings="//@ownedViewpoints[name='Behaviour%20Tree%20Viewpoint']/@ownedRepresentations[name='BTreeDefinitionStandalone']/@defaultLayer/@nodeMappings[name='BTreeContainer'] //@ownedViewpoints[name='Behaviour%20Tree%20Viewpoint']/@ownedRepresentations[name='BTreeDefinitionStandalone']/@defaultLayer/@nodeMappings[name='BTreeRoot'] //@ownedViewpoints[name='Behaviour%20Tree%20Viewpoint']/@ownedRepresentations[name='BTreeDefinitionStandalone']/@defaultLayer/@nodeMappings[name='BTreeDecorator']">
               <variable name="container">
                 <subVariables xsi:type="tool_1:AcceleoVariable" name="tool" computationExpression="Logical Function"/>
               </variable>
@@ -1754,10 +1769,15 @@
                       <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="ForceSuccess"/>
                     </subModelOperations>
                   </subModelOperations>
+                  <subModelOperations xsi:type="tool_1:If" conditionExpression="aql:self.oclIsKindOf(BehaviourTree::BTreeDecorator)">
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="ForceSuccess" referenceName="ownedNode">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'ForceSuccess'"/>
+                    </subModelOperations>
+                  </subModelOperations>
                 </firstModelOperations>
               </initialOperation>
             </tools>
-            <tools xsi:type="tool_2:NodeCreationDescription" name="btree.create.forceFailure" label="ForceFailure" precondition="aql:true" forceRefresh="true" nodeMappings="//@ownedViewpoints[name='Behaviour%20Tree%20Viewpoint']/@ownedRepresentations[name='BTreeDefinitionStandalone']/@defaultLayer/@nodeMappings[name='BTreeDecorator']" iconPath="/rds.capella.btree.design/icons/full/obj16/Retry.gif" extraMappings="//@ownedViewpoints[name='Behaviour%20Tree%20Viewpoint']/@ownedRepresentations[name='BTreeDefinitionStandalone']/@defaultLayer/@nodeMappings[name='BTreeContainer'] //@ownedViewpoints[name='Behaviour%20Tree%20Viewpoint']/@ownedRepresentations[name='BTreeDefinitionStandalone']/@defaultLayer/@nodeMappings[name='BTreeRoot']">
+            <tools xsi:type="tool_2:NodeCreationDescription" name="btree.create.forceFailure" label="ForceFailure" precondition="aql:true" forceRefresh="true" nodeMappings="//@ownedViewpoints[name='Behaviour%20Tree%20Viewpoint']/@ownedRepresentations[name='BTreeDefinitionStandalone']/@defaultLayer/@nodeMappings[name='BTreeDecorator']" iconPath="/rds.capella.btree.design/icons/full/obj16/Retry.gif" extraMappings="//@ownedViewpoints[name='Behaviour%20Tree%20Viewpoint']/@ownedRepresentations[name='BTreeDefinitionStandalone']/@defaultLayer/@nodeMappings[name='BTreeContainer'] //@ownedViewpoints[name='Behaviour%20Tree%20Viewpoint']/@ownedRepresentations[name='BTreeDefinitionStandalone']/@defaultLayer/@nodeMappings[name='BTreeRoot'] //@ownedViewpoints[name='Behaviour%20Tree%20Viewpoint']/@ownedRepresentations[name='BTreeDefinitionStandalone']/@defaultLayer/@nodeMappings[name='BTreeDecorator']">
               <variable name="container">
                 <subVariables xsi:type="tool_1:AcceleoVariable" name="tool" computationExpression="Logical Function"/>
               </variable>
@@ -1775,11 +1795,16 @@
                       <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="ForceFailure"/>
                     </subModelOperations>
                   </subModelOperations>
+                  <subModelOperations xsi:type="tool_1:If" conditionExpression="aql:self.oclIsKindOf(BehaviourTree::BTreeDecorator)">
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="ForceFailure" referenceName="ownedNode">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'ForceFailure'"/>
+                    </subModelOperations>
+                  </subModelOperations>
                 </firstModelOperations>
               </initialOperation>
             </tools>
           </ownedTools>
-          <ownedTools xsi:type="tool_2:NodeCreationDescription" name="btree.create.includenew" label="Behaviour Tree" precondition="aql:true" forceRefresh="true" nodeMappings="//@ownedViewpoints[name='Behaviour%20Tree%20Viewpoint']/@ownedRepresentations[name='BTreeDefinitionStandalone']/@defaultLayer/@nodeMappings[name='BTreeInclude']" iconPath="/rds.capella.btree.design/icons/full/obj16/BTree.gif" extraMappings="//@ownedViewpoints[name='Behaviour%20Tree%20Viewpoint']/@ownedRepresentations[name='BTreeDefinitionStandalone']/@defaultLayer/@nodeMappings[name='BTreeContainer']">
+          <ownedTools xsi:type="tool_2:NodeCreationDescription" name="btree.create.includenew" label="Behaviour Tree Include" precondition="aql:true" forceRefresh="true" nodeMappings="//@ownedViewpoints[name='Behaviour%20Tree%20Viewpoint']/@ownedRepresentations[name='BTreeDefinitionStandalone']/@defaultLayer/@nodeMappings[name='BTreeInclude']" iconPath="/rds.capella.btree.design/icons/full/obj16/BTree.gif" extraMappings="//@ownedViewpoints[name='Behaviour%20Tree%20Viewpoint']/@ownedRepresentations[name='BTreeDefinitionStandalone']/@defaultLayer/@nodeMappings[name='BTreeContainer'] //@ownedViewpoints[name='Behaviour%20Tree%20Viewpoint']/@ownedRepresentations[name='BTreeDefinitionStandalone']/@defaultLayer/@nodeMappings[name='BTreeDecorator']">
             <variable name="container">
               <subVariables xsi:type="tool_1:AcceleoVariable" name="tool" computationExpression="Logical Function"/>
             </variable>
@@ -1792,9 +1817,17 @@
                   </subModelOperations>
                 </subModelOperations>
                 <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:containerView.setBTreeNodePositionHint()"/>
-                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="BTreeInclude" referenceName="ownedNodes">
-                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:newBTreeRoot.name"/>
-                  <subModelOperations xsi:type="tool_1:SetValue" featureName="btreeReference" valueExpression="var:newBTreeRoot"/>
+                <subModelOperations xsi:type="tool_1:If" conditionExpression="aql:self.oclIsKindOf(BehaviourTree::BTreeContainer)">
+                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="BTreeInclude" referenceName="ownedNodes">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:newBTreeRoot.name"/>
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="btreeReference" valueExpression="var:newBTreeRoot"/>
+                  </subModelOperations>
+                </subModelOperations>
+                <subModelOperations xsi:type="tool_1:If" conditionExpression="aql:self.oclIsKindOf(BehaviourTree::BTreeDecorator)">
+                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="BTreeInclude" referenceName="ownedNode">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:newBTreeRoot.name"/>
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="btreeReference" valueExpression="var:newBTreeRoot"/>
+                  </subModelOperations>
                 </subModelOperations>
               </firstModelOperations>
             </initialOperation>
