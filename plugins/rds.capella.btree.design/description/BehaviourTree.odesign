@@ -1335,7 +1335,7 @@
             </style>
           </conditionnalStyles>
           <conditionnalStyles predicateExpression="aql:self.eClass().name = 'ReactiveSequence'">
-            <style xsi:type="style:SquareDescription" borderSizeComputationExpression="2" labelExpression="aql:self.eContainer().ownedNodes->indexOf(self).toString().concat('. ').concat(self.name)" iconPath="/rds.capella.btree.design/icons/full/obj16/ReactiveSequence.gif" labelAlignment="LEFT" labelPosition="node" resizeKind="EAST_WEST" width="10" height="5">
+            <style xsi:type="style:SquareDescription" borderSizeComputationExpression="1" labelExpression="aql:self.eContainer().ownedNodes->indexOf(self).toString().concat('. ').concat(self.name)" iconPath="/rds.capella.btree.design/icons/full/obj16/ReactiveSequence.gif" labelAlignment="LEFT" labelPosition="node" resizeKind="EAST_WEST" width="10" height="5">
               <borderColor xsi:type="description:UserFixedColor" href="platform:/plugin/org.polarsys.capella.core.sirius.analysis/description/common.odesign#//@userColorsPalettes[name='Migration%20Palette']/@entries[name='_CAP_Actor_Border_Blue']"/>
               <labelColor xsi:type="description:UserFixedColor" href="platform:/plugin/org.polarsys.capella.core.sirius.analysis/description/common.odesign#//@userColorsPalettes[name='Migration%20Palette']/@entries[name='_CAP_Actor_Blue_label']"/>
               <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_purple']"/>
@@ -1356,7 +1356,7 @@
             </style>
           </conditionnalStyles>
           <conditionnalStyles predicateExpression="aql:self.eClass().name = 'ReactiveFallback'">
-            <style xsi:type="style:SquareDescription" borderSizeComputationExpression="2" labelExpression="aql:self.eContainer().ownedNodes->indexOf(self).toString().concat('. ').concat(self.name)" iconPath="/rds.capella.btree.design/icons/full/obj16/ReactiveFallback.gif" labelAlignment="LEFT" labelPosition="node" resizeKind="EAST_WEST" width="10" height="5">
+            <style xsi:type="style:SquareDescription" borderSizeComputationExpression="1" labelExpression="aql:self.eContainer().ownedNodes->indexOf(self).toString().concat('. ').concat(self.name)" iconPath="/rds.capella.btree.design/icons/full/obj16/ReactiveFallback.gif" labelAlignment="LEFT" labelPosition="node" resizeKind="EAST_WEST" width="10" height="5">
               <borderColor xsi:type="description:UserFixedColor" href="platform:/plugin/org.polarsys.capella.core.sirius.analysis/description/common.odesign#//@userColorsPalettes[name='Migration%20Palette']/@entries[name='_CAP_Actor_Border_Blue']"/>
               <labelColor xsi:type="description:UserFixedColor" href="platform:/plugin/org.polarsys.capella.core.sirius.analysis/description/common.odesign#//@userColorsPalettes[name='Migration%20Palette']/@entries[name='_CAP_Actor_Blue_label']"/>
               <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_chocolate']"/>
@@ -1416,35 +1416,35 @@
             <style xsi:type="style:SquareDescription" borderSizeComputationExpression="1" labelExpression="aql:self.eContainer().ownedNodes->indexOf(self).toString().concat('. ').concat(self.name)" iconPath="/rds.capella.btree.design/icons/full/obj16/Repeat.gif" labelAlignment="LEFT" labelPosition="node" resizeKind="EAST_WEST" width="10" height="5">
               <borderColor xsi:type="description:UserFixedColor" href="platform:/plugin/org.polarsys.capella.core.sirius.analysis/description/common.odesign#//@userColorsPalettes[name='Migration%20Palette']/@entries[name='_CAP_Actor_Border_Blue']"/>
               <labelColor xsi:type="description:UserFixedColor" href="platform:/plugin/org.polarsys.capella.core.sirius.analysis/description/common.odesign#//@userColorsPalettes[name='Migration%20Palette']/@entries[name='_CAP_Actor_Blue_label']"/>
-              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_red']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
             </style>
           </conditionnalStyles>
           <conditionnalStyles predicateExpression="aql:self.eClass().name = 'Retry'">
             <style xsi:type="style:SquareDescription" borderSizeComputationExpression="1" labelExpression="aql:self.eContainer().ownedNodes->indexOf(self).toString().concat('. ').concat(self.name)" iconPath="/rds.capella.btree.design/icons/full/obj16/Retry.gif" labelAlignment="LEFT" labelPosition="node" resizeKind="EAST_WEST" width="10" height="5">
               <borderColor xsi:type="description:UserFixedColor" href="platform:/plugin/org.polarsys.capella.core.sirius.analysis/description/common.odesign#//@userColorsPalettes[name='Migration%20Palette']/@entries[name='_CAP_Actor_Border_Blue']"/>
               <labelColor xsi:type="description:UserFixedColor" href="platform:/plugin/org.polarsys.capella.core.sirius.analysis/description/common.odesign#//@userColorsPalettes[name='Migration%20Palette']/@entries[name='_CAP_Actor_Blue_label']"/>
-              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_red']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
             </style>
           </conditionnalStyles>
           <conditionnalStyles predicateExpression="aql:self.eClass().name = 'Inverter'">
-            <style xsi:type="style:SquareDescription" borderSizeComputationExpression="1" labelExpression="aql:self.eContainer().ownedNodes->indexOf(self).toString().concat('. ').concat(self.name)" iconPath="/rds.capella.btree.design/icons/full/obj16/Ibverter.gif" labelAlignment="LEFT" labelPosition="node" resizeKind="EAST_WEST" width="10" height="5">
+            <style xsi:type="style:SquareDescription" borderSizeComputationExpression="1" labelExpression="aql:self.eContainer().ownedNodes->indexOf(self).toString().concat('. ').concat(self.name)" iconPath="/rds.capella.btree.design/icons/full/obj16/Inverter.gif" labelAlignment="LEFT" labelPosition="node" resizeKind="EAST_WEST" width="10" height="5">
               <borderColor xsi:type="description:UserFixedColor" href="platform:/plugin/org.polarsys.capella.core.sirius.analysis/description/common.odesign#//@userColorsPalettes[name='Migration%20Palette']/@entries[name='_CAP_Actor_Border_Blue']"/>
               <labelColor xsi:type="description:UserFixedColor" href="platform:/plugin/org.polarsys.capella.core.sirius.analysis/description/common.odesign#//@userColorsPalettes[name='Migration%20Palette']/@entries[name='_CAP_Actor_Blue_label']"/>
-              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_red']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
             </style>
           </conditionnalStyles>
           <conditionnalStyles predicateExpression="aql:self.eClass().name = 'ForceSuccess'">
             <style xsi:type="style:SquareDescription" borderSizeComputationExpression="1" labelExpression="aql:self.eContainer().ownedNodes->indexOf(self).toString().concat('. ').concat(self.name)" iconPath="/rds.capella.btree.design/icons/full/obj16/ForceSuccess.gif" labelAlignment="LEFT" labelPosition="node" resizeKind="EAST_WEST" width="10" height="5">
               <borderColor xsi:type="description:UserFixedColor" href="platform:/plugin/org.polarsys.capella.core.sirius.analysis/description/common.odesign#//@userColorsPalettes[name='Migration%20Palette']/@entries[name='_CAP_Actor_Border_Blue']"/>
               <labelColor xsi:type="description:UserFixedColor" href="platform:/plugin/org.polarsys.capella.core.sirius.analysis/description/common.odesign#//@userColorsPalettes[name='Migration%20Palette']/@entries[name='_CAP_Actor_Blue_label']"/>
-              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_red']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
             </style>
           </conditionnalStyles>
           <conditionnalStyles predicateExpression="aql:self.eClass().name = 'ForceFailure'">
             <style xsi:type="style:SquareDescription" borderSizeComputationExpression="1" labelExpression="aql:self.eContainer().ownedNodes->indexOf(self).toString().concat('. ').concat(self.name)" iconPath="/rds.capella.btree.design/icons/full/obj16/ForceFailure.gif" labelAlignment="LEFT" labelPosition="node" resizeKind="EAST_WEST" width="10" height="5">
               <borderColor xsi:type="description:UserFixedColor" href="platform:/plugin/org.polarsys.capella.core.sirius.analysis/description/common.odesign#//@userColorsPalettes[name='Migration%20Palette']/@entries[name='_CAP_Actor_Border_Blue']"/>
               <labelColor xsi:type="description:UserFixedColor" href="platform:/plugin/org.polarsys.capella.core.sirius.analysis/description/common.odesign#//@userColorsPalettes[name='Migration%20Palette']/@entries[name='_CAP_Actor_Blue_label']"/>
-              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_red']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
             </style>
           </conditionnalStyles>
         </nodeMappings>
@@ -1725,7 +1725,7 @@
                 </firstModelOperations>
               </initialOperation>
             </tools>
-            <tools xsi:type="tool_2:NodeCreationDescription" name="btree.create.iverter" label="Inverter" precondition="aql:true" forceRefresh="true" nodeMappings="//@ownedViewpoints[name='Behaviour%20Tree%20Viewpoint']/@ownedRepresentations[name='BTreeDefinitionStandalone']/@defaultLayer/@nodeMappings[name='BTreeDecorator']" iconPath="/rds.capella.btree.design/icons/full/obj16/Retry.gif" extraMappings="//@ownedViewpoints[name='Behaviour%20Tree%20Viewpoint']/@ownedRepresentations[name='BTreeDefinitionStandalone']/@defaultLayer/@nodeMappings[name='BTreeContainer'] //@ownedViewpoints[name='Behaviour%20Tree%20Viewpoint']/@ownedRepresentations[name='BTreeDefinitionStandalone']/@defaultLayer/@nodeMappings[name='BTreeRoot'] //@ownedViewpoints[name='Behaviour%20Tree%20Viewpoint']/@ownedRepresentations[name='BTreeDefinitionStandalone']/@defaultLayer/@nodeMappings[name='BTreeDecorator']">
+            <tools xsi:type="tool_2:NodeCreationDescription" name="btree.create.iverter" label="Inverter" precondition="aql:true" forceRefresh="true" nodeMappings="//@ownedViewpoints[name='Behaviour%20Tree%20Viewpoint']/@ownedRepresentations[name='BTreeDefinitionStandalone']/@defaultLayer/@nodeMappings[name='BTreeDecorator']" iconPath="/rds.capella.btree.design/icons/full/obj16/Inverter.gif" extraMappings="//@ownedViewpoints[name='Behaviour%20Tree%20Viewpoint']/@ownedRepresentations[name='BTreeDefinitionStandalone']/@defaultLayer/@nodeMappings[name='BTreeContainer'] //@ownedViewpoints[name='Behaviour%20Tree%20Viewpoint']/@ownedRepresentations[name='BTreeDefinitionStandalone']/@defaultLayer/@nodeMappings[name='BTreeRoot'] //@ownedViewpoints[name='Behaviour%20Tree%20Viewpoint']/@ownedRepresentations[name='BTreeDefinitionStandalone']/@defaultLayer/@nodeMappings[name='BTreeDecorator']">
               <variable name="container">
                 <subVariables xsi:type="tool_1:AcceleoVariable" name="tool" computationExpression="Logical Function"/>
               </variable>
@@ -1751,7 +1751,7 @@
                 </firstModelOperations>
               </initialOperation>
             </tools>
-            <tools xsi:type="tool_2:NodeCreationDescription" name="btree.create.forceSuccess" label="ForceSuccess" precondition="aql:true" forceRefresh="true" nodeMappings="//@ownedViewpoints[name='Behaviour%20Tree%20Viewpoint']/@ownedRepresentations[name='BTreeDefinitionStandalone']/@defaultLayer/@nodeMappings[name='BTreeDecorator']" iconPath="/rds.capella.btree.design/icons/full/obj16/Retry.gif" extraMappings="//@ownedViewpoints[name='Behaviour%20Tree%20Viewpoint']/@ownedRepresentations[name='BTreeDefinitionStandalone']/@defaultLayer/@nodeMappings[name='BTreeContainer'] //@ownedViewpoints[name='Behaviour%20Tree%20Viewpoint']/@ownedRepresentations[name='BTreeDefinitionStandalone']/@defaultLayer/@nodeMappings[name='BTreeRoot'] //@ownedViewpoints[name='Behaviour%20Tree%20Viewpoint']/@ownedRepresentations[name='BTreeDefinitionStandalone']/@defaultLayer/@nodeMappings[name='BTreeDecorator']">
+            <tools xsi:type="tool_2:NodeCreationDescription" name="btree.create.forceSuccess" label="ForceSuccess" precondition="aql:true" forceRefresh="true" nodeMappings="//@ownedViewpoints[name='Behaviour%20Tree%20Viewpoint']/@ownedRepresentations[name='BTreeDefinitionStandalone']/@defaultLayer/@nodeMappings[name='BTreeDecorator']" iconPath="/rds.capella.btree.design/icons/full/obj16/ForceSuccess.gif" extraMappings="//@ownedViewpoints[name='Behaviour%20Tree%20Viewpoint']/@ownedRepresentations[name='BTreeDefinitionStandalone']/@defaultLayer/@nodeMappings[name='BTreeContainer'] //@ownedViewpoints[name='Behaviour%20Tree%20Viewpoint']/@ownedRepresentations[name='BTreeDefinitionStandalone']/@defaultLayer/@nodeMappings[name='BTreeRoot'] //@ownedViewpoints[name='Behaviour%20Tree%20Viewpoint']/@ownedRepresentations[name='BTreeDefinitionStandalone']/@defaultLayer/@nodeMappings[name='BTreeDecorator']">
               <variable name="container">
                 <subVariables xsi:type="tool_1:AcceleoVariable" name="tool" computationExpression="Logical Function"/>
               </variable>
@@ -1777,7 +1777,7 @@
                 </firstModelOperations>
               </initialOperation>
             </tools>
-            <tools xsi:type="tool_2:NodeCreationDescription" name="btree.create.forceFailure" label="ForceFailure" precondition="aql:true" forceRefresh="true" nodeMappings="//@ownedViewpoints[name='Behaviour%20Tree%20Viewpoint']/@ownedRepresentations[name='BTreeDefinitionStandalone']/@defaultLayer/@nodeMappings[name='BTreeDecorator']" iconPath="/rds.capella.btree.design/icons/full/obj16/Retry.gif" extraMappings="//@ownedViewpoints[name='Behaviour%20Tree%20Viewpoint']/@ownedRepresentations[name='BTreeDefinitionStandalone']/@defaultLayer/@nodeMappings[name='BTreeContainer'] //@ownedViewpoints[name='Behaviour%20Tree%20Viewpoint']/@ownedRepresentations[name='BTreeDefinitionStandalone']/@defaultLayer/@nodeMappings[name='BTreeRoot'] //@ownedViewpoints[name='Behaviour%20Tree%20Viewpoint']/@ownedRepresentations[name='BTreeDefinitionStandalone']/@defaultLayer/@nodeMappings[name='BTreeDecorator']">
+            <tools xsi:type="tool_2:NodeCreationDescription" name="btree.create.forceFailure" label="ForceFailure" precondition="aql:true" forceRefresh="true" nodeMappings="//@ownedViewpoints[name='Behaviour%20Tree%20Viewpoint']/@ownedRepresentations[name='BTreeDefinitionStandalone']/@defaultLayer/@nodeMappings[name='BTreeDecorator']" iconPath="/rds.capella.btree.design/icons/full/obj16/ForceFailure.gif" extraMappings="//@ownedViewpoints[name='Behaviour%20Tree%20Viewpoint']/@ownedRepresentations[name='BTreeDefinitionStandalone']/@defaultLayer/@nodeMappings[name='BTreeContainer'] //@ownedViewpoints[name='Behaviour%20Tree%20Viewpoint']/@ownedRepresentations[name='BTreeDefinitionStandalone']/@defaultLayer/@nodeMappings[name='BTreeRoot'] //@ownedViewpoints[name='Behaviour%20Tree%20Viewpoint']/@ownedRepresentations[name='BTreeDefinitionStandalone']/@defaultLayer/@nodeMappings[name='BTreeDecorator']">
               <variable name="container">
                 <subVariables xsi:type="tool_1:AcceleoVariable" name="tool" computationExpression="Logical Function"/>
               </variable>
@@ -1804,7 +1804,7 @@
               </initialOperation>
             </tools>
           </ownedTools>
-          <ownedTools xsi:type="tool_2:NodeCreationDescription" name="btree.create.includenew" label="Behaviour Tree Include" precondition="aql:true" forceRefresh="true" nodeMappings="//@ownedViewpoints[name='Behaviour%20Tree%20Viewpoint']/@ownedRepresentations[name='BTreeDefinitionStandalone']/@defaultLayer/@nodeMappings[name='BTreeInclude']" iconPath="/rds.capella.btree.design/icons/full/obj16/BTree.gif" extraMappings="//@ownedViewpoints[name='Behaviour%20Tree%20Viewpoint']/@ownedRepresentations[name='BTreeDefinitionStandalone']/@defaultLayer/@nodeMappings[name='BTreeContainer'] //@ownedViewpoints[name='Behaviour%20Tree%20Viewpoint']/@ownedRepresentations[name='BTreeDefinitionStandalone']/@defaultLayer/@nodeMappings[name='BTreeDecorator']">
+          <ownedTools xsi:type="tool_2:NodeCreationDescription" name="btree.create.includenew" label="Behaviour Tree Include" precondition="aql:true" forceRefresh="true" nodeMappings="//@ownedViewpoints[name='Behaviour%20Tree%20Viewpoint']/@ownedRepresentations[name='BTreeDefinitionStandalone']/@defaultLayer/@nodeMappings[name='BTreeInclude']" iconPath="/rds.capella.btree.design/icons/full/obj16/BTreeInclude.gif" extraMappings="//@ownedViewpoints[name='Behaviour%20Tree%20Viewpoint']/@ownedRepresentations[name='BTreeDefinitionStandalone']/@defaultLayer/@nodeMappings[name='BTreeContainer'] //@ownedViewpoints[name='Behaviour%20Tree%20Viewpoint']/@ownedRepresentations[name='BTreeDefinitionStandalone']/@defaultLayer/@nodeMappings[name='BTreeDecorator']">
             <variable name="container">
               <subVariables xsi:type="tool_1:AcceleoVariable" name="tool" computationExpression="Logical Function"/>
             </variable>
