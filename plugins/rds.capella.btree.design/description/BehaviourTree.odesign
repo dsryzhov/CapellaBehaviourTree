@@ -1527,12 +1527,12 @@
                 <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:containerView.setBTreeNodePositionHint()"/>
                 <subModelOperations xsi:type="tool_1:If" conditionExpression="aql:self.oclIsKindOf(BehaviourTree::BTreeContainer)">
                   <subModelOperations xsi:type="tool_1:CreateInstance" typeName="Parallel" referenceName="ownedNodes">
-                    <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'Condition '.concat(self.eContainer().ownedNodes->filter(BehaviourTree::Condition)->indexOf(self).toString())"/>
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'Parallel '.concat(self.eContainer().ownedNodes->filter(BehaviourTree::Parallel)->indexOf(self).toString())"/>
                   </subModelOperations>
                 </subModelOperations>
                 <subModelOperations xsi:type="tool_1:If" conditionExpression="aql:self.oclIsKindOf(BehaviourTree::BTreeDecorator)">
                   <subModelOperations xsi:type="tool_1:CreateInstance" typeName="Parallel" referenceName="ownedNode">
-                    <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'Sequence '.concat(self.eContainer().ownedNodes->filter(BehaviourTree::Sequence)->indexOf(self).toString())"/>
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'Parallel '.concat(self.eContainer().ownedNodes->filter(BehaviourTree::Parallel)->indexOf(self).toString())"/>
                   </subModelOperations>
                 </subModelOperations>
               </firstModelOperations>
@@ -1817,10 +1817,11 @@
             <newViewContainer name="newContainerView"/>
             <initialOperation>
               <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:container">
-                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:newContainerView.setBTreeNodePositionHint()"/>
-                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="Action" referenceName="ownedNodes">
-                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:element.name"/>
-                  <subModelOperations xsi:type="tool_1:SetValue" featureName="function" valueExpression="aql:element"/>
+                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:newContainerView.setBTreeNodePositionHint()">
+                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="Action" referenceName="ownedNodes">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:element.name"/>
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="function" valueExpression="aql:element"/>
+                  </subModelOperations>
                 </subModelOperations>
               </firstModelOperations>
             </initialOperation>
