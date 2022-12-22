@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature url="features/rds.capella.btree.feature_0.1.0.202212211206.jar" id="rds.capella.btree.feature" version="0.1.0.202212211206"/>
+</site>
