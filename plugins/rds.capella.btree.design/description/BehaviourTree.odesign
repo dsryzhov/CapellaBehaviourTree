@@ -1370,7 +1370,7 @@
             </style>
           </conditionnalStyles>
         </nodeMappings>
-        <nodeMappings name="BTreeRoot" detailDescriptions="//@ownedViewpoints[name='Behaviour%20Tree%20Viewpoint']/@ownedRepresentations[name='BTreeDefinitionStandalone']/@defaultLayer/@toolSections.0/@ownedTools[name='btree.create.diagram']" labelDirectEdit="//@ownedViewpoints[name='Behaviour%20Tree%20Viewpoint']/@ownedRepresentations[name='BTreeDefinitionStandalone']/@defaultLayer/@toolSections.0/@ownedTools[name='renameContainer']" semanticCandidatesExpression="aql:self" doubleClickDescription="//@ownedViewpoints[name='Behaviour%20Tree%20Viewpoint']/@ownedRepresentations[name='BTreeDefinitionStandalone']/@defaultLayer/@toolSections.0/@ownedTools[name='SelectBranch']" synchronizationLock="true" domainClass="BTreeRoot">
+        <nodeMappings name="BTreeRoot" detailDescriptions="//@ownedViewpoints[name='Behaviour%20Tree%20Viewpoint']/@ownedRepresentations[name='BTreeDefinitionStandalone']/@defaultLayer/@toolSections.0/@ownedTools[name='btree.create.diagram']" navigationDescriptions="//@ownedViewpoints[name='Behaviour%20Tree%20Viewpoint']/@ownedRepresentations[name='BTreeDefinitionStandalone']/@defaultLayer/@toolSections.0/@ownedTools[name='BTreeParentDiagramNavigate']" labelDirectEdit="//@ownedViewpoints[name='Behaviour%20Tree%20Viewpoint']/@ownedRepresentations[name='BTreeDefinitionStandalone']/@defaultLayer/@toolSections.0/@ownedTools[name='renameContainer']" semanticCandidatesExpression="aql:self" doubleClickDescription="//@ownedViewpoints[name='Behaviour%20Tree%20Viewpoint']/@ownedRepresentations[name='BTreeDefinitionStandalone']/@defaultLayer/@toolSections.0/@ownedTools[name='SelectBranch']" synchronizationLock="true" domainClass="BTreeRoot">
           <style xsi:type="style:SquareDescription" labelAlignment="LEFT" labelPosition="node" resizeKind="NSEW" width="10" height="5">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelFormat>bold</labelFormat>
@@ -1448,7 +1448,7 @@
             </style>
           </conditionnalStyles>
         </nodeMappings>
-        <nodeMappings name="BTreeInclude" detailDescriptions="//@ownedViewpoints[name='Behaviour%20Tree%20Viewpoint']/@ownedRepresentations[name='BTreeDefinitionStandalone']/@defaultLayer/@toolSections.0/@ownedTools[name='btree.create.diagram']" navigationDescriptions="//@ownedViewpoints[name='Behaviour%20Tree%20Viewpoint']/@ownedRepresentations[name='BTreeDefinitionStandalone']/@defaultLayer/@toolSections.0/@ownedTools[name='BTreeDiagramNavigate']" labelDirectEdit="//@ownedViewpoints[name='Behaviour%20Tree%20Viewpoint']/@ownedRepresentations[name='BTreeDefinitionStandalone']/@defaultLayer/@toolSections.0/@ownedTools[name='renameBTreeInclude']" semanticCandidatesExpression="aql:self.eAllContents()" domainClass="BTreeInclude" dropDescriptions="//@ownedViewpoints[name='Behaviour%20Tree%20Viewpoint']/@ownedRepresentations[name='BTreeDefinitionStandalone']/@defaultLayer/@toolSections.0/@ownedTools[name='DropFunctionToAction'] //@ownedViewpoints[name='Behaviour%20Tree%20Viewpoint']/@ownedRepresentations[name='BTreeDefinitionStandalone']/@defaultLayer/@toolSections.0/@ownedTools[name='DropBTreeToContainer']">
+        <nodeMappings name="BTreeInclude" detailDescriptions="//@ownedViewpoints[name='Behaviour%20Tree%20Viewpoint']/@ownedRepresentations[name='BTreeDefinitionStandalone']/@defaultLayer/@toolSections.0/@ownedTools[name='btree.create.diagram']" navigationDescriptions="//@ownedViewpoints[name='Behaviour%20Tree%20Viewpoint']/@ownedRepresentations[name='BTreeDefinitionStandalone']/@defaultLayer/@toolSections.0/@ownedTools[name='BTreeChildDiagramNavigate']" labelDirectEdit="//@ownedViewpoints[name='Behaviour%20Tree%20Viewpoint']/@ownedRepresentations[name='BTreeDefinitionStandalone']/@defaultLayer/@toolSections.0/@ownedTools[name='renameBTreeInclude']" semanticCandidatesExpression="aql:self.eAllContents()" domainClass="BTreeInclude" dropDescriptions="//@ownedViewpoints[name='Behaviour%20Tree%20Viewpoint']/@ownedRepresentations[name='BTreeDefinitionStandalone']/@defaultLayer/@toolSections.0/@ownedTools[name='DropFunctionToAction'] //@ownedViewpoints[name='Behaviour%20Tree%20Viewpoint']/@ownedRepresentations[name='BTreeDefinitionStandalone']/@defaultLayer/@toolSections.0/@ownedTools[name='DropBTreeToContainer']">
           <conditionnalStyles predicateExpression="aql:self.btreeReference = null">
             <style xsi:type="style:SquareDescription" labelExpression="aql:self.eContainer().ownedNodes->indexOf(self).toString().concat('. ').concat('Ссылка не определена')" iconPath="/rds.capella.btree.design/icons/full/obj16/BTree.gif" labelAlignment="LEFT" labelPosition="node" resizeKind="NSEW" width="10" height="5">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='red']"/>
@@ -1902,7 +1902,7 @@
               <firstModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="Updated"/>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool_2:DiagramNavigationDescription" name="BTreeDiagramNavigate" browseExpression="aql:container.btreeReference" diagramDescription="//@ownedViewpoints[name='Behaviour%20Tree%20Viewpoint']/@ownedRepresentations[name='BTreeDefinitionStandalone']">
+          <ownedTools xsi:type="tool_2:DiagramNavigationDescription" name="BTreeChildDiagramNavigate" browseExpression="aql:container.btreeReference" navigationNameExpression="aql:diagramName" diagramDescription="//@ownedViewpoints[name='Behaviour%20Tree%20Viewpoint']/@ownedRepresentations[name='BTreeDefinitionStandalone']">
             <containerViewVariable name="containerView"/>
             <containerVariable name="container"/>
             <representationNameVariable name="diagramName"/>
@@ -2014,6 +2014,11 @@
                 </subModelOperations>
               </firstModelOperations>
             </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool_2:DiagramNavigationDescription" name="BTreeParentDiagramNavigate" browseExpression="aql:self.eInverse()->filter(BehaviourTree::BTreeInclude).ancestors()->filter(BehaviourTree::BTreeRoot)" navigationNameExpression="aql:diagramName" diagramDescription="//@ownedViewpoints[name='Behaviour%20Tree%20Viewpoint']/@ownedRepresentations[name='BTreeDefinitionStandalone']">
+            <containerViewVariable name="containerView"/>
+            <containerVariable name="container"/>
+            <representationNameVariable name="diagramName"/>
           </ownedTools>
         </toolSections>
       </defaultLayer>
