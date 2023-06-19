@@ -1967,10 +1967,10 @@
                 </firstModelOperations>
               </initialOperation>
             </menuItemDescription>
-            <menuItemDescription xsi:type="tool_1:OperationAction">
+            <menuItemDescription xsi:type="tool_1:OperationAction" name="FixBTreeIds">
               <view name="views"/>
               <initialOperation>
-                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:container"/>
+                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self.fixBTreeIds()"/>
               </initialOperation>
             </menuItemDescription>
           </ownedTools>

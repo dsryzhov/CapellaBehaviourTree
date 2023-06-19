@@ -5,6 +5,7 @@ import java.util.Map;
 import java.util.ArrayList;
 import org.eclipse.draw2d.geometry.Point;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.parts.DiagramEditor;
@@ -24,6 +25,7 @@ import org.eclipse.ui.IEditorPart;
 import org.polarsys.capella.core.data.capellacore.AbstractPropertyValue;
 import org.polarsys.capella.core.data.capellacore.CapellaElement;
 import org.polarsys.capella.core.data.capellacore.CapellacoreFactory;
+import org.polarsys.capella.core.data.capellacore.NamedElement;
 import org.polarsys.capella.core.data.capellacore.StringPropertyValue;
 import org.polarsys.capella.core.data.ctx.CtxFactory;
 import org.polarsys.capella.core.data.ctx.SystemFunction;
@@ -34,6 +36,11 @@ import org.polarsys.capella.core.data.oa.OaFactory;
 import org.polarsys.capella.core.data.oa.OperationalActivity;
 import org.polarsys.capella.core.data.pa.PaFactory;
 import org.polarsys.capella.core.data.pa.PhysicalFunction;
+
+import rds.capella.btree.data.BehaviourTree.BTreeContainer;
+import rds.capella.btree.data.BehaviourTree.BTreeInclude;
+import rds.capella.btree.data.BehaviourTree.BTreeNode;
+import rds.capella.btree.data.BehaviourTree.BTreeRoot;
 
 public class BTreeService {
 	public BTreeService() {
@@ -286,4 +293,41 @@ public class BTreeService {
     	}
     	return fnc_type;
     }
+    
+    public void fixBTreeIds(NamedElement element) {
+    	
+    	if (element == null) return;
+    	
+    	if (!(element.getId().isEmpty())) {
+    		element.setId(EcoreUtil.generateUUID());
+    	}
+    	
+    	if (element instanceof BTreeContainer) {
+    		
+    		BTreeContainer container = (BTreeContainer)element;
+    		
+	    	for (BTreeNode node: container.getOwnedNodes()) {
+	    		
+	    		fixBTreeIds(node);
+	    		
+	    	}
+    	} else
+
+    	if (element instanceof BTreeRoot) {
+    		
+    		BTreeRoot root = (BTreeRoot)element;
+    		
+    		BTreeNode node = root.getOwnedBTreeContainer();
+    		
+    		fixBTreeIds(node);
+    	} else 
+    		if (element instanceof BTreeInclude ) {
+    			BTreeInclude btree_include = (BTreeInclude)element;
+    			
+    			BTreeRoot root = btree_include.getBtreeReference();
+    			
+    			fixBTreeIds(root);
+    		}
+    }
+    
 }
