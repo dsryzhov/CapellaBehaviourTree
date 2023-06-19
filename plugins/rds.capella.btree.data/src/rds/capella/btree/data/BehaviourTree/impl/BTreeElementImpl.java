@@ -2,6 +2,7 @@
 package rds.capella.btree.data.BehaviourTree.impl;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.polarsys.capella.core.data.capellacore.impl.NamedElementImpl;
 import rds.capella.btree.data.BehaviourTree.BTreeElement;
 import rds.capella.btree.data.BehaviourTree.BehaviourTreePackage;
@@ -17,10 +18,11 @@ public abstract class BTreeElementImpl extends NamedElementImpl implements BTree
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated not
 	 */
 	protected BTreeElementImpl() {
 		super();
+		setId(EcoreUtil.generateUUID());
 	}
 
 	/**

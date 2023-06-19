@@ -16,6 +16,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.polarsys.capella.common.data.modellingcore.AbstractConstraint;
@@ -340,10 +341,11 @@ public class BTreeRootImpl extends ElementExtensionImpl implements BTreeRoot {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated not
 	 */
 	protected BTreeRootImpl() {
 		super();
+		setId(EcoreUtil.generateUUID());
 	}
 
 	/**
