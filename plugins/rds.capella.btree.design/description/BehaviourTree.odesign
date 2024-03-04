@@ -1270,7 +1270,7 @@
         <toolSections/>
       </defaultLayer>
     </ownedRepresentations>
-    <ownedRepresentations xsi:type="description_2:DiagramDescription" name="BTreeDefinitionStandalone" label="Behaviour Tree Definition Diagram" domainClass="BTreeElement" preconditionExpression="aql:self.oclIsKindOf(BehaviourTree::BTreeRoot) or self.oclIsKindOf(BehaviourTree::BTreeContainer) or self.oclIsKindOf(BehaviourTree::BTreeDecorator)" enablePopupBars="true">
+    <ownedRepresentations xsi:type="description_2:DiagramDescription" name="BTreeDefinitionStandalone" label="Behaviour Tree Definition Diagram" titleExpression="aql:'[BТ] '+ self.eContainer().oclAsType(capellacore::NamedElement).name" domainClass="BTreeElement" preconditionExpression="aql:self.oclIsKindOf(BehaviourTree::BTreeRoot) or self.oclIsKindOf(BehaviourTree::BTreeContainer) or self.oclIsKindOf(BehaviourTree::BTreeDecorator)" enablePopupBars="true">
       <metamodel href="http://rds/capella/btree/1.0#/"/>
       <layout xsi:type="description_2:CustomLayoutConfiguration" id="org.eclipse.elk.graphviz.dot" label="Dot" description="Layered drawings of directed graphs. The algorithm aims edges in the same direction (top to bottom, or left to right) and then attempts to avoid edge crossings and reduce edge length. Edges are routed as spline curves and are thus drawn very smoothly. This algorithm is very suitable for state machine and activity diagrams, where the direction of edges has an important role.">
         <layoutOptions xsi:type="description_2:BooleanLayoutOption" id="org.eclipse.elk.graphviz.adaptPortPositions">
@@ -1378,7 +1378,7 @@
             <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
           </style>
         </nodeMappings>
-        <nodeMappings name="BTreeLeaf" labelDirectEdit="//@ownedViewpoints[name='Behaviour%20Tree%20Viewpoint']/@ownedRepresentations[name='BTreeDefinitionStandalone']/@defaultLayer/@toolSections.0/@ownedTools[name='renameCondition']" semanticCandidatesExpression="aql:self.eAllContents()" domainClass="BTreeLeaf" dropDescriptions="//@ownedViewpoints[name='Behaviour%20Tree%20Viewpoint']/@ownedRepresentations[name='BTreeDefinitionStandalone']/@defaultLayer/@toolSections.0/@ownedTools[name='DropFunctionToAction']">
+        <nodeMappings name="BTreeLeaf" detailDescriptions="//@ownedViewpoints[name='Behaviour%20Tree%20Viewpoint']/@ownedRepresentations[name='BTreeDefinitionStandalone']/@defaultLayer/@toolSections.0/@ownedTools[name='CreateBTreeInFunction']" navigationDescriptions="//@ownedViewpoints[name='Behaviour%20Tree%20Viewpoint']/@ownedRepresentations[name='BTreeDefinitionStandalone']/@defaultLayer/@toolSections.0/@ownedTools[name='FncBTreeNavigate']" labelDirectEdit="//@ownedViewpoints[name='Behaviour%20Tree%20Viewpoint']/@ownedRepresentations[name='BTreeDefinitionStandalone']/@defaultLayer/@toolSections.0/@ownedTools[name='renameCondition']" semanticCandidatesExpression="aql:self.eAllContents()" domainClass="BTreeLeaf" dropDescriptions="//@ownedViewpoints[name='Behaviour%20Tree%20Viewpoint']/@ownedRepresentations[name='BTreeDefinitionStandalone']/@defaultLayer/@toolSections.0/@ownedTools[name='DropFunctionToAction']">
           <style xsi:type="style:SquareDescription" labelSize="12" labelAlignment="LEFT" labelPosition="node" resizeKind="NSEW" width="10" height="5">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -1473,7 +1473,7 @@
           </style>
         </edgeMappings>
         <toolSections name="BehaviourTree">
-          <ownedTools xsi:type="tool_2:NodeCreationDescription" name="btree.create.action" label="Action" precondition="aql:true" forceRefresh="true" nodeMappings="//@ownedViewpoints[name='Behaviour%20Tree%20Viewpoint']/@ownedRepresentations[name='BTreeDefinitionStandalone']/@defaultLayer/@nodeMappings[name='BTreeLeaf']" iconPath="/rds.capella.btree.design/icons/full/obj16/Action.gif" extraMappings="//@ownedViewpoints[name='Behaviour%20Tree%20Viewpoint']/@ownedRepresentations[name='BTreeDefinitionStandalone']/@defaultLayer/@nodeMappings[name='BTreeContainer'] //@ownedViewpoints[name='Behaviour%20Tree%20Viewpoint']/@ownedRepresentations[name='BTreeDefinitionStandalone']/@defaultLayer/@nodeMappings[name='BTreeDecorator']">
+          <ownedTools xsi:type="tool_2:NodeCreationDescription" name="btree.create.action" label="New Internal Action" precondition="aql:true" forceRefresh="true" nodeMappings="//@ownedViewpoints[name='Behaviour%20Tree%20Viewpoint']/@ownedRepresentations[name='BTreeDefinitionStandalone']/@defaultLayer/@nodeMappings[name='BTreeLeaf']" iconPath="/rds.capella.btree.design/icons/full/obj16/Action.gif" extraMappings="//@ownedViewpoints[name='Behaviour%20Tree%20Viewpoint']/@ownedRepresentations[name='BTreeDefinitionStandalone']/@defaultLayer/@nodeMappings[name='BTreeContainer'] //@ownedViewpoints[name='Behaviour%20Tree%20Viewpoint']/@ownedRepresentations[name='BTreeDefinitionStandalone']/@defaultLayer/@nodeMappings[name='BTreeDecorator']">
             <variable name="container">
               <subVariables xsi:type="tool_1:AcceleoVariable" name="tool" computationExpression="Logical Function"/>
             </variable>
@@ -1491,6 +1491,28 @@
                   <subModelOperations xsi:type="tool_1:CreateInstance" typeName="Action" referenceName="ownedNode">
                     <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'Action '.concat(self.eContainer().ownedNodes->filter(BehaviourTree::Action)->indexOf(self).toString())"/>
                     <subModelOperations xsi:type="tool_1:SetValue" featureName="function" valueExpression="aql:instance.createBtreeActionFunction()"/>
+                  </subModelOperations>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:SelectionWizardDescription" name="AddExistingActionId" label="External Action" candidatesExpression="aql:self.getCallableFunctionsFromBTree()">
+            <element name="element"/>
+            <containerView name="containerView"/>
+            <container name="container"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:container">
+                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:containerView.setBTreeNodePositionHint()"/>
+                <subModelOperations xsi:type="tool_1:If" conditionExpression="aql:self.oclIsKindOf(BehaviourTree::BTreeContainer)">
+                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="Action" referenceName="ownedNodes">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'Action '.concat(self.eContainer().ownedNodes->filter(BehaviourTree::Action)->indexOf(self).toString())"/>
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="function" valueExpression="aql:element"/>
+                  </subModelOperations>
+                </subModelOperations>
+                <subModelOperations xsi:type="tool_1:If" conditionExpression="aql:self.oclIsKindOf(BehaviourTree::BTreeDecorator)">
+                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="Action" referenceName="ownedNode">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'Action '.concat(self.eContainer().ownedNodes->filter(BehaviourTree::Action)->indexOf(self).toString())"/>
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="function" valueExpression="aql:element"/>
                   </subModelOperations>
                 </subModelOperations>
               </firstModelOperations>
@@ -1849,11 +1871,13 @@
             <element name="element"/>
             <newViewContainer name="newContainerView"/>
             <initialOperation>
-              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:container">
-                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:newContainerView.setBTreeNodePositionHint()">
-                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="Action" referenceName="ownedNodes">
-                    <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:element.name"/>
-                    <subModelOperations xsi:type="tool_1:SetValue" featureName="function" valueExpression="aql:element"/>
+              <firstModelOperations xsi:type="tool_1:If" conditionExpression="aql:newSemanticContainer.isFncCanBeCalledFromBTree(element)">
+                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:container">
+                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:newContainerView.setBTreeNodePositionHint()">
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="Action" referenceName="ownedNodes">
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:element.name"/>
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="function" valueExpression="aql:element"/>
+                    </subModelOperations>
                   </subModelOperations>
                 </subModelOperations>
               </firstModelOperations>
@@ -1865,9 +1889,11 @@
             <element name="element"/>
             <newViewContainer name="newContainerView"/>
             <initialOperation>
-              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:container">
-                <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:element.name"/>
-                <subModelOperations xsi:type="tool_1:SetValue" featureName="function" valueExpression="aql:element"/>
+              <firstModelOperations xsi:type="tool_1:If" conditionExpression="aql:newSemanticContainer.isFncCanBeCalledFromBTree(element)">
+                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:container">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:element.name"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="function" valueExpression="aql:element"/>
+                </subModelOperations>
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
@@ -2018,6 +2044,18 @@
           <ownedTools xsi:type="tool_2:DiagramNavigationDescription" name="BTreeParentDiagramNavigate" browseExpression="aql:self.eInverse()->filter(BehaviourTree::BTreeInclude).ancestors()->filter(BehaviourTree::BTreeRoot)" navigationNameExpression="aql:diagramName" diagramDescription="//@ownedViewpoints[name='Behaviour%20Tree%20Viewpoint']/@ownedRepresentations[name='BTreeDefinitionStandalone']">
             <containerViewVariable name="containerView"/>
             <containerVariable name="container"/>
+            <representationNameVariable name="diagramName"/>
+          </ownedTools>
+          <ownedTools xsi:type="tool_2:DiagramNavigationDescription" name="FncBTreeNavigate" browseExpression="aql:container.function.getFncBTreeList()" navigationNameExpression="aql:diagramName" diagramDescription="//@ownedViewpoints[name='Behaviour%20Tree%20Viewpoint']/@ownedRepresentations[name='BTreeDefinitionStandalone']">
+            <containerViewVariable name="containerView"/>
+            <containerVariable name="container"/>
+            <representationNameVariable name="diagramName"/>
+          </ownedTools>
+          <ownedTools xsi:type="tool_2:DiagramCreationDescription" name="CreateBTreeInFunction" titleExpression="aql:'[BТ] '+ self.function.name" browseExpression="aql:self.function.createBTreeInFunction()" diagramDescription="//@ownedViewpoints[name='Behaviour%20Tree%20Viewpoint']/@ownedRepresentations[name='BTreeDefinitionStandalone']">
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self"/>
+            </initialOperation>
+            <containerViewVariable name="containerView"/>
             <representationNameVariable name="diagramName"/>
           </ownedTools>
         </toolSections>

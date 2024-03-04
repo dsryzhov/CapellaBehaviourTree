@@ -5,6 +5,8 @@ import java.util.Map;
 
 import org.eclipse.draw2d.geometry.Dimension;
 import org.eclipse.draw2d.geometry.Point;
+import org.eclipse.emf.common.util.BasicEList;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeEditPart;
@@ -22,6 +24,7 @@ import org.eclipse.sirius.diagram.ui.business.internal.view.AbstractLayoutData;
 import org.eclipse.sirius.diagram.ui.business.internal.view.RootLayoutData;
 import org.eclipse.sirius.diagram.ui.business.api.view.SiriusGMFHelper;
 import org.eclipse.ui.IEditorPart;
+import org.polarsys.capella.common.data.activity.OutputPin;
 import org.polarsys.capella.core.data.capellacore.CapellaElement;
 import org.polarsys.capella.core.data.capellacore.NamedElement;
 import org.polarsys.capella.core.data.capellamodeller.SystemEngineering;
@@ -31,13 +34,16 @@ import org.polarsys.capella.core.data.ctx.CtxFactory;
 import org.polarsys.capella.core.data.ctx.SystemFunction;
 import org.polarsys.capella.core.data.ctx.SystemFunctionPkg;
 import org.polarsys.capella.core.data.fa.AbstractFunction;
+import org.polarsys.capella.core.data.fa.FunctionOutputPort;
 import org.polarsys.capella.core.data.fa.FunctionPkg;
+import org.polarsys.capella.core.data.fa.FunctionalExchange;
 import org.polarsys.capella.core.data.la.LaFactory;
 import org.polarsys.capella.core.data.la.LogicalFunction;
 import org.polarsys.capella.core.data.la.LogicalFunctionPkg;
 import org.polarsys.capella.core.data.pa.PaFactory;
 import org.polarsys.capella.core.data.pa.PhysicalFunction;
 import org.polarsys.capella.core.data.pa.PhysicalFunctionPkg;
+import org.polarsys.kitalpha.emde.model.ElementExtension;
 
 import rds.capella.btree.data.BehaviourTree.Action;
 import rds.capella.btree.data.BehaviourTree.BTreeContainer;
@@ -46,6 +52,8 @@ import rds.capella.btree.data.BehaviourTree.BTreeElement;
 import rds.capella.btree.data.BehaviourTree.BTreeLeaf;
 import rds.capella.btree.data.BehaviourTree.BTreeNode;
 import rds.capella.btree.data.BehaviourTree.BTreeRoot;
+import rds.capella.btree.data.BehaviourTree.BTreeSequence;
+import rds.capella.btree.data.BehaviourTree.BehaviourTreeFactory;
 
 public class BTreeNativeService {
 	public BTreeNativeService() {
@@ -300,5 +308,103 @@ public class BTreeNativeService {
 		    }
     	}
     	return null;
+    }
+    
+    public EObject getBTreeParent(BTreeElement container) {
+    	BTreeElement root_element = container;
+    	
+    	while (!(root_element instanceof BTreeRoot) && (root_element.eContainer() instanceof BTreeElement)) root_element = (BTreeElement)root_element.eContainer();
+    	
+    	if (!(root_element instanceof BTreeRoot)) return null;
+    	
+    	return root_element.eContainer();
+    	
+    }
+    
+    public boolean isFncCanBeCalledFromBTree(BTreeElement container, AbstractFunction fnc) {
+    	
+    	boolean res = false;
+    	
+    	EObject btree_parent = getBTreeParent(container);
+    	
+    	if (btree_parent == null) return false;
+    	
+    	if (!(btree_parent instanceof AbstractFunction)) return false;
+    	
+    	AbstractFunction parent_fnc = (AbstractFunction)btree_parent;
+    	
+    	for (OutputPin pin : parent_fnc.getOutputs()) {
+    		if (pin instanceof FunctionOutputPort) {
+    			
+    			FunctionOutputPort out_port = (FunctionOutputPort)pin;
+    			
+    			if (out_port.getOutgoingFunctionalExchanges().size() == 0) continue;
+    			
+    			FunctionalExchange fe = out_port.getOutgoingFunctionalExchanges().get(0);
+    			
+    			AbstractFunction tgt_fnc = (AbstractFunction)fe.getTargetFunctionInputPort().eContainer();
+    			
+    			if (tgt_fnc.equals(fnc)) {
+    				res = true; break;
+    			}
+    		}
+    	}
+    	
+    	return res;
+    }
+    
+    public EList<AbstractFunction> getCallableFunctionsFromBTree(BTreeElement container) {
+    	
+    	EList<AbstractFunction> fnc_list = new BasicEList<AbstractFunction>();
+    	
+    	EObject btree_parent = getBTreeParent(container);
+    	
+    	if (btree_parent != null) {
+    		if (btree_parent instanceof AbstractFunction) {
+    			
+    			AbstractFunction parent_fnc = (AbstractFunction)btree_parent;
+
+    	    	for (OutputPin pin : parent_fnc.getOutputs()) {
+    	    		if (pin instanceof FunctionOutputPort) {
+    	    			
+    	    			FunctionOutputPort out_port = (FunctionOutputPort)pin;
+    	    			
+    	    			if (out_port.getOutgoingFunctionalExchanges().size() == 0) continue;
+    	    			
+    	    			FunctionalExchange fe = out_port.getOutgoingFunctionalExchanges().get(0);
+    	    			
+    	    			AbstractFunction tgt_fnc = (AbstractFunction)fe.getTargetFunctionInputPort().eContainer();
+    	    			
+    	    			fnc_list.add(tgt_fnc);
+    	    		}
+    	    	}
+
+    		}
+    	};
+    	
+    	return fnc_list;
+    	
+    }
+    
+    public EList<BTreeRoot> getFncBTreeList(AbstractFunction fnc) {
+    	EList<BTreeRoot> btree_list = new BasicEList<BTreeRoot>();
+    	
+    	for (ElementExtension element: fnc.getOwnedExtensions()) {
+    		
+    		if (element instanceof BTreeRoot)
+    			btree_list.add((BTreeRoot)element);
+    		
+    	}
+    	
+    	return btree_list;
+    }
+    
+    public BTreeRoot createBTreeInFunction(AbstractFunction fnc) {
+    	BTreeRoot btree = BehaviourTreeFactory.eINSTANCE.createBTreeRoot();
+    	btree.setName(fnc.getName());
+    	
+    	fnc.getOwnedExtensions().add(btree);
+    	
+    	return btree;
     }
 }

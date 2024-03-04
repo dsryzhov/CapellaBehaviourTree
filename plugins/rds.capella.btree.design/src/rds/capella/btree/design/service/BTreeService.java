@@ -38,9 +38,11 @@ import org.polarsys.capella.core.data.pa.PaFactory;
 import org.polarsys.capella.core.data.pa.PhysicalFunction;
 
 import rds.capella.btree.data.BehaviourTree.BTreeContainer;
+import rds.capella.btree.data.BehaviourTree.BTreeElement;
 import rds.capella.btree.data.BehaviourTree.BTreeInclude;
 import rds.capella.btree.data.BehaviourTree.BTreeNode;
 import rds.capella.btree.data.BehaviourTree.BTreeRoot;
+import rds.capella.btree.data.BehaviourTree.BTreeSequence;
 
 public class BTreeService {
 	public BTreeService() {
@@ -329,5 +331,6 @@ public class BTreeService {
     			fixBTreeIds(root);
     		}
     }
-    
+
+
 }
