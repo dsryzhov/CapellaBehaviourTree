@@ -28,12 +28,15 @@ import org.polarsys.capella.common.data.activity.OutputPin;
 import org.polarsys.capella.core.data.capellacore.CapellaElement;
 import org.polarsys.capella.core.data.capellacore.NamedElement;
 import org.polarsys.capella.core.data.capellamodeller.SystemEngineering;
+import org.polarsys.capella.core.data.cs.Component;
 import org.polarsys.capella.core.data.cs.ComponentArchitecture;
 import org.polarsys.capella.core.data.cs.CsFactory;
 import org.polarsys.capella.core.data.ctx.CtxFactory;
 import org.polarsys.capella.core.data.ctx.SystemFunction;
 import org.polarsys.capella.core.data.ctx.SystemFunctionPkg;
 import org.polarsys.capella.core.data.fa.AbstractFunction;
+import org.polarsys.capella.core.data.fa.ComponentFunctionalAllocation;
+import org.polarsys.capella.core.data.fa.FaFactory;
 import org.polarsys.capella.core.data.fa.FunctionOutputPort;
 import org.polarsys.capella.core.data.fa.FunctionPkg;
 import org.polarsys.capella.core.data.fa.FunctionalExchange;
@@ -285,9 +288,35 @@ public class BTreeNativeService {
     	return root_fnc;
     }
    
+    public Component findRootComponent(CapellaElement element) {
+    	Component root_cmp = null;
+    	CapellaElement parent;
+    	parent = element;
+    	while (!(parent.eContainer() instanceof SystemEngineering || parent.eContainer() instanceof Component )) parent = (CapellaElement) parent.eContainer();
+    	
+    	if (parent.eContainer() instanceof Component) {
+    		root_cmp = (Component)parent.eContainer();
+    	}
+    	return root_cmp;
+    }
+    
+    public void allocateFunction(AbstractFunction fnc, Component cmp) {
+    	
+    	ComponentFunctionalAllocation alloc = FaFactory.eINSTANCE.createComponentFunctionalAllocation();
+    	
+    	alloc.setSourceElement(cmp);
+    	alloc.setTargetElement(fnc);
+
+    	cmp.getOwnedFunctionalAllocation().add(alloc);
+    }
+    
+    /*
+     *  Если btree определен для компонента, то новая функция аллоцируется на компонент. 
+     */
     public AbstractFunction createBtreeActionFunction(Action btree_action_node) {
     	
     	AbstractFunction root_fnc = findRootFunction(btree_action_node);
+    	
     	if (root_fnc != null) {
     		AbstractFunction node_fnc = null;
     		if (root_fnc instanceof SystemFunction) {
@@ -296,14 +325,20 @@ public class BTreeNativeService {
     		else
 	    		if (root_fnc instanceof LogicalFunction) {
 	    			node_fnc = LaFactory.eINSTANCE.createLogicalFunction();
-	    		}
+	    		} else
 		    		if (root_fnc instanceof PhysicalFunction) {
 		    			node_fnc = PaFactory.eINSTANCE.createPhysicalFunction();
 		    		}
-    		
 		    if (node_fnc != null) { 
 				node_fnc.setName(btree_action_node.getName());
 				root_fnc.getOwnedFunctions().add(node_fnc);
+				
+		    	Component btree_root_cmp = findRootComponent(btree_action_node);
+		    	
+		    	if (btree_root_cmp != null) {
+		    		allocateFunction(node_fnc, btree_root_cmp);
+		    	}
+		    	
 				return node_fnc;
 		    }
     	}
