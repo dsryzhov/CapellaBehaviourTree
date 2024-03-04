@@ -35,6 +35,7 @@ import org.polarsys.capella.core.data.ctx.CtxFactory;
 import org.polarsys.capella.core.data.ctx.SystemFunction;
 import org.polarsys.capella.core.data.ctx.SystemFunctionPkg;
 import org.polarsys.capella.core.data.fa.AbstractFunction;
+import org.polarsys.capella.core.data.fa.AbstractFunctionalBlock;
 import org.polarsys.capella.core.data.fa.ComponentFunctionalAllocation;
 import org.polarsys.capella.core.data.fa.FaFactory;
 import org.polarsys.capella.core.data.fa.FunctionOutputPort;
@@ -356,6 +357,19 @@ public class BTreeNativeService {
     	
     }
     
+    /*
+     * Функция по разному ведет себя, если btree определено для компонента или функции. 
+     * 
+     * Если btree определен в компоненте
+     * то isFncCanBeCalledFromBTree проверяет может ли fnc быть вызвана из btree на основе следующих правил
+     * - если функция аллоцированна на компонент, для которого определено btree
+     * - если функция не аллоцирована ни на один компонент
+     * 
+     * Если btree определен в функции
+     * то isFncCanBeCalledFromBTree проверяет может ли fnc быть вызвана из btree на основе следующих правил
+     * - если родительская функция связана с функцией fnc исходящими функциональными связями 
+     */
+    
     public boolean isFncCanBeCalledFromBTree(BTreeElement container, AbstractFunction fnc) {
     	
     	boolean res = false;
@@ -364,28 +378,80 @@ public class BTreeNativeService {
     	
     	if (btree_parent == null) return false;
     	
-    	if (!(btree_parent instanceof AbstractFunction)) return false;
+    	if (btree_parent instanceof AbstractFunction) {
     	
-    	AbstractFunction parent_fnc = (AbstractFunction)btree_parent;
-    	
-    	for (OutputPin pin : parent_fnc.getOutputs()) {
-    		if (pin instanceof FunctionOutputPort) {
+	    	AbstractFunction parent_fnc = (AbstractFunction)btree_parent;
+	    	
+	    	for (OutputPin pin : parent_fnc.getOutputs()) {
+	    		if (pin instanceof FunctionOutputPort) {
+	    			
+	    			FunctionOutputPort out_port = (FunctionOutputPort)pin;
+	    			
+	    			if (out_port.getOutgoingFunctionalExchanges().size() == 0) continue;
+	    			
+	    			FunctionalExchange fe = out_port.getOutgoingFunctionalExchanges().get(0);
+	    			
+	    			AbstractFunction tgt_fnc = (AbstractFunction)fe.getTargetFunctionInputPort().eContainer();
+	    			
+	    			if (tgt_fnc.equals(fnc)) {
+	    				res = true; break;
+	    			}
+	    		}
+	    	}
+    	} else
+    		if (btree_parent instanceof Component) {
+    			Component cmp = (Component)btree_parent;
     			
-    			FunctionOutputPort out_port = (FunctionOutputPort)pin;
-    			
-    			if (out_port.getOutgoingFunctionalExchanges().size() == 0) continue;
-    			
-    			FunctionalExchange fe = out_port.getOutgoingFunctionalExchanges().get(0);
-    			
-    			AbstractFunction tgt_fnc = (AbstractFunction)fe.getTargetFunctionInputPort().eContainer();
-    			
-    			if (tgt_fnc.equals(fnc)) {
-    				res = true; break;
-    			}
+    			if (fnc.getAllocationBlocks().size() > 0) {
+    				
+    				AbstractFunctionalBlock block = fnc.getAllocationBlocks().get(0);
+    				if (block.equals(cmp)) {
+    					return true;
+    				}
+    			} 
+    			else 
+    				return true;
     		}
-    	}
     	
     	return res;
+    }
+    
+    /* Аллоцирует функцию fnc на компонент, для которого определено поведенческое дерево
+     * при выполнении следующих условий
+     * - если функция 
+     * 
+     * /param container - элемент btree, в который перетащена функция на диаграмме
+     * /param fnc - функция, перетащенная на элемент btree на диаграмме
+     * 
+     * /return false если функция не аллоцирована на компонент
+     * /return true если уже функция уже ранее аллоцирована на компонент с btree, либо аллоцирована функция, ранее
+     * не аллоцирована ни на один компонент.
+     */
+    public boolean allocateFncToBtreeComponentIfNotAllocated(BTreeElement container, AbstractFunction fnc) {
+    	EObject btree_parent = getBTreeParent(container);
+    	
+    	if (btree_parent == null) return false;
+    	
+    	if (btree_parent instanceof Component) {
+    		
+			Component cmp = (Component)btree_parent;
+			
+			if (fnc.getAllocationBlocks().size() > 0) {
+				
+				AbstractFunctionalBlock block = fnc.getAllocationBlocks().get(0);
+				if (block.equals(cmp)) {
+					return true;
+				}
+				else {
+					// reallocate функцию
+				}
+			} else {
+				allocateFunction(fnc, cmp);
+				return true;
+			}
+    	}
+
+    	return false;
     }
     
     public EList<AbstractFunction> getCallableFunctionsFromBTree(BTreeElement container) {

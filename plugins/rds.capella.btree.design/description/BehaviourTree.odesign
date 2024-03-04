@@ -1878,6 +1878,7 @@
                       <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:element.name"/>
                       <subModelOperations xsi:type="tool_1:SetValue" featureName="function" valueExpression="aql:element"/>
                     </subModelOperations>
+                    <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:newSemanticContainer.allocateFncToBtreeComponentIfNotAllocated(element)"/>
                   </subModelOperations>
                 </subModelOperations>
               </firstModelOperations>
