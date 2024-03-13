@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         point="org.eclipse.ui.commands">
+      <category
+            id="rds.capella.btree.ui.commands.category"
+            name="Sample Category">
+      </category>
+      <command
+            categoryId="rds.capella.btree.ui.commands.category"
+            name="Sample Command"
+            id="rds.capella.btree.ui.commands.NavigateToBTreeActionFunction">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.handlers">
+      <handler
+            class="rds.capella.btree.ui.handlers.NavigateToBTreeActionFunction"
+            commandId="rds.capella.btree.ui.commands.NavigateToBTreeActionFunction">
+      </handler>
+   </extension>
+   <extension
+         point="org.eclipse.ui.bindings">
+      <key
+            commandId="rds.capella.btree.ui.commands.NavigateToBTreeActionFunction"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
+            contextId="org.eclipse.ui.contexts.window"
+            sequence="Alt+F7">
+      </key>
+   </extension>
+   
+<!--   
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            locationURI="popup:org.eclipse.ui.popup.any?after=group.showIn">
+         <menu
+               id="rds.capella.btree.ui.menus.sampleMenu"
+               label="Sample Menu"
+               mnemonic="M">
+            <command
+                  commandId="rds.capella.btree.ui.commands.NavigateToBTreeActionFunction"
+                  id="rds.capella.btree.ui.menus.NavigateToBTreeActionFunction"
+                  mnemonic="S">
+            </command>
+         </menu>
+      </menuContribution>
+   </extension>
+-->
+
+</plugin>

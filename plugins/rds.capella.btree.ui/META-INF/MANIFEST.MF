@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: rds.capella.btree.ui
+Bundle-SymbolicName: rds.capella.btree.ui;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: rds.capella.btree.ui.Activator
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.polarsys.capella.core.platform.sirius.ui.navigator,
+ org.eclipse.ui.views.properties.tabbed,
+ org.eclipse.sirius.diagram.ui,
+ org.eclipse.gmf.runtime.notation
+Bundle-RequiredExecutionEnvironment: JavaSE-11
+Automatic-Module-Name: rds.capella.btree.ui
+Bundle-ActivationPolicy: lazy
+Import-Package: rds.capella.btree.data.BehaviourTree

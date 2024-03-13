@@ -1973,7 +1973,7 @@
                 </firstModelOperations>
               </initialOperation>
             </menuItemDescription>
-            <menuItemDescription xsi:type="tool_1:OperationAction" name="MoveToNewBTree" precondition="true">
+            <menuItemDescription xsi:type="tool_1:OperationAction" name="MoveToNewBTree" label="Выделить в отдельное поведенческое дерево" precondition="true">
               <view name="views"/>
               <initialOperation>
                 <firstModelOperations xsi:type="tool_1:For" expression="aql:views" iteratorName="v">
