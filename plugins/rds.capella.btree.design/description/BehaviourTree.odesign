@@ -1473,7 +1473,7 @@
           </style>
         </edgeMappings>
         <toolSections name="BehaviourTree">
-          <ownedTools xsi:type="tool_2:NodeCreationDescription" name="btree.create.action" label="New Internal Action" precondition="aql:true" forceRefresh="true" nodeMappings="//@ownedViewpoints[name='Behaviour%20Tree%20Viewpoint']/@ownedRepresentations[name='BTreeDefinitionStandalone']/@defaultLayer/@nodeMappings[name='BTreeLeaf']" iconPath="/rds.capella.btree.design/icons/full/obj16/Action.gif" extraMappings="//@ownedViewpoints[name='Behaviour%20Tree%20Viewpoint']/@ownedRepresentations[name='BTreeDefinitionStandalone']/@defaultLayer/@nodeMappings[name='BTreeContainer'] //@ownedViewpoints[name='Behaviour%20Tree%20Viewpoint']/@ownedRepresentations[name='BTreeDefinitionStandalone']/@defaultLayer/@nodeMappings[name='BTreeDecorator']">
+          <ownedTools xsi:type="tool_2:NodeCreationDescription" name="btree.create.action" label="New Action" precondition="aql:true" forceRefresh="true" nodeMappings="//@ownedViewpoints[name='Behaviour%20Tree%20Viewpoint']/@ownedRepresentations[name='BTreeDefinitionStandalone']/@defaultLayer/@nodeMappings[name='BTreeLeaf']" iconPath="/rds.capella.btree.design/icons/full/obj16/Action.gif" extraMappings="//@ownedViewpoints[name='Behaviour%20Tree%20Viewpoint']/@ownedRepresentations[name='BTreeDefinitionStandalone']/@defaultLayer/@nodeMappings[name='BTreeContainer'] //@ownedViewpoints[name='Behaviour%20Tree%20Viewpoint']/@ownedRepresentations[name='BTreeDefinitionStandalone']/@defaultLayer/@nodeMappings[name='BTreeDecorator']">
             <variable name="container">
               <subVariables xsi:type="tool_1:AcceleoVariable" name="tool" computationExpression="Logical Function"/>
             </variable>
@@ -1496,7 +1496,7 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool_1:SelectionWizardDescription" name="AddExistingActionId" label="External Action" candidatesExpression="aql:self.getCallableFunctionsFromBTree()">
+          <ownedTools xsi:type="tool_1:SelectionWizardDescription" name="AddExistingActionId" label="Existing Action" candidatesExpression="aql:self.getCallableFunctionsFromBTree()">
             <element name="element"/>
             <containerView name="containerView"/>
             <container name="container"/>

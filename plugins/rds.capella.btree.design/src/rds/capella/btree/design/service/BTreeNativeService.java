@@ -38,6 +38,7 @@ import org.polarsys.capella.core.data.fa.AbstractFunction;
 import org.polarsys.capella.core.data.fa.AbstractFunctionalBlock;
 import org.polarsys.capella.core.data.fa.ComponentFunctionalAllocation;
 import org.polarsys.capella.core.data.fa.FaFactory;
+import org.polarsys.capella.core.data.fa.FunctionInputPort;
 import org.polarsys.capella.core.data.fa.FunctionOutputPort;
 import org.polarsys.capella.core.data.fa.FunctionPkg;
 import org.polarsys.capella.core.data.fa.FunctionalExchange;
@@ -311,6 +312,25 @@ public class BTreeNativeService {
     	cmp.getOwnedFunctionalAllocation().add(alloc);
     }
     
+    public FunctionalExchange createCallFunctionalExchange(AbstractFunction src, AbstractFunction dst) {
+    	FunctionOutputPort out_port = FaFactory.eINSTANCE.createFunctionOutputPort();
+    	out_port.setName(dst.getName());
+    	src.getOutputs().add(out_port);
+    	
+    	FunctionInputPort in_port = FaFactory.eINSTANCE.createFunctionInputPort();
+    	in_port.setName("call");
+    	dst.getInputs().add(in_port);
+
+    	FunctionalExchange fe = FaFactory.eINSTANCE.createFunctionalExchange();
+    	fe.setName(dst.getName());
+    	fe.setSource(out_port);
+    	fe.setTarget(in_port);
+    	
+    	src.getOwnedFunctionalExchanges().add(fe);
+    	
+    	return fe;
+    }
+    
     /*
      *  Если btree определен для компонента, то новая функция аллоцируется на компонент. 
      */
@@ -332,13 +352,21 @@ public class BTreeNativeService {
 		    		}
 		    if (node_fnc != null) { 
 				node_fnc.setName(btree_action_node.getName());
-				root_fnc.getOwnedFunctions().add(node_fnc);
+				if (root_fnc.eContainer() instanceof AbstractFunction) {
+					AbstractFunction parent_fnc = (AbstractFunction)root_fnc.eContainer();
+					parent_fnc.getOwnedFunctions().add(node_fnc);
+				}
+				else
+					root_fnc.getOwnedFunctions().add(node_fnc);
 				
 		    	Component btree_root_cmp = findRootComponent(btree_action_node);
 		    	
 		    	if (btree_root_cmp != null) {
 		    		allocateFunction(node_fnc, btree_root_cmp);
+		    	} else {
+		    		createCallFunctionalExchange(root_fnc, node_fnc);
 		    	}
+		    		
 		    	
 				return node_fnc;
 		    }
