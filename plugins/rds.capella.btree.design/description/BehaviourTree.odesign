@@ -1496,7 +1496,7 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool_1:SelectionWizardDescription" name="AddExistingActionId" label="Existing Action" candidatesExpression="aql:self.getCallableFunctionsFromBTree()">
+          <ownedTools xsi:type="tool_1:SelectionWizardDescription" name="AddExistingActionId" label="Fnc Call Action" candidatesExpression="aql:self.getCallableFunctionsFromBTree()">
             <element name="element"/>
             <containerView name="containerView"/>
             <container name="container"/>
