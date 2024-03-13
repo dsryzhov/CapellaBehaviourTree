@@ -24,6 +24,7 @@ import org.eclipse.sirius.diagram.ui.business.internal.view.AbstractLayoutData;
 import org.eclipse.sirius.diagram.ui.business.internal.view.RootLayoutData;
 import org.eclipse.sirius.diagram.ui.business.api.view.SiriusGMFHelper;
 import org.eclipse.ui.IEditorPart;
+import org.polarsys.capella.common.data.activity.InputPin;
 import org.polarsys.capella.common.data.activity.OutputPin;
 import org.polarsys.capella.core.data.capellacore.CapellaElement;
 import org.polarsys.capella.core.data.capellacore.NamedElement;
@@ -506,6 +507,27 @@ public class BTreeNativeService {
     	
     	return false;
     }
+    
+    /*
+     * Переименовывает все порты в вызывающих функциях и связанные FE
+     */
+    public void renameFunctionAndIncomingFEandOutPorts(AbstractFunction fnc, String name) {
+    	fnc.setName(name);
+    	for (InputPin pin : fnc.getInputs()) {
+    		if (pin instanceof FunctionInputPort) {
+    			FunctionInputPort in_port = (FunctionInputPort)pin;
+    			
+    			if (!in_port.getName().contentEquals("call")) continue;
+    			
+    			for (FunctionalExchange fe : in_port.getIncomingFunctionalExchanges()) {
+        			FunctionOutputPort src_fnc_out_port = fe.getSourceFunctionOutputPort();
+        			src_fnc_out_port.setName(name);
+        			fe.setName(name);
+    			}
+    		}
+    	}
+    }
+   
     
     public EList<AbstractFunction> getCallableFunctionsFromBTree(BTreeElement container) {
     	

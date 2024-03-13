@@ -1959,9 +1959,7 @@
               <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self">
                 <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:arg0"/>
                 <subModelOperations xsi:type="tool_1:If" conditionExpression="aql:self.oclIsKindOf(BehaviourTree::Action)">
-                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self.function">
-                    <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:arg0"/>
-                  </subModelOperations>
+                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:self.function.renameFunctionAndIncomingFEandOutPorts(arg0)"/>
                 </subModelOperations>
               </firstModelOperations>
             </initialOperation>
