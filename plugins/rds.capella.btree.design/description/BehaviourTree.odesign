@@ -1874,11 +1874,12 @@
               <firstModelOperations xsi:type="tool_1:If" conditionExpression="aql:newSemanticContainer.isFncCanBeCalledFromBTree(element)">
                 <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:container">
                   <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:newContainerView.setBTreeNodePositionHint()">
-                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="Action" referenceName="ownedNodes">
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="Action" referenceName="ownedNodes" variableName="newAction">
                       <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:element.name"/>
                       <subModelOperations xsi:type="tool_1:SetValue" featureName="function" valueExpression="aql:element"/>
                     </subModelOperations>
                     <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:newSemanticContainer.allocateFncToBtreeComponentIfNotAllocated(element)"/>
+                    <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:newSemanticContainer.createCallFncExToFncIfNotExist(element)"/>
                   </subModelOperations>
                 </subModelOperations>
               </firstModelOperations>

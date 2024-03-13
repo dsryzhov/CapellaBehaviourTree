@@ -385,7 +385,30 @@ public class BTreeNativeService {
     	
     }
     
-    /*
+    public boolean isFncConnected(AbstractFunction src, AbstractFunction dst) {
+    	boolean res = false;
+    	for (OutputPin pin : src.getOutputs()) {
+    		if (pin instanceof FunctionOutputPort) {
+    			
+    			FunctionOutputPort out_port = (FunctionOutputPort)pin;
+    			
+    			if (out_port.getOutgoingFunctionalExchanges().size() == 0) continue;
+    			
+    			FunctionalExchange fe = out_port.getOutgoingFunctionalExchanges().get(0);
+    			
+    			AbstractFunction tgt_fnc = (AbstractFunction)fe.getTargetFunctionInputPort().eContainer();
+    			
+    			if (tgt_fnc.equals(dst)) {
+    				res = true; break;
+    			}
+    		}
+    	}
+    	return res;
+    }
+    
+    /* временно сделано, что функция возвразает true всегда, если ПД определено для функции
+     * сделано, чтобы можно было добавлять вызовы существующих функций 
+     *
      * Функция по разному ведет себя, если btree определено для компонента или функции. 
      * 
      * Если btree определен в компоненте
@@ -410,22 +433,8 @@ public class BTreeNativeService {
     	
 	    	AbstractFunction parent_fnc = (AbstractFunction)btree_parent;
 	    	
-	    	for (OutputPin pin : parent_fnc.getOutputs()) {
-	    		if (pin instanceof FunctionOutputPort) {
-	    			
-	    			FunctionOutputPort out_port = (FunctionOutputPort)pin;
-	    			
-	    			if (out_port.getOutgoingFunctionalExchanges().size() == 0) continue;
-	    			
-	    			FunctionalExchange fe = out_port.getOutgoingFunctionalExchanges().get(0);
-	    			
-	    			AbstractFunction tgt_fnc = (AbstractFunction)fe.getTargetFunctionInputPort().eContainer();
-	    			
-	    			if (tgt_fnc.equals(fnc)) {
-	    				res = true; break;
-	    			}
-	    		}
-	    	}
+	    	//res = isFncConnected(parent_fnc, fnc);
+	    	res = true;
     	} else
     		if (btree_parent instanceof Component) {
     			Component cmp = (Component)btree_parent;
@@ -479,6 +488,22 @@ public class BTreeNativeService {
 			}
     	}
 
+    	return false;
+    }
+    
+    public boolean createCallFncExToFncIfNotExist(BTreeElement container, AbstractFunction fnc) {
+    	EObject btree_parent = getBTreeParent(container);
+    	
+    	if (btree_parent == null) return false;
+
+    	if (btree_parent instanceof AbstractFunction) {
+    		AbstractFunction root_fnc = (AbstractFunction)btree_parent;
+    		
+    		if (!isFncConnected(root_fnc, fnc))
+    			createCallFunctionalExchange(root_fnc, fnc);
+    		return true;
+    	}
+    	
     	return false;
     }
     
