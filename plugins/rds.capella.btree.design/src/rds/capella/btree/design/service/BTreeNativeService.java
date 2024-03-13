@@ -319,7 +319,7 @@ public class BTreeNativeService {
     	src.getOutputs().add(out_port);
     	
     	FunctionInputPort in_port = FaFactory.eINSTANCE.createFunctionInputPort();
-    	in_port.setName("call");
+    	in_port.setName("in");
     	dst.getInputs().add(in_port);
 
     	FunctionalExchange fe = FaFactory.eINSTANCE.createFunctionalExchange();
@@ -517,7 +517,7 @@ public class BTreeNativeService {
     		if (pin instanceof FunctionInputPort) {
     			FunctionInputPort in_port = (FunctionInputPort)pin;
     			
-    			if (!in_port.getName().contentEquals("call")) continue;
+    			if (!in_port.getName().contentEquals("in")) continue;
     			
     			for (FunctionalExchange fe : in_port.getIncomingFunctionalExchanges()) {
         			FunctionOutputPort src_fnc_out_port = fe.getSourceFunctionOutputPort();
