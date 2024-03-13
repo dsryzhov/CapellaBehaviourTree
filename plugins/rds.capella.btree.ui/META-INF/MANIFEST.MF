@@ -10,7 +10,7 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.ui.views.properties.tabbed,
  org.eclipse.sirius.diagram.ui,
  org.eclipse.gmf.runtime.notation
-Bundle-RequiredExecutionEnvironment: JavaSE-11
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Automatic-Module-Name: rds.capella.btree.ui
 Bundle-ActivationPolicy: lazy
 Import-Package: rds.capella.btree.data.BehaviourTree
