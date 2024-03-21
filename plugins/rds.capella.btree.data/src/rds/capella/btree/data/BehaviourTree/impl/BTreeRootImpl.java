@@ -7,6 +7,7 @@ import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
@@ -411,7 +412,7 @@ public class BTreeRootImpl extends ElementExtensionImpl implements BTreeRoot {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated not
 	 */
 
 	@Override
@@ -420,7 +421,8 @@ public class BTreeRootImpl extends ElementExtensionImpl implements BTreeRoot {
 		// Ensure that you remove @generated or mark it @generated NOT
 		// The list is expected to implement org.eclipse.emf.ecore.util.InternalEList and org.eclipse.emf.ecore.EStructuralFeature.Setting
 		// so it's likely that an appropriate subclass of org.eclipse.emf.ecore.util.EcoreEList should be used.
-		throw new UnsupportedOperationException();
+		//throw new UnsupportedOperationException();
+		return new BasicEList<AbstractConstraint>();
 	}
 
 	/**
@@ -778,7 +780,7 @@ public class BTreeRootImpl extends ElementExtensionImpl implements BTreeRoot {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated not
 	 */
 
 	@Override
@@ -787,7 +789,8 @@ public class BTreeRootImpl extends ElementExtensionImpl implements BTreeRoot {
 		// Ensure that you remove @generated or mark it @generated NOT
 		// The list is expected to implement org.eclipse.emf.ecore.util.InternalEList and org.eclipse.emf.ecore.EStructuralFeature.Setting
 		// so it's likely that an appropriate subclass of org.eclipse.emf.ecore.util.EcoreEList should be used.
-		throw new UnsupportedOperationException();
+		//throw new UnsupportedOperationException();
+		return new BasicEList<Requirement>();
 	}
 
 	/**
