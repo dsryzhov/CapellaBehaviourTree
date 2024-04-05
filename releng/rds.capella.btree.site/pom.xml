@@ -14,16 +14,75 @@
 	<packaging>eclipse-repository</packaging>
 	<version>0.1.0-SNAPSHOT</version>
 	
-	<build>
+<build>
 		<plugins>
 			<plugin>
 				<groupId>org.eclipse.tycho</groupId>
-				<artifactId>tycho-p2-repository-plugin</artifactId>
-				<version>${tycho.version}</version>
+				<artifactId>tycho-maven-plugin</artifactId>
+				<version>4.0.7</version>
+				<extensions>true</extensions>
+			</plugin>
+			<plugin>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>tycho-packaging-plugin</artifactId>
+				<version>4.0.7</version>
+				<executions>
+					<execution>
+						<phase>package</phase>
+						<id>package-feature</id>
+						<configuration>
+							<finalName>${project.artifactId}_${unqualifiedVersion}.${buildQualifier}</finalName>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+	
+			<plugin>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>target-platform-configuration</artifactId>
+				<version>4.0.7</version>
 				<configuration>
-					<xzCompress>false</xzCompress>
+<!--					<resolver>p2</resolver>-->
+					<environments>
+						<environment>
+							<os>win32</os>
+							<ws>win32</ws>
+							<arch>x86_64</arch>
+						</environment>
+						<environment>
+							<os>linux</os>
+							<ws>gtk</ws>
+							<arch>x86_64</arch>
+						</environment>
+					</environments>
+					<target>
+						<file>../rds.capella.btree.target/btree.target-definition.target</file>
+					
+					</target>
 				</configuration>
 			</plugin>
 		</plugins>
-	</build>	
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.eclipse.tycho</groupId>
+					<artifactId>tycho-p2-repository-plugin</artifactId>
+					<version>4.0.7</version>
+					<executions>
+						<execution>
+							<phase>package</phase>
+							<id>archive-repository</id>
+							<goals>
+								<goal>archive-repository</goal>
+							</goals>
+							<configuration>
+								<finalName>${packagedAddonName}-updateSite-${unqualifiedVersion}.${buildQualifier}</finalName>
+							</configuration>
+						</execution>
+					</executions>
+				</plugin>
+			</plugins>
+		</pluginManagement>		
+	</build>
+		
 </project>

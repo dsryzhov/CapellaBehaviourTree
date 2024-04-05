@@ -8,7 +8,7 @@
 	<version>0.1.0-SNAPSHOT</version>
 	<packaging>pom</packaging>
 	<properties>
-		<tycho.version>1.3.0</tycho.version>
+		<tycho.version>4.0.7</tycho.version>
 		<targetplatformPath>../rds.capella.btree.target/btree.target-definition</targetplatformPath>
 		<packagedAddonName>CapellaBehaviourTree</packagedAddonName>
 	</properties>
@@ -16,6 +16,7 @@
 		<module>../../plugins/rds.capella.btree</module>
 		<module>../../plugins/rds.capella.btree.data</module>
 		<module>../../plugins/rds.capella.btree.data.edit</module>
+		<module>../../plugins/rds.capella.btree.ui</module>
 		<module>../../plugins/rds.capella.btree.design</module>
 		<module>../../features/rds.capella.btree.feature</module>
 		<module>../../releng/rds.capella.btree.site</module>
